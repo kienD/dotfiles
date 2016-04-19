@@ -166,14 +166,17 @@ bindsym Mod1+Shift+bracketright move workspace to output right
 bindsym Mod1+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
-        status_command i3status
-        tray_output primary
+    status_command    python3 /home/kdo/.i3/i3pystatus-config.py
+    position          top
+    workspace_buttons yes
 }
 
 # Focus follows mouse
 focus_follows_mouse no
+
+# Mouse Warping
+mouse_warping none
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
