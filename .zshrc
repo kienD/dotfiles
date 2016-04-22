@@ -84,6 +84,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Alias definitions
 
+alias pls='sudo "$BASH" -c "$(history -p !!)"'
+
+alias gitpr="source ~/Liferay/git-tools/git-pull-request/git-pull-request.sh"
+
+alias apache='apache2ctl'
+
 alias pls='sudo $(fc -ln -1)'
 
 alias gitpr="git-pull-request.sh"
@@ -93,7 +99,6 @@ alias apache='apache2ctl'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
 
 function gradle {
   local root_level=$(git rev-parse --show-toplevel 2>/dev/null)
@@ -127,6 +132,12 @@ alias szrc='source ~/.zshrc'
 
 alias java-kill='fuser -k 8080/tcp'
 
+# Support-KB Project
+alias deploy-kb='cd ~/Liferay/ee-plugins/themes/osb-knowledge-base-theme && acd | cd ~/Liferay/ee-plugins/themes/stanley-theme && acd | cd ~/Liferay/ee-plugins/hooks/osb-knowledge-base-hook && acd | cd ~/Liferay/ee-plugins/portlets/osb-knowledge-base-portlet && acd | cd ~/Liferay/ee-plugins/portlets/knowledge-base-portlet && acd | cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd | cd ~/Liferay/ee-plugins/webs/resources-importer-web && acd | cd ~/Liferay/ee-plugins/ext/osb-knowledge-base-ext && acd'
+
+alias cp-css='cp ~/Liferay/ee-plugins/themes/osb-knowledge-base-theme/docroot/_diffs/css/custom.css ~/Liferay/ee-bundles/tomcat/webapps/osb-knowledge-base-theme/css/custom.css
+'
+
 # npm
 
 NPM_PACKAGES="${HOME}/.npm-packages"
@@ -143,6 +154,8 @@ export NVM_DIR="/home/kdo/.nvm"
 # Swap ctrl to capslock
 setxkbmap -layout us -option ctrl:swapcaps
 
-export ANT_OPTS="-Xms2048m -Xmx4096m -XX:MaxPermSize=2048m"
+export ANT_OPTS="-Xms512m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=256m"
+
+export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m"
 
 export HOSTNAME=${HOSTNAME}
