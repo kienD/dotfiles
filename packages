@@ -184,7 +184,6 @@ evolution-data-server-common			install
 evolution-data-server-online-accounts		install
 example-content					install
 fakeroot					install
-feh						install
 file						install
 file-roller					install
 findbugs					install
@@ -239,6 +238,7 @@ ftp						install
 fuse						install
 g++						install
 g++-5						install
+gawk						install
 gcc						install
 gcc-5						install
 gcc-5-base:amd64				install
@@ -363,6 +363,7 @@ gsfonts						install
 gsfonts-x11					install
 gstreamer0.10-plugins-bad:amd64			install
 gstreamer0.10-plugins-base:amd64		install
+gstreamer0.10-plugins-good:amd64		deinstall
 gstreamer0.10-pulseaudio:amd64			install
 gstreamer0.10-tools				install
 gstreamer1.0-alsa:amd64				install
@@ -407,6 +408,7 @@ humanity-icon-theme				install
 hunspell-en-us					install
 hwdata						install
 hyphen-en-us					install
+i3blocks					install
 i3lock						install
 i3status					install
 i965-va-driver:amd64				install
@@ -711,6 +713,7 @@ libcroco3:amd64					install
 libcryptsetup4:amd64				install
 libcrystalhd3:amd64				install
 libcuda1-304					install
+libcuda1-352					deinstall
 libcue1						install
 libcups2:amd64					install
 libcups2:i386					install
@@ -720,6 +723,7 @@ libcupsimage2:amd64				install
 libcupsmime1:amd64				install
 libcupsppdc1:amd64				install
 libcurl3:amd64					install
+libcurl3:i386					deinstall
 libcurl3-gnutls:amd64				install
 libcurl4-openssl-dev:amd64			install
 libcwidget3v5:amd64				install
@@ -1083,6 +1087,7 @@ libicu55:i386					install
 libid3tag0					install
 libidl0:amd64					install
 libidn11:amd64					install
+libidn11:i386					deinstall
 libido3-0.1-0:amd64				install
 libiec61883-0:amd64				install
 libiec61883-0:i386				install
@@ -1147,8 +1152,6 @@ libjline2-java					install
 libjna-java					install
 libjna-jni					install
 libjna-platform-java				install
-libjpeg-progs					install
-libjpeg-turbo-progs				install
 libjpeg-turbo8:amd64				install
 libjpeg-turbo8:i386				install
 libjpeg8:amd64					install
@@ -1352,7 +1355,7 @@ libnspr4:amd64					install
 libnss-mdns:amd64				install
 libnss3:amd64					install
 libnss3-nssdb					install
-libntdb1:amd64					install
+libntdb1:amd64					deinstall
 libnuma1:amd64					install
 libnux-4.0-0					install
 libnux-4.0-common				install
@@ -1439,7 +1442,7 @@ libpeas-common					install
 libperl5.20					install
 libperlio-gzip-perl				install
 libpgm-5.1-0:amd64				install
-libpiano0:amd64					install
+libpiano0:amd64					deinstall
 libpipeline1:amd64				install
 libpixman-1-0:amd64				install
 libpixman-1-0:i386				install
@@ -1497,7 +1500,9 @@ libpwquality-common				install
 libpwquality1:amd64				install
 libpython-stdlib:amd64				install
 libpython2.7:amd64				install
+libpython2.7:i386				deinstall
 libpython2.7-minimal:amd64			install
+libpython2.7-minimal:i386			deinstall
 libpython2.7-stdlib:amd64			install
 libpython3-dev:amd64				install
 libpython3-stdlib:amd64				install
@@ -1572,6 +1577,7 @@ libraw1394-11:amd64				install
 libraw1394-11:i386				install
 librdf0:amd64					install
 libreadline6:amd64				install
+libreadline6:i386				deinstall
 libreflectasm-java				install
 libregexp-java					install
 libreoffice					install
@@ -1610,6 +1616,7 @@ librsvg2-2:amd64				install
 librsvg2-common:amd64				install
 librsync1:amd64					install
 librtmp1:amd64					install
+librtmp1:i386					deinstall
 libruby2.1:amd64				install
 libsamplerate0:amd64				install
 libsamplerate0:i386				install
@@ -1628,6 +1635,7 @@ libschroedinger-1.0-0:amd64			install
 libsctp1:amd64					install
 libsdl-ttf2.0-0:amd64				install
 libsdl1.2debian:amd64				install
+libsdl1.2debian:i386				deinstall
 libseccomp2:amd64				install
 libsecret-1-0:amd64				install
 libsecret-common				install
@@ -1652,6 +1660,7 @@ libsignon-extension1:amd64			install
 libsignon-glib1:amd64				install
 libsignon-plugins-common1:amd64			install
 libsignon-qt5-1:amd64				install
+libsigsegv2:amd64				install
 libsisu-guice-java				install
 libsisu-inject-java				install
 libsisu-plexus-java				install
@@ -1685,6 +1694,7 @@ libspeex1:amd64					install
 libspeex1:i386					install
 libspeexdsp1:amd64				install
 libspeexdsp1:i386				install
+libspotify12					deinstall
 libsqlite3-0:amd64				install
 libsqlite3-0:i386				install
 libss2:amd64					install
@@ -1935,7 +1945,7 @@ libxcb-xinerama0:amd64				install
 libxcb-xinerama0-dev:amd64			install
 libxcb-xkb-dev:amd64				install
 libxcb-xkb1:amd64				install
-libxcb-xtest0:amd64				install
+libxcb-xtest0:amd64				deinstall
 libxcb1:amd64					install
 libxcb1:i386					install
 libxcb1-dev:amd64				install
@@ -1976,6 +1986,7 @@ libxml-xpathengine-perl				install
 libxml2:amd64					install
 libxml2:i386					install
 libxmu6:amd64					install
+libxmu6:i386					deinstall
 libxmuu1:amd64					install
 libxnvctrl0					install
 libxom-java					install
@@ -2031,8 +2042,14 @@ linux-headers-4.2.0-27				install
 linux-headers-4.2.0-27-generic			install
 linux-headers-4.2.0-30				install
 linux-headers-4.2.0-30-generic			install
+linux-image-4.2.0-16-generic			deinstall
+linux-image-4.2.0-23-generic			deinstall
+linux-image-4.2.0-25-generic			deinstall
 linux-image-4.2.0-27-generic			install
 linux-image-4.2.0-30-generic			install
+linux-image-extra-4.2.0-16-generic		deinstall
+linux-image-extra-4.2.0-23-generic		deinstall
+linux-image-extra-4.2.0-25-generic		deinstall
 linux-image-extra-4.2.0-27-generic		install
 linux-image-extra-4.2.0-30-generic		install
 linux-libc-dev:amd64				install
@@ -2051,7 +2068,7 @@ lsb-release					install
 lshw						install
 lsof						install
 ltrace						install
-lua-lgi:amd64					install
+lua-lgi:amd64					deinstall
 make						install
 makedev						install
 man-db						install
@@ -2262,7 +2279,6 @@ python-lxml					install
 python-minimal					install
 python-ndg-httpsclient				install
 python-notify					install
-python-ntdb					install
 python-oauthlib					install
 python-oneconf					install
 python-openssl					install
@@ -2289,6 +2305,7 @@ python-setuptools				install
 python-sip					install
 python-six					install
 python-software-properties			install
+python-support					deinstall
 python-talloc					install
 python-tdb					install
 python-tornado					install
@@ -2422,7 +2439,6 @@ rhythmbox-plugin-cdrecorder			install
 rhythmbox-plugin-magnatune			install
 rhythmbox-plugin-zeitgeist			install
 rhythmbox-plugins				install
-rlwrap						install
 rsync						install
 rsyslog						install
 rtkit						install
@@ -2454,6 +2470,7 @@ signond						install
 simple-scan					install
 skype						install
 skype-bin:i386					install
+slack-desktop					install
 smartgit					install
 smartmontools					install
 sni-qt:amd64					install
@@ -2477,6 +2494,7 @@ suru-icon-theme					install
 syslinux					install
 syslinux-common					install
 syslinux-legacy					install
+sysstat						install
 system-config-printer-common			install
 system-config-printer-gnome			install
 system-config-printer-udev			install
@@ -2501,6 +2519,7 @@ telepathy-salut					install
 telnet						install
 terminator					install
 testng						install
+thermald					deinstall
 thunderbird					install
 thunderbird-gnome-support			install
 thunderbird-locale-en				install
@@ -2628,6 +2647,7 @@ vim-runtime					install
 vim-tiny					install
 vino						install
 virtualbox					install
+virtualbox-5.0:i386				deinstall
 virtualbox-dkms					install
 virtualbox-qt					install
 w3m						install
@@ -2727,3 +2747,5 @@ zip						install
 zlib1g:amd64					install
 zlib1g:i386					install
 zlib1g-dev:amd64				install
+zsh						install
+zsh-common					install
