@@ -197,15 +197,20 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Auto start items
 exec --no-startup-id nm-applet
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/kdo/.i3/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/kdo/.i3/workspace-2.json'"
-exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/kdo/.i3/workspace-3.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/kdo/.i3/workspace-browser.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/kdo/.i3/workspace-coding.json'"
+exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/kdo/.i3/workspace-terminals.json'"
+exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/kdo/.i3/workspace-communication.json'"
+exec --no-startup-id "i3-msg 'workspace 5; append_layout /home/kdo/.i3/workspace-email.json'"
+#exec xrandr
 exec nitrogen --restore &
-exec terminator
-exec terminator
-exec terminator
-exec terminator
-exec google-chrome
+exec terminator -e pianobar
+exec terminator -e sudo apt-get update
+exec terminator -e cd ~/Liferay/
+exec terminator -e cd ~/Liferay/
+exec google-chrome --force -device-scale-factor=1.1 --new-window keep.google.com
+exec google-chrome --force -device-scale-factor=1.1 --new-window https://liferayeng.slack.com/messages/build/
+exec google-chrome --force -device-scale-factor=1.1 --new-window localhost:8080
 exec atom
 exec thunderbird
 

@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Alias definitions
 
-alias pls='sudo "$BASH" -c "$(history -p !!)"'
+# alias pls='sudo "$BASH" -c "$(history -p !!)"'
 
 alias gitpr="source ~/Liferay/git-tools/git-pull-request/git-pull-request.sh"
 
@@ -120,6 +120,15 @@ alias acd='ant clean deploy'
 # Git
 alias gs="git status"
 alias gitk="/usr/bin/wish $(which gitk)"
+alias grb='git pull --rebase'
+alias grb-ee='git pull --rebase upstream ee-6.2.x'
+alias grb-master='git pull --rebase upstream master'
+alias gpush='git push'
+alias gpush-ee='git push origin ee-6.2.x'
+alias gpush-master='git push origin master'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+
 
 # Lock screen
 alias lock='py3lock.py'
@@ -154,7 +163,7 @@ export NVM_DIR="/home/kdo/.nvm"
 # Swap ctrl to capslock
 setxkbmap -layout us -option ctrl:swapcaps
 
-export ANT_OPTS="-Xms512m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=256m"
+export ANT_OPTS="-Xms2048m -Xmx2048m -XX:PermSize=512m -XX:MaxPermSize=512m"
 
 export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m"
 
