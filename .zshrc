@@ -117,6 +117,9 @@ alias aa='ant all'
 alias ad='ant deploy'
 alias acd='ant clean deploy'
 
+# Chrome
+alias chrome='google-chrome --force-device-scale-factor=1.2'
+
 # Git
 alias gs="git status"
 alias gitk="/usr/bin/wish $(which gitk)"
@@ -128,7 +131,6 @@ alias gpush-ee='git push origin ee-6.2.x'
 alias gpush-master='git push origin master'
 alias gc='git checkout'
 alias gcb='git checkout -b'
-
 
 # Lock screen
 alias lock='py3lock.py'
@@ -146,9 +148,14 @@ alias deploy-kb='cd ~/Liferay/ee-plugins/themes/osb-knowledge-base-theme && acd 
 
 alias cp-css='cp ~/Liferay/ee-plugins/themes/osb-knowledge-base-theme/docroot/_diffs/css/custom.css ~/Liferay/ee-bundles/tomcat/webapps/osb-knowledge-base-theme/css/custom.css
 '
+# Liferay
+alias liferay-update='
+echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && grb-master;
+echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && grb-master;
+echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && grb-ee;
+echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && grb-ee'
 
 # npm
-
 NPM_PACKAGES="${HOME}/.npm-packages"
 
 PATH="$NPM_PACKAGES/bin:$PATH"

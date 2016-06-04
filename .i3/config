@@ -208,9 +208,9 @@ exec terminator -e pianobar
 exec terminator -e sudo apt-get update
 exec terminator -e cd ~/Liferay/
 exec terminator -e cd ~/Liferay/
-exec google-chrome --force -device-scale-factor=1.1 --new-window keep.google.com
-exec google-chrome --force -device-scale-factor=1.1 --new-window https://liferayeng.slack.com/messages/build/
-exec google-chrome --force -device-scale-factor=1.1 --new-window localhost:8080
+exec google-chrome --force-device-scale-factor=1.2 --new-window keep.google.com
+exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
+exec google-chrome --force-device-scale-factor=1.2 --new-window localhost:8080
 exec atom
 exec thunderbird
 
