@@ -215,7 +215,7 @@ exec atom
 exec thunderbird
 
 
-gaps inner 20
+gaps inner 40
 #gaps outer 1
 for_window [class="^.*"] border pixel 0
 

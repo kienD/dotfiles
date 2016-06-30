@@ -118,7 +118,7 @@ alias ad='ant deploy'
 alias acd='ant clean deploy'
 
 # Chrome
-alias chrome='google-chrome --force-device-scale-factor=1.2'
+alias chrome='google-chrome --force-device-scale-factor=1.2 &'
 
 # Git
 alias gs="git status"
@@ -143,6 +143,17 @@ alias szrc='source ~/.zshrc'
 
 alias java-kill='fuser -k 8080/tcp'
 
+# Loop Project
+alias deploy-loop='
+echo ---------------- loop-theme ---------------- && cd ~/Liferay/ee-plugins/themes/loop-theme && acd &&
+echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd &&
+echo ---------------- asset-entry-set-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
+echo ---------------- asset-sharing-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
+echo ---------------- marketplace-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
+echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
+echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
+ echo ---------------- push-notifications-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/push-notifications-portlet && acd'
+
 # Support-KB Project
 alias deploy-kb='cd ~/Liferay/ee-plugins/themes/osb-knowledge-base-theme && acd | cd ~/Liferay/ee-plugins/themes/stanley-theme && acd | cd ~/Liferay/ee-plugins/hooks/osb-knowledge-base-hook && acd | cd ~/Liferay/ee-plugins/portlets/osb-knowledge-base-portlet && acd | cd ~/Liferay/ee-plugins/portlets/knowledge-base-portlet && acd | cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd | cd ~/Liferay/ee-plugins/webs/resources-importer-web && acd | cd ~/Liferay/ee-plugins/ext/osb-knowledge-base-ext && acd'
 
@@ -157,6 +168,8 @@ echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && 
 
 # npm
 NPM_PACKAGES="${HOME}/.npm-packages"
+
+alias npm-check='npm list | grep'
 
 PATH="$NPM_PACKAGES/bin:$PATH"
 
