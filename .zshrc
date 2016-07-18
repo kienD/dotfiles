@@ -183,8 +183,8 @@ export NVM_DIR="/home/kdo/.nvm"
 # Swap ctrl to capslock
 setxkbmap -layout us -option ctrl:swapcaps
 
-export ANT_OPTS="-Xms2048m -Xmx2048m -XX:PermSize=512m -XX:MaxPermSize=512m"
+export ANT_OPTS="-Xms2048m -Xmx4096m -XX:PermSize=2048m -XX:MaxPermSize=2048m"
 
-export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m"
+export JAVA_OPTS="-Xms512m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=256m"
 
 export HOSTNAME=${HOSTNAME}
