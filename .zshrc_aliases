@@ -1,0 +1,93 @@
+alias gitpr="source ~/Liferay/git-tools/git-pull-request/git-pull-request.sh"
+
+###############################
+########### General ###########
+###############################
+
+alias pls='sudo $(fc -ln -1)'
+
+alias java-kill='fuser -k 8080/tcp'
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias sbp='source ~/.bash_profile'
+alias szrc='source ~/.zshrc'
+
+# Ant
+alias aa='ant all'
+alias ad='ant deploy'
+alias acd='ant clean deploy'
+
+# Apache
+alias apache='apache2ctl'
+
+# Chrome
+alias chrome='google-chrome --force-device-scale-factor=1.2 &'
+
+# GH to git help
+alias gh="git help"
+
+# Git
+alias gs="git status"
+alias gitk="/usr/bin/wish $(which gitk)"
+alias gitpr="git-pull-request.sh"
+alias grb='git pull --rebase'
+alias grb-ee='git pull --rebase upstream ee-6.2.x'
+alias grb-master='git pull --rebase upstream master'
+alias gpush='git push'
+alias gpush-ee='git push origin ee-6.2.x'
+alias gpush-master='git push origin master'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+
+# Gradlew from any level
+function gradle {
+ local root_level=$(git rev-parse --show-toplevel 2>/dev/null)
+
+ if [[ -n "$root_level" && -f "$root_level/gradlew" ]]; then
+   root_level="$root_level/gradlew"
+ else
+   root_level=$(which gradle)
+fi
+
+ "$root_level" $@
+}
+
+# Lock screen
+alias lock='py3lock.py'
+
+# Npm
+alias npm-check='npm list | grep'
+
+###############################
+########### Liferay ###########
+###############################
+
+# Source format all changes
+function sfm {
+	if [ "$1" ]; then
+		git diff --stat --relative --name-only "$1".. | grep -E '.(tag|jsp.?|vm|ftl|js|(s)?css)$' | xargs check_sf;
+	else
+		echo -e "$fg_bold[red]Please choose a branch to compare changes to.$reset_color EG: sfm ee-6.2.x"
+	fi
+}
+
+# Loop Project
+alias deploy-loop='
+echo ---------------- loop-theme ---------------- && cd ~/Liferay/ee-plugins/themes/loop-theme && acd &&
+echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd &&
+echo ---------------- asset-entry-set-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
+echo ---------------- asset-sharing-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
+echo ---------------- marketplace-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
+echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
+echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
+echo ---------------- push-notifications-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/push-notifications-portlet && acd'
+
+# Update Liferay
+alias liferay-update='
+echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && grb-master;
+echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && grb-master;
+echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && grb-ee;
+echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && grb-ee'

@@ -82,94 +82,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 # Alias definitions
+
+if [ -f ./.zshrc_aliases ]; then
+    . ./.zshrc_aliases
+fi
 
 # alias pls='sudo "$BASH" -c "$(history -p !!)"'
 
-alias gitpr="source ~/Liferay/git-tools/git-pull-request/git-pull-request.sh"
-
-alias apache='apache2ctl'
-
-alias pls='sudo $(fc -ln -1)'
-
-alias gitpr="git-pull-request.sh"
-
-alias apache='apache2ctl'
-
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-function gradle {
-  local root_level=$(git rev-parse --show-toplevel 2>/dev/null)
-
-  if [[ -n "$root_level" && -f "$root_level/gradlew" ]]; then
-    root_level="$root_level/gradlew"
-  else
-    root_level=$(which gradle)
- fi
-
-  "$root_level" $@
-}
-
-# Ant
-alias aa='ant all'
-alias ad='ant deploy'
-alias acd='ant clean deploy'
-
-# Chrome
-alias chrome='google-chrome --force-device-scale-factor=1.2 &'
-
-# Git
-alias gs="git status"
-alias gitk="/usr/bin/wish $(which gitk)"
-alias grb='git pull --rebase'
-alias grb-ee='git pull --rebase upstream ee-6.2.x'
-alias grb-master='git pull --rebase upstream master'
-alias gpush='git push'
-alias gpush-ee='git push origin ee-6.2.x'
-alias gpush-master='git push origin master'
-alias gc='git checkout'
-alias gcb='git checkout -b'
-
-# Lock screen
-alias lock='py3lock.py'
-
-# Alias gh to git help
-alias gh="git help"
-
-alias sbp='source ~/.bash_profile'
-alias szrc='source ~/.zshrc'
-
-alias java-kill='fuser -k 8080/tcp'
-
-# Loop Project
-alias deploy-loop='
-echo ---------------- loop-theme ---------------- && cd ~/Liferay/ee-plugins/themes/loop-theme && acd &&
-echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd &&
-echo ---------------- asset-entry-set-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
-echo ---------------- asset-sharing-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
-echo ---------------- marketplace-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
-echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
-echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
- echo ---------------- push-notifications-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/push-notifications-portlet && acd'
-
-# Support-KB Project
-alias deploy-kb='cd ~/Liferay/ee-plugins/themes/osb-knowledge-base-theme && acd | cd ~/Liferay/ee-plugins/themes/stanley-theme && acd | cd ~/Liferay/ee-plugins/hooks/osb-knowledge-base-hook && acd | cd ~/Liferay/ee-plugins/portlets/osb-knowledge-base-portlet && acd | cd ~/Liferay/ee-plugins/portlets/knowledge-base-portlet && acd | cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd | cd ~/Liferay/ee-plugins/webs/resources-importer-web && acd | cd ~/Liferay/ee-plugins/ext/osb-knowledge-base-ext && acd'
-
-alias cp-css='cp ~/Liferay/ee-plugins/themes/osb-knowledge-base-theme/docroot/_diffs/css/custom.css ~/Liferay/ee-bundles/tomcat/webapps/osb-knowledge-base-theme/css/custom.css
-'
-# Liferay
-alias liferay-update='
-echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && grb-master;
-echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && grb-master;
-echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && grb-ee;
-echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && grb-ee'
 
 # npm
 NPM_PACKAGES="${HOME}/.npm-packages"
-
-alias npm-check='npm list | grep'
 
 PATH="$NPM_PACKAGES/bin:$PATH"
 
