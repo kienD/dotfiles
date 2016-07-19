@@ -1,4 +1,4 @@
-# i3 config file 
+# i3 config file (v4)
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -6,10 +6,41 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 12
+
 
 #######################################################################
-# Vim hotkeys 
+# Theme
+#######################################################################
+
+# Theme variables
+set $FONT pango:Source Code Pro 12
+set $BORDER_SIZE 3
+set $COLOR_ACCENT       #bf5b75
+set $COLOR_HIGHLIGHT    #999999
+set $COLOR_NORMAL       #222222
+set $COLOR_INDICATOR    #bf5b75
+
+# Font
+font $FONT
+
+# Gap size
+gaps inner 40
+#gaps outer 40
+
+# Borders
+for_window [class="^.*"] border pixel $BORDER_SIZE
+
+for_window [class="^X-terminal-emulator$"] border none
+
+# Appearance
+client.focused          $COLOR_ACCENT $COLOR_ACCENT $COLOR_HIGHLIGHT $COLOR_INDICATOR
+client.focused_inactive $COLOR_NORMAL $COLOR_NORMAL $COLOR_HIGHLIGHT $COLOR_NORMAL
+client.unfocused        $COLOR_NORMAL $COLOR_NORMAL $COLOR_HIGHLIGHT $COLOR_NORMAL
+client.urgent           #cc77ff #cc77ff $COLOR_HIGHLIGHT #bb66ff
+client.placeholder      $COLOR_NORMAL $COLOR_NORMAL $COLOR_HIGHLIGHT #bb66ff
+
+#######################################################################
+# Keybindings
 #######################################################################
 
 # set mod key to alt
@@ -96,10 +127,10 @@ set $tag5 "&#xf0e0;"
 set $tag6 "&#xf188;"
 
 # switch to workspace
-bindsym $mod+1 workspace $tag1 
-bindsym $mod+2 workspace $tag2 
+bindsym $mod+1 workspace $tag1
+bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
-bindsym $mod+4 workspace $tag4 
+bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace $tag5
 bindsym $mod+6 workspace $tag6
 bindsym $mod+7 workspace 7
@@ -111,7 +142,7 @@ bindsym $mod+0 workspace 10
 bindsym $mod+Shift+1 move container to workspace $tag1
 bindsym $mod+Shift+2 move container to workspace $tag2
 bindsym $mod+Shift+3 move container to workspace $tag3
-bindsym $mod+Shift+4 move container to workspace $tag4 
+bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
 bindsym $mod+Shift+6 move container to workspace $tag6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -162,30 +193,30 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-    status_command i3blocks 
-    position top 
+    status_command i3blocks
+    position top
 		tray_output primary
 		font pango: Ubuntu, fontawesome, ionicons, 13
 		separator_symbol " "
     workspace_buttons yes
-		strip_workspace_numbers yes 
+		strip_workspace_numbers yes
 		binding_mode_indicator yes
 		height 30
-		
+
 		colors {
 			set $background #000000
 			set $darkgrey   #2F4F4F
 			set $foreground #FFFFFF
 			set $red #FF0000
 			background $background
-			statusline $foreground 
+			statusline $foreground
 			separator $darkgrey
 
 			focused_workspace  $background $background $foreground
 			active_workspace   $background $background $foreground
 			inactive_workspace $background $background $darkgrey
-			urgent_workspace   $background $background $red 
-    
+			urgent_workspace   $background $background $red
+
 		}
 }
 
@@ -214,17 +245,18 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-#start rofi
-bindsym $mod+space exec rofi -show run -lines 10 -eh 20 -font 'Ubuntu' -width 40  -opacity 100 -hide-scrollbar Auto start items
+# Print screen
+bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
+
+# Start ranger
+bindsym $mod+x exec terminator -e ranger
+
+# Start rofi
+bindsym $mod+space exec rofi -show run -lines 10 -eh 2 -width 40 -hide-scrollbar
 
 exec --no-startup-id nm-applet
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/kdo/.i3/workspace-browser.json'"
 exec nitrogen --restore &
 exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
 
-gaps inner 40
-#gaps outer 1
-for_window [class="^.*"] border pixel 0
 
-# noborders?
-#for_window [class="^Thunderbird$"] border none
