@@ -232,9 +232,9 @@ mouse_warping none
 ##############################################################################
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -256,8 +256,7 @@ bindsym $mod+x exec terminator -e ranger
 bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar
 
 exec --no-startup-id nm-applet
+exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/kdo/.i3/workspace-browser.json'"
 exec nitrogen --restore &
 exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
-
-
