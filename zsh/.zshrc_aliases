@@ -56,7 +56,7 @@ fi
 }
 
 # Lock screen
-alias lock='lock.py'
+alias lock='py3lock.py'
 
 # Npm
 alias npm-check='npm list | grep'

@@ -104,6 +104,11 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export NVM_DIR="/home/kdo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Load Xmodmap
+# if [ -s ~/.Xmodmap ]; then
+#     xmodmap ~/.Xmodmap
+# fi
+#
 # Swap ctrl to capslock
 setxkbmap -layout us -option ctrl:swapcaps
 
