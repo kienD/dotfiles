@@ -1,0 +1,28 @@
+! Mode switch to Super
+clear mod4
+clear mod5
+keycode 133 = Mode_switch
+add mod4 = Mode_switch
+!
+! Global Vim hot keys
+keycode 43 = h H Left
+keycode 44 = j J Down
+keycode 45 = k K Up
+keycode 46 = l L Right
+!
+! Left Shift to Right Shift
+keycode 62 = Shift_L
+!
+! Swap Caps Lock and Left Control
+remove lock = Caps_Lock
+remove control = Control_L
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+add lock = Caps_Lock
+add control = Control_L
+!
+! Shift + Esc = ~
+keycode 9 = Escape asciitilde Escape
+!
+! Super + BackSpace = Delete
+keycode 22 = BackSpace BackSpace Delete
