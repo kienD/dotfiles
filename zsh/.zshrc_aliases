@@ -77,16 +77,16 @@ function sfm {
 # Loop Project
 alias deploy-loop='
 echo ---------------- loop-theme ---------------- && cd ~/Liferay/ee-plugins/themes/loop-theme && acd &&
-echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd &&
+echo ---------------- push-notifications-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/push-notifications-portlet && acd &&
 echo ---------------- asset-entry-set-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
 echo ---------------- asset-sharing-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
 echo ---------------- marketplace-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
 echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
 echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
-echo ---------------- push-notifications-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/push-notifications-portlet && acd'
+echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd'
 
 # Update Liferay
-alias liferay-update='
+alias update-liferay='
 echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && grb-master;
 echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && grb-master;
 echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && grb-ee;
