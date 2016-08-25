@@ -8,8 +8,12 @@ call plug#begin('~/.vim/plugged')
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
+Plug 'fcevado/molokai_dark'
+Plug 'laserswald/chameleon.vim'
+Plug 'trapd00r/neverland-vim-theme'
 "Plug 'vim-dichromatic'
 Plug 'whatyouhide/vim-gotham'
+
 
 " Plugs
 Plug 'airblade/vim-gitgutter'
@@ -52,7 +56,7 @@ let g:syntastic_css_checkers = ['csf']
 let g:syntastic_javascript_checkers = ['csf']
 let g:syntastic_scss_checkers = ['csf']
 
-let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.xml"
+let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.xml"
 let g:mta_filetypes = {
 	\ 'html' : 1,
 	\ 'xhtml': 1,
@@ -68,7 +72,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 "highlight ExtraWhitespace ctermbg=white
 "set background=dark
-"colorscheme solarized
+"colorscheme molokai_dark
 
 " key bindings
 map <C-\> :NERDTreeToggle<CR>
