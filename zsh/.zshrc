@@ -104,14 +104,6 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export NVM_DIR="/home/kdo/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Load Xmodmap
-# if [ -s ~/.Xmodmap ]; then
-#     xmodmap ~/.Xmodmap
-# fi
-#
-# Swap ctrl to capslock
-#setxkbmap -layout us -option ctrl:swapcaps
-
 export ANT_OPTS="-Xms2048m -Xmx4096m -XX:PermSize=2048m -XX:MaxPermSize=2048m"
 
 export JAVA_OPTS="-Xms512m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=256m"
