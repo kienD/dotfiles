@@ -256,6 +256,7 @@ bindsym $mod+x exec terminator -e ranger
 # Start rofi
 bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar
 
+# Startup
 exec --no-startup-id nm-applet
 exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 #exec --no-startup-id dunst
@@ -263,3 +264,4 @@ exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 -
 exec redshift -l 34.132268:-117.961578
 exec nitrogen --restore &
 exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
+exec xautolock -locker py3lock.py
