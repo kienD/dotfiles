@@ -61,6 +61,9 @@ alias lock='py3lock.py'
 # Npm
 alias npm-check='npm list | grep'
 
+# thefuck
+eval $(thefuck --alias)
+
 ###############################
 ########### Liferay ###########
 ###############################
