@@ -88,6 +88,12 @@ echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/
 echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
 echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd'
 
+alias sfm-loop='
+cd ~/Liferay/ee-plugins/themes/loop-theme && sfme &&
+cd ~/Liferay/ee-plugins/portlets/loop-portlet && sfme'
+
+alias sfme='sfm ee-6.2.x'
+
 # Update Liferay
 alias update-liferay='
 echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && grb-master;

@@ -85,8 +85,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias definitions
 
-if [ -f ./.zshrc_aliases ]; then
-    . ~/.zshrc_aliases
+if [ -f "/home/kdo/.zshrc_aliases" ]
+then
+	echo "hello"
+	source /home/kdo/.zshrc_aliases
 fi
 
 # alias pls='sudo "$BASH" -c "$(history -p !!)"'
