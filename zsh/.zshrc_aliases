@@ -94,6 +94,8 @@ alias ant-fs-loop='
 cd ~/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
+alias loop-final='ant-fs-loop && sfm-loop'
+
 alias sfm-loop='
 cd ~/Liferay/ee-plugins/themes/loop-theme && sfme &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && sfme'
