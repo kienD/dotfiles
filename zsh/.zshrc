@@ -87,7 +87,6 @@ source $ZSH/oh-my-zsh.sh
 
 if [ -f "/home/kdo/.zshrc_aliases" ]
 then
-	echo "hello"
 	source /home/kdo/.zshrc_aliases
 fi
 

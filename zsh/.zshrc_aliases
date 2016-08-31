@@ -88,6 +88,12 @@ echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/
 echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
 echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd'
 
+alias ant-fs='ant format-source'
+
+alias ant-fs-loop='
+cd ~/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
+cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
+
 alias sfm-loop='
 cd ~/Liferay/ee-plugins/themes/loop-theme && sfme &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && sfme'
