@@ -61,6 +61,9 @@ alias lock='py3lock.py'
 # Npm
 alias npm-check='npm list | grep'
 
+# Preview
+alias preview='xdg-open'
+
 # thefuck
 eval $(thefuck --alias)
 
@@ -94,6 +97,9 @@ alias ant-fs-loop='
 cd ~/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
+alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components'
+alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
+
 alias loop-final='ant-fs-loop && sfm-loop'
 
 alias sfm-loop='
@@ -101,6 +107,10 @@ cd ~/Liferay/ee-plugins/themes/loop-theme && sfme &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && sfme'
 
 alias sfme='sfm ee-6.2.x'
+
+alias reset-dist='
+cd ~/Liferay//ee-plugins/portlets/loop-portlet &&
+git checkout -- docroot/js/dist/*'
 
 # Update Liferay
 alias update-liferay='

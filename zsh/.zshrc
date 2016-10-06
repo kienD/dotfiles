@@ -110,3 +110,5 @@ export ANT_OPTS="-Xms2048m -Xmx4096m -XX:PermSize=2048m -XX:MaxPermSize=2048m"
 export JAVA_OPTS="-Xms512m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=256m"
 
 export HOSTNAME=${HOSTNAME}
+
+export PATH=$PATH:~/bin
