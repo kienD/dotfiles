@@ -97,7 +97,11 @@ alias ant-fs-loop='
 cd ~/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
-alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components'
+alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
+alias dir-watcher='~/Liferay/dir-watcher/'
+alias ee-bundles='~/Liferay/ee-bundles/tomcat/bin/'
+alias ee-plugins='~/Liferay/ee-plugins/'
+alias ee-portal='~/Liferay/ee-portal/'
 alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
 
 alias loop-final='ant-fs-loop && sfm-loop'
