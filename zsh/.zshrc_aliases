@@ -67,6 +67,10 @@ alias preview='xdg-open'
 # thefuck
 eval $(thefuck --alias)
 
+
+# xmodmap
+alias pok3r='xmodmap ~/.Xmodmap'
+
 ###############################
 ########### Liferay ###########
 ###############################
