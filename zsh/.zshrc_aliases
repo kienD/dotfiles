@@ -93,6 +93,8 @@ echo ---------------- asset-sharing-portlet ---------------- && cd ~/Liferay/ee-
 echo ---------------- marketplace-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
 echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
 echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
+echo ---------------- token-auth-portlet ---------------- && cd
+~/Liferay/ee-plugins/portlets/token-auth-portlet && acd
 echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd'
 
 alias ant-fs='ant format-source'
