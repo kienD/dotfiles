@@ -148,7 +148,7 @@ bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
 bindsym $mod+Shift+6 move container to workspace $tag6
 bindsym $mod+Shift+7 move container to workspace $tag7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
@@ -238,8 +238,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
+# increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
+# decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -250,8 +252,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # Print screen
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
-# Start ranger
-bindsym $mod+x exec terminator -e ranger
+# Start Chrome
+bindsym $mod+x exec google-chrome --force-device-scale-factor=1.2 --new-window
 
 # Start rofi
 bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar
@@ -260,8 +262,13 @@ bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-
 exec --no-startup-id nm-applet
 exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 #exec --no-startup-id dunst
-exec --no-startup-id "i3-msg 'workspace $tag3; append_layout /home/kdo/.i3/workspace-3.json'"
+
 exec redshift -l 34.132268:-117.961578
 exec nitrogen --restore &
+#exec --no-startup-id "i3-msg 'workspace $tag3; append_layout /home/kdo/.i3/workspace-terminals.json'"
+#exec terminator -T "liferay-portal-ee" -e cd Liferay/ee-bundles/tomcat/bin && ./catalina.sh run
+#exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch
+#exec terminator -T "dir-watcher" -e cd Liferay/dir-watch && gulp watch
+#exec terminator -T "loop-portlet" -e cd Liferay/ee-plugins/portlets/loop-portlet
 exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
 exec xautolock -locker py3lock.py
