@@ -24,7 +24,11 @@ alias acd='ant clean deploy'
 alias apache='apache2ctl'
 
 # Chrome
-alias chrome='google-chrome --force-device-scale-factor=1.2 &'
+alias chrome='google-chrome-stable --force-device-scale-factor=1.2 &'
+
+# Directory Shortcuts
+alias dotfiles='~/dotfiles/'
+alias pkgs='~/pkgs/'
 
 # GH to git help
 alias gh="git help"
@@ -104,11 +108,13 @@ cd ~/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
 alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
+alias css='~/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
 alias dir-watcher='~/Liferay/dir-watcher/'
 alias ee-bundles='~/Liferay/ee-bundles/tomcat/bin/'
 alias ee-plugins='~/Liferay/ee-plugins/'
 alias ee-portal='~/Liferay/ee-portal/'
 alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
+alias theme='~/Liferay/ee-plugins/themes/loop-theme/'
 
 alias loop-final='ant-fs-loop && sfm-loop'
 
