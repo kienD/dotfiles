@@ -36,7 +36,6 @@ alias gh="git help"
 # Git
 alias gs="git status"
 alias gitk="/usr/bin/wish $(which gitk)"
-alias gitpr="/home/kdo/pkgs/git-tools/git-pull-request/git-pull-request.sh"
 alias grb='git pull --rebase'
 alias grb-ee='git pull --rebase upstream ee-6.2.x'
 alias grb-master='git pull --rebase upstream master'
@@ -45,6 +44,13 @@ alias gpush-ee='git push origin ee-6.2.x'
 alias gpush-master='git push origin master'
 alias gc='git checkout'
 alias gcb='git checkout -b'
+
+# Gitpr
+alias gitpr="/home/kdo/pkgs/git-tools/git-pull-request/git-pull-request.sh"
+alias gitpr-bryce='gitpr -u bryceosterhaus -b ee-6.2.x submit'
+alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
+alias gitpr-mike='gitpr -u mthadley -b ee-6.2.x submit'
+
 
 # Gradlew from any level
 function gradle {
@@ -115,6 +121,7 @@ alias ee-plugins='~/Liferay/ee-plugins/'
 alias ee-portal='~/Liferay/ee-portal/'
 alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
 alias theme='~/Liferay/ee-plugins/themes/loop-theme/'
+
 
 alias loop-final='ant-fs-loop && sfm-loop'
 
