@@ -253,7 +253,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
 # Start Chrome
-bindsym $mod+x exec google-chrome --force-device-scale-factor=1.2 --new-window
+bindsym $mod+x exec google-chrome-stable --force-device-scale-factor=1.2 --new-window
 
 # Start rofi
 bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar
@@ -262,6 +262,8 @@ bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-
 exec --no-startup-id nm-applet
 exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 #exec --no-startup-id dunst
+
+exec guake
 
 exec redshift -l 34.132268:-117.961578
 exec nitrogen --restore &
