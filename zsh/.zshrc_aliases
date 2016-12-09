@@ -65,11 +65,15 @@ fi
  "$root_level" $@
 }
 
+#Gulp
+alias gw='gulp watch'
+
 # Lock screen
 alias lock='py3lock.py'
 
 # Npm
 alias npm-check='npm list | grep'
+alias nrw='npm run watch'
 
 # Preview
 alias preview='xdg-open'
@@ -84,6 +88,9 @@ alias pok3r='xmodmap ~/.Xmodmap'
 ###############################
 ########### Liferay ###########
 ###############################
+
+#start liferay service
+alias liferay-run='./catalina.sh run'
 
 # Source format all changes
 function sfm {
