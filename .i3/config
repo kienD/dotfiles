@@ -125,8 +125,8 @@ set $tag3 "3:&#xf120;"
 set $tag4 "4:&#xf27b;"
 set $tag5 "5:&#xf0e0;"
 set $tag6 "6:&#xf188;"
-set $tag7 "7:&#xf1d2;"
-set $tag8 "8:&#xf1c5;"
+set $tag7 "7:&#xf1c5;"
+set $tag8 "8:&#xf1d2;"
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1
@@ -264,6 +264,7 @@ exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 -
 #exec --no-startup-id dunst
 
 exec guake
+exec --no-startup-id syndaemon -d -K -t
 
 exec redshift -l 34.132268:-117.961578
 exec nitrogen --restore &
@@ -272,5 +273,6 @@ exec nitrogen --restore &
 #exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch
 #exec terminator -T "dir-watcher" -e cd Liferay/dir-watch && gulp watch
 #exec terminator -T "loop-portlet" -e cd Liferay/ee-plugins/portlets/loop-portlet
+#exec /usr/libexec/gnome-settings-daemon
 exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
 exec xautolock -locker py3lock.py
