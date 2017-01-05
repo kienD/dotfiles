@@ -15,10 +15,10 @@
 # Theme variables
 set $FONT pango:Source Code Pro 12
 set $BORDER_SIZE 3
-set $COLOR_ACCENT       #bf5b75
-set $COLOR_HIGHLIGHT    #999999
-set $COLOR_NORMAL       #222222
-set $COLOR_INDICATOR    #bf5b75
+set $COLOR_ACCENT       #222222
+set $COLOR_HIGHLIGHT    #111111
+set $COLOR_NORMAL       #bbbbbb
+set $COLOR_INDICATOR    #bbbbbb
 
 # Font
 font $FONT
@@ -206,8 +206,8 @@ bar {
 		height 30
 
 		colors {
-			set $background #000000
-			set $darkgrey   #2F4F4F
+			set $background #111111
+			set $darkgrey   #383838
 			set $foreground #FFFFFF
 			set $red #FF0000
 			background $background
@@ -228,44 +228,47 @@ focus_follows_mouse no
 # Mouse Warping
 mouse_warping none
 
+# XFCE
+for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
+
 ##############################################################################
 # media key bindings
 ##############################################################################
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5%
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10%
 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5%
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 10%
 # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
 
 # Print screen
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
 # Start Chrome
-bindsym $mod+x exec google-chrome-stable --force-device-scale-factor=1.2 --new-window
+bindsym $mod+x exec google-chrome --force-device-scale-factor=1.2 --new-window
 
 # Start rofi
-bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar
+bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
 
 # Startup
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 #exec --no-startup-id dunst
 
 exec guake
 exec --no-startup-id syndaemon -d -K -t
-
+#exec --no-startup-id brightd -d
 exec redshift -l 34.132268:-117.961578
 exec nitrogen --restore &
 #exec --no-startup-id "i3-msg 'workspace $tag3; append_layout /home/kdo/.i3/workspace-terminals.json'"
@@ -273,6 +276,5 @@ exec nitrogen --restore &
 #exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch
 #exec terminator -T "dir-watcher" -e cd Liferay/dir-watch && gulp watch
 #exec terminator -T "loop-portlet" -e cd Liferay/ee-plugins/portlets/loop-portlet
-#exec /usr/libexec/gnome-settings-daemon
-exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
-exec xautolock -locker py3lock.py
+#exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
+#exec xautolock -locker py3lock.py
