@@ -4,6 +4,10 @@ alias gitpr="source ~/Liferay/git-tools/git-pull-request/git-pull-request.sh"
 ########### General ###########
 ###############################
 
+alias cbip='ifconfig enx00249b13a8bf | grep 'inet addr' | cut -d ':' -f 2 | cut -d ' ' -f 1 | xsel --clipboard'
+alias localip='ifconfig enx00249b13a8bf | grep 'inet addr' | cut -d 'B' -f1'
+
+
 alias pls='sudo $(fc -ln -1)'
 
 alias java-kill='fuser -k 8080/tcp'
@@ -23,6 +27,9 @@ alias acd='ant clean deploy'
 # Apache
 alias apache='apache2ctl'
 
+# Apt
+alias aar='add-apt-repository'
+
 # Chrome
 alias chrome='google-chrome-stable --force-device-scale-factor=1.2 &'
 
@@ -35,21 +42,25 @@ alias gh="git help"
 
 # Git
 alias gs="git status"
+alias gfind="g log --grep"
 alias gitk="/usr/bin/wish $(which gitk)"
-alias grb='git pull --rebase'
-alias grb-ee='git pull --rebase upstream ee-6.2.x'
-alias grb-master='git pull --rebase upstream master'
+alias gpr='git pull --rebase'
+alias gpr-ee='git pull --rebase upstream ee-6.2.x'
+alias gpr-master='git pull --rebase upstream master'
 alias gpush='git push'
 alias gpush-ee='git push origin ee-6.2.x'
 alias gpush-master='git push origin master'
 alias gc='git checkout'
 alias gcb='git checkout -b'
+alias gsp-ee='g stash && gpr-ee && gstp'
+alias gsp-master='g stash && gpr-master && gstp'
 
 # Gitpr
 alias gitpr="/home/kdo/pkgs/git-tools/git-pull-request/git-pull-request.sh"
 alias gitpr-bryce='gitpr -u bryceosterhaus -b ee-6.2.x submit'
 alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
 alias gitpr-mike='gitpr -u mthadley -b ee-6.2.x submit'
+alias gitpr-nate='gitpr -u natecavanaugh -b ee-6.2.x submit'
 
 
 # Gradlew from any level
@@ -89,8 +100,8 @@ alias pok3r='xmodmap ~/.Xmodmap'
 ########### Liferay ###########
 ###############################
 
-#start liferay service
-alias liferay-run='./catalina.sh run'
+# Start liferay service
+alias cr='./catalina.sh run'
 
 # Source format all changes
 function sfm {
@@ -123,14 +134,17 @@ cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
 alias css='~/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
 alias dir-watcher='~/Liferay/dir-watcher/'
+alias dir-watcher-run='dir-watcher && gw'
 alias ee-bundles='~/Liferay/ee-bundles/tomcat/bin/'
+alias ee-bundles-run='ee-bundles && cr'
 alias ee-plugins='~/Liferay/ee-plugins/'
 alias ee-portal='~/Liferay/ee-portal/'
 alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
+alias loop-run='loop && nrw'
 alias theme='~/Liferay/ee-plugins/themes/loop-theme/'
 
 
-alias loop-final='ant-fs-loop && sfm-loop'
+alias loop-final='ant-fs-loop && sfm-loop && npm test'
 
 alias sfm-loop='
 cd ~/Liferay/ee-plugins/themes/loop-theme && sfme &&
@@ -139,12 +153,12 @@ cd ~/Liferay/ee-plugins/portlets/loop-portlet && sfme'
 alias sfme='sfm ee-6.2.x'
 
 alias reset-dist='
-cd ~/Liferay//ee-plugins/portlets/loop-portlet &&
-git checkout -- docroot/js/dist/*'
+cd ~/Liferay/ee-plugins/portlets/loop-portlet &&
+git checkout -- docroot/js/dist/* webpack.config.js'
 
 # Update Liferay
 alias update-liferay='
-echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && grb-master;
-echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && grb-master;
-echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && grb-ee;
-echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && grb-ee'
+echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && gpr-master;
+echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && gpr-master;
+echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
+echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
