@@ -41,6 +41,9 @@ alias pkgs='~/pkgs/'
 alias gh="git help"
 
 # Git
+alias gca='g commit --amend'
+alias gcm='g cm'
+alias gco='g co'
 alias gs="git status"
 alias gfind="g log --grep"
 alias gitk="/usr/bin/wish $(which gitk)"
