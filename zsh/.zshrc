@@ -32,7 +32,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(alias-tips git)
 
 # User configuration
 
@@ -57,6 +57,8 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 
 # Exports
+export JAVA_HOME="/usr/lib/jvm/java-7-oracle/jre"
+
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 export NVM_DIR="/home/kdo/.nvm"
