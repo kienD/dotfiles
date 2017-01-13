@@ -133,16 +133,30 @@ alias ant-fs-loop='
 cd ~/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
 cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
+alias actions='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/actions/'
 alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
+alias middleware='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/middleware/'
+alias reducers='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/reducers/'
+
 alias css='~/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
+
 alias dir-watcher='~/Liferay/dir-watcher/'
-alias dir-watcher-run='dir-watcher && gw'
+alias dir-watcher-run='dir-watcher && gw' # Remove
+alias dlr='loop && acd && nrw'
+alias dwr='dir-watcher && gw'
+
 alias ee-bundles='~/Liferay/ee-bundles/tomcat/bin/'
 alias ee-bundles-run='ee-bundles && cr'
+alias eebr='ee-bundles && cr'
+
 alias ee-plugins='~/Liferay/ee-plugins/'
+
 alias ee-portal='~/Liferay/ee-portal/'
+
+
 alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
 alias loop-run='loop && nrw'
+alias reset-theme='theme && acd && dir-watcher-run'
 alias theme='~/Liferay/ee-plugins/themes/loop-theme/'
 
 
