@@ -21,12 +21,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'alvan/vim-closetag'
 "Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-sort-motion'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'henrik/vim-indexed-search'
+Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mthadley/syntastic-csf'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips' " Maybe use this
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
 "Plugin 'valloric/MatchTagAlways'
 "Plugin 'valloric/youcompleteme'
 Plugin 'Yggdroot/indentline'
@@ -37,7 +43,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
 " Themes
-
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fcevado/molokai_dark'
 Plugin 'laserswald/chameleon.vim'
@@ -63,9 +68,11 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
+set binary
 set cursorline
 set ignorecase
 set mouse=a
+set noeol
 set number
 set relativenumber
 set shiftwidth=2
