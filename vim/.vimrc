@@ -107,6 +107,7 @@ nnoremap <C-H> <C-W><C-H>
 "highlight ExtraWhitespace ctermbg=white
 set background=dark
 "colorscheme dichromatic 
+"colorscheme bclear
 
 " key bindings
 map <C-\> :NERDTreeToggle<CR>
