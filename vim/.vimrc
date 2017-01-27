@@ -46,6 +46,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fcevado/molokai_dark'
 Plugin 'laserswald/chameleon.vim'
+Plugin 'sickill/vim-monokai'
 Plugin 'trapd00r/neverland-vim-theme'
 "Plugin 'vim-dichromatic'
 Plugin 'whatyouhide/vim-gotham'
@@ -68,8 +69,9 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
 set binary
-set cursorline
+" set cursorline
 set ignorecase
 set mouse=a
 set noeol
@@ -85,7 +87,20 @@ set so=999
 
 let g:plug_timeout = 5
 
+" Vim Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=darkgrey ctermbg=DarkGray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgrey ctermbg=DarkMagenta
+
+
 let g:jsx_ext_required = 0
+
+" Lightline
+" let g:lightline = {'colortheme': 'solarized'}
+set laststatus=2
+
+" Syntastic
 let g:syntastic_css_checkers = ['csf']
 let g:syntastic_javascript_checkers = ['csf']
 let g:syntastic_scss_checkers = ['csf']
@@ -100,14 +115,20 @@ let g:mta_filetypes = {
 	\ 'jsp': 1
 	\}
 
+function! s:DiffWithSaved()
+	let filetype=&ft
+		diffthis
+			vnew | r # | normal! 1Gdd
+				diffthis
+					exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-"highlight ExtraWhitespace ctermbg=white
-set background=dark
-"colorscheme dichromatic 
-"colorscheme bclear
+" colorscheme solarized
 
 " key bindings
 map <C-\> :NERDTreeToggle<CR>
