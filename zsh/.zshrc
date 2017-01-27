@@ -2,7 +2,8 @@
 export ZSH=/home/kdo/.oh-my-zsh
 
 
-ZSH_THEME="ys"
+# ZSH_THEME="ys"
+ZSH_THEME="agnoster"
 
 # ZSH Auto-update in days
 export UPDATE_ZSH_DAYS=13
@@ -25,9 +26,9 @@ then
 fi
 
 # NPM
-NPM_PACKAGES="${HOME}/.npm-packages"
-
-PATH="$NPM_PACKAGES/bin:$PATH"
+# NPM_PACKAGES="${HOME}/.npm-packages"
+#
+# PATH="$NPM_PACKAGES/bin:$PATH"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
@@ -43,8 +44,9 @@ export NVM_DIR="/home/kdo/.nvm"
 export HOSTNAME=${HOSTNAME}
 
 # Always use java7
-# export PATH=$PATH:~/bin
-export PATH="/home/kdo/.nvm/versions/node/v0.12.0/bin:/home/kdo/.npm-packages/bin:/home/kdo/.npm-packages/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-7-oracle/bin:/usr/lib/jvm/java-7-oracle/db/bin:/usr/lib/jvm/java-7-oracle/jre/bin"
+export PATH=$PATH:~/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/lib/jvm/java-7-oracle/db/bin:/usr/lib/jvm/java-7-oracle/jre/bin
+# export PATH="/home/kdo/.nvm/versions/node/v0.12.0/bin:/home/kdo/.npm-packages/bin:/home/kdo/.npm-packages/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-7-oracle/bin:/usr/lib/jvm/java-7-oracle/db/bin:/usr/lib/jvm/java-7-oracle/jre/bin"
+
 # Ant
 export ANT_OPTS="-Xms2048m -Xmx4096m -XX:PermSize=2048m -XX:MaxPermSize=2048m"
 

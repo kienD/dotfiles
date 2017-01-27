@@ -29,6 +29,10 @@ alias apache='apache2ctl'
 # Apt
 alias aar='add-apt-repository'
 
+# Arandr
+alias arandr-work='arandr ~/dotfiles/arandr/work_dual_screen.sh'
+alias arandr-mobile='arandr ~/dotfiles/arandr/single_screen.sh'
+
 # Chrome
 alias chrome='google-chrome-stable --force-device-scale-factor=1.2 &'
 
