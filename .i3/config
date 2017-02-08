@@ -262,7 +262,9 @@ bindsym $mod+x exec google-chrome --force-device-scale-factor=1.2 --new-window
 bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
 
 # Startup
-#exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
 exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 #exec --no-startup-id dunst
 
@@ -270,11 +272,20 @@ exec guake
 exec --no-startup-id syndaemon -d -K -t
 #exec --no-startup-id brightd -d
 exec redshift -l 34.132268:-117.961578
-exec nitrogen --restore &
-#exec --no-startup-id "i3-msg 'workspace $tag3; append_layout /home/kdo/.i3/workspace-terminals.json'"
-#exec terminator -T "liferay-portal-ee" -e cd Liferay/ee-bundles/tomcat/bin && ./catalina.sh run
-#exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch
-#exec terminator -T "dir-watcher" -e cd Liferay/dir-watch && gulp watch
-#exec terminator -T "loop-portlet" -e cd Liferay/ee-plugins/portlets/loop-portlet
-#exec google-chrome --force-device-scale-factor=1.2 --new-window https://liferayeng.slack.com/messages/build/
+exec  nitrogen --restore &
+#exec --no-startup-id "i3-msg \'workspace 3; append_layout /home/kdo/.i3/workspace-terminals.json\'"
+#exec --no-startup-id "i3-msg \'workspace 4; append_layout /home/kdo/.i3/workspace-chat.json\'"
+#exec --no-startup-id "terminator"
+#exec --no-startup-id "terminator"
+#exec --no-startup-id "terminator"
+#exec --no-startup-id "terminator"
+#exec --no-startup-id "terminator"
+
+# exec terminator -T "liferay-portal-ee" -e cd Liferay/ee-bundles/tomcat/bin && ./catalina.sh run
+# exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch
+# exec terminator -T "dir-watcher" -e cd Liferay/dir-watch && gulp watch
+# exec terminator -T "loop-portlet" -e cd Liferay/ee-plugins/portlets/loop-portlet
+exec google-chrome --restore-last-session
+exec --no-startup-id "google-chrome --app=https://liferayeng.slack.com/messages/frontend-dev"
+exec --no-startup-id "google-chrome --app=https://web.skype.com"
 #exec xautolock -locker py3lock.py
