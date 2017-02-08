@@ -2,8 +2,8 @@
 export ZSH=/home/kdo/.oh-my-zsh
 
 
-# ZSH_THEME="ys"
-ZSH_THEME="agnoster"
+ZSH_THEME="ys"
+# ZSH_THEME="agnoster"
 
 # ZSH Auto-update in days
 export UPDATE_ZSH_DAYS=13
@@ -58,3 +58,5 @@ export ANDROID_HOME=~/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 # Adding autocomplete for 'we'
 [ -f ~/.we_autocomplete ] && source ~/.we_autocomplete
+
+[ -s "/home/kdo/.jabba/jabba.sh" ] && source "/home/kdo/.jabba/jabba.sh"
