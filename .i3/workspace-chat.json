@@ -1,0 +1,45 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 966,
+       "width": 1280,
+       "x": 42,
+       "y": 1040
+    },
+    "name": "Skype - Google Chrome",
+    "percent": 0.7,
+    "swallows": [
+      {
+        "class": "^Google\\-chrome$",
+        /*"instance": "^google\\-chrome$",*/
+        "title": "^Skype"
+      }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 966,
+       "width": 510,
+       "x": 1920,
+       "y": 57
+    },
+    "name": "Join",
+    "percent": 0.3,
+    "swallows": [
+      {
+        "class": "^Google\\-chrome$",
+        "instance": "^crx_flejfacjooompmliegamfbpjjdlhokhj$",
+        "title": "^Join$"
+      }
+    ],
+    "type": "con"
+}
+

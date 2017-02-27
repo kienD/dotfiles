@@ -70,8 +70,9 @@ filetype plugin indent on    " required
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
+set backupcopy=yes
 set binary
-" set cursorline
+set hlsearch
 set ignorecase
 set mouse=a
 set noeol
@@ -81,17 +82,19 @@ set shiftwidth=2
 set splitbelow
 set splitright
 set tabstop=2
-"syntax enable
 set guifont=Monospace\ 16
 set so=999
 
 let g:plug_timeout = 5
 
+" CtrlP Vim
+let g:ctrlp_working_path_mode = 'ra'
+
 " Vim Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=darkgrey ctermbg=DarkGray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgrey ctermbg=DarkMagenta
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgrey ctermbg=DarkGray
 
 
 let g:jsx_ext_required = 0
@@ -128,7 +131,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-" colorscheme solarized
+colorscheme gotham
 
 " key bindings
 map <C-\> :NERDTreeToggle<CR>

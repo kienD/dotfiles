@@ -1,72 +1,142 @@
 // vim:ts=4:sw=4:et
 {
-    // splith split container with 2 children
+    // splitv split container with 2 children
     "border": "normal",
     "floating": "auto_off",
-    "layout": "splith",
-    "percent": 0.2,
+    "layout": "splitv",
+    "percent": 1,
     "type": "con",
     "nodes": [
         {
-            "border": "pixel",
-            "current_border_width": 0,
+            // splith split container with 2 children
+            "border": "normal",
             "floating": "auto_off",
-            "geometry": {
-               "height": 427,
-               "width": 642,
-               "x": 0,
-               "y": 0
-            },
-            "name": "pianobar",
-            "percent": 0.35,
-            "swallows": [
-               {
-                "class": "^X\\-terminal\\-emulator$",
-                "instance": "^x\\-terminal\\-emulator$"
-               }
-            ],
-            "type": "con"
+            "layout": "splith",
+            "percent": 0.55,
+            "type": "con",
+            "nodes": [
+                {
+                    // splitv split container with 2 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "splitv",
+                    "percent": 0.5,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "none",
+                            "current_border_width": 0,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 477,
+                               "width": 802,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "pianobar",
+                            "percent": 0.25,
+                            "swallows": [
+                              {
+                                "class": "^X\\-terminal\\-emulator$",
+                                "instance": "^x\\-terminal\\-emulator$"
+                              }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "none",
+                            "current_border_width": 0,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 477,
+                               "width": 802,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "~/Liferay/ee-plugins/portlets/loop-portlet/ && npm run watch",
+                            "percent": 0.75,
+                            "swallows": [
+                              {
+                                "class": "^X\\-terminal\\-emulator$",
+                                "instance": "^x\\-terminal\\-emulator$"
+                              }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                },
+                {
+                    // splitv split container with 2 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "splitv",
+                    "percent": 0.5,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "none",
+                            "current_border_width": 0,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 477,
+                               "width": 802,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "htop",
+                            "percent": 0.4,
+                            "swallows": [
+                              {
+                                "class": "^X\\-terminal\\-emulator$",
+                                "instance": "^x\\-terminal\\-emulator$"
+                              }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "none",
+                            "current_border_width": 0,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 477,
+                               "width": 802,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "~/Liferay/dir-watcher/ && gulp watch",
+                            "percent": 0.6,
+                            "swallows": [
+                              {
+                                "class": "^X\\-terminal\\-emulator$",
+                                "instance": "^x\\-terminal\\-emulator$"
+                              }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "border": "pixel",
+            "border": "none",
             "current_border_width": 0,
             "floating": "auto_off",
             "geometry": {
-               "height": 427,
-               "width": 642,
+               "height": 477,
+               "width": 802,
                "x": 0,
                "y": 0
             },
-            "name": "Terminal": 0.65,
+            "name": "./catalina.sh run",
+            "percent": 0.45,
             "swallows": [
-               {
+              {
                 "class": "^X\\-terminal\\-emulator$",
                 "instance": "^x\\-terminal\\-emulator$"
-               }
+              }
             ],
             "type": "con"
         }
     ]
-}
-
-{
-    "border": "pixel",
-    "current_border_width": 0,
-    "floating": "auto_off",
-    "geometry": {
-       "height": 427,
-       "width": 642,
-       "x": 0,
-       "y": 0
-    },
-    "name": "Liferay",
-    "percent": 0.8,
-    "swallows": [
-       {
-        "class": "^X\\-terminal\\-emulator$",
-        "instance": "^x\\-terminal\\-emulator$"
-       }
-    ],
-    "type": "con"
 }
 

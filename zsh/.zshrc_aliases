@@ -149,10 +149,13 @@ cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
 alias actions='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/actions/'
 alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
+alias controllers='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/controllers/'
 alias lib='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/lib/'
 alias middleware='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/middleware/'
 alias reducers='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/reducers/'
+alias util='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/util/'
 alias views='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/views'
+alias webinf='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/'
 
 alias css='~/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
 

@@ -1,11 +1,4 @@
-# i3 config file (v4)
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-#font pango:DejaVu Sans Mono 11
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
+# i3 config file
 
 
 #######################################################################
@@ -193,14 +186,14 @@ bindsym $mod+r mode "resize"
 # i3-bar configs
 #############################################################################
 
-# Start i3bar to display a workspace bar (plus the system information i3status
+#Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-    status_command i3blocks
-    position top
+		status_command i3blocks
+		position top
 		tray_output primary
-		font pango: Ubuntu, fontawesome, ionicons, 13
+		font pango: monospace, fontawesome, ionicons, 13
 		separator_symbol " "
-    workspace_buttons yes
+		workspace_buttons yes
 		strip_workspace_numbers yes
 		binding_mode_indicator yes
 		height 30
@@ -229,7 +222,7 @@ focus_follows_mouse no
 mouse_warping none
 
 # XFCE
-for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
+# for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
 
 ##############################################################################
 # media key bindings
@@ -262,9 +255,9 @@ bindsym $mod+x exec google-chrome --force-device-scale-factor=1.2 --new-window
 bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
 
 # Startup
-exec --no-startup-id blueman-applet
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id blueman-applet
+#exec --no-startup-id nm-applet
+#exec --no-startup-id xfce4-power-manager
 exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 #exec --no-startup-id dunst
 
@@ -273,13 +266,6 @@ exec --no-startup-id syndaemon -d -K -t
 #exec --no-startup-id brightd -d
 exec redshift -l 34.132268:-117.961578
 exec  nitrogen --restore &
-#exec --no-startup-id "i3-msg \'workspace 3; append_layout /home/kdo/.i3/workspace-terminals.json\'"
-#exec --no-startup-id "i3-msg \'workspace 4; append_layout /home/kdo/.i3/workspace-chat.json\'"
-#exec --no-startup-id "terminator"
-#exec --no-startup-id "terminator"
-#exec --no-startup-id "terminator"
-#exec --no-startup-id "terminator"
-#exec --no-startup-id "terminator"
 
 # exec terminator -T "liferay-portal-ee" -e cd Liferay/ee-bundles/tomcat/bin && ./catalina.sh run
 # exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch

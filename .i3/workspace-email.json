@@ -1,21 +1,23 @@
 // vim:ts=4:sw=4:et
 {
     "border": "pixel",
-    "current_border_width": 0,
+    "current_border_width": 3,
     "floating": "auto_off",
     "geometry": {
-       "height": 1041,
-       "width": 1016,
-       "x": 0,
-       "y": 0
+       "height": 2046,
+       "width": 3756,
+       "x": 1962,
+       "y": 72
     },
-    "name": "Inbox - Work - Mozilla Thunderbird",
+    "name": "Inbox - 67353207@liferay.com - Mail - Google Chrome",
     "percent": 1,
     "swallows": [
        {
-        "class": "^Thunderbird$",
-        "instance": "^Mail$",
-        "window_role": "^3pane$"
+       // "class": "^Google\\-chrome$",
+       // "instance": "^google\\-chrome$",
+       // "title": "^Inbox\\ \\-\\ 67353207\\@liferay\\.com\\ \\-\\ Mail\\ \\-\\ Google\\ Chrome$",
+       // "transient_for": "^$",
+       // "window_role": "^browser$"
        }
     ],
     "type": "con"

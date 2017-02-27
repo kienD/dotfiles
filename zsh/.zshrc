@@ -30,6 +30,10 @@ fi
 #
 # PATH="$NPM_PACKAGES/bin:$PATH"
 
+# set
+xset +fp /home/kdo/.fonts
+xset fp rehash
+
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 
