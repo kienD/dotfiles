@@ -112,14 +112,14 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Name the workspaces
-set $tag1 "1:&#xf268;"
-set $tag2 "2:&#xf15c;"
-set $tag3 "3:&#xf120;"
-set $tag4 "4:&#xf27b;"
-set $tag5 "5:&#xf0e0;"
-set $tag6 "6:&#xf188;"
-set $tag7 "7:&#xf1c5;"
-set $tag8 "8:&#xf1d2;"
+set $tag1 "1:   "
+set $tag2 "2:   "
+set $tag3 "3:   "
+set $tag4 "4:   "
+set $tag5 "5:   "
+set $tag6 "6:   "
+set $tag7 "7:   "
+set $tag8 "8:   "
 
 # switch to workspace
 bindsym $mod+1 workspace $tag1
@@ -182,61 +182,25 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#############################################################################
-# i3-bar configs
-#############################################################################
-
-#Start i3bar to display a workspace bar (plus the system information i3status
-bar {
-		status_command i3blocks
-		position top
-		tray_output primary
-		font pango: monospace, fontawesome, ionicons, 13
-		separator_symbol " "
-		workspace_buttons yes
-		strip_workspace_numbers yes
-		binding_mode_indicator yes
-		height 30
-
-		colors {
-			set $background #111111
-			set $darkgrey   #383838
-			set $foreground #FFFFFF
-			set $red #FF0000
-			background $background
-			statusline $foreground
-			separator $darkgrey
-
-			focused_workspace  $background $background $foreground
-			active_workspace   $background $background $foreground
-			inactive_workspace $background $background $darkgrey
-			urgent_workspace   $background $background $red
-
-		}
-}
-
 # Focus follows mouse
 focus_follows_mouse no
 
 # Mouse Warping
 mouse_warping none
 
-# XFCE
-# for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
-
 ##############################################################################
 # media key bindings
 ##############################################################################
 
 # Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
-#bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
 # Sreen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 10%
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10%
 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 10%
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10%
 # decrease screen brightness
 
 # Media player controls
@@ -249,29 +213,30 @@ mouse_warping none
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
 # Start Chrome
-bindsym $mod+x exec google-chrome --force-device-scale-factor=1.2 --new-window
+bindsym $mod+x exec google-chrome-stable --new-window
 
 # Start rofi
-bindsym $mod+space exec rofi -show run -font 16 -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
+bindsym $mod+space exec rofi -show run -font "monospace 16" -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
 
 # Startup
-#exec --no-startup-id blueman-applet
-#exec --no-startup-id nm-applet
-#exec --no-startup-id xfce4-power-manager
-exec compton -cCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
+exec xrandr --setprovideroutputsource nouveau Intel
+exec compton -bcCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
+exec polybar-run
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
 #exec --no-startup-id dunst
 
 exec guake
-exec --no-startup-id syndaemon -d -K -t
-#exec --no-startup-id brightd -d
 exec redshift -l 34.132268:-117.961578
-exec  nitrogen --restore &
+exec nitrogen --restore &
+
+# exec --no-startup-id syndaemon -d -K -t
 
 # exec terminator -T "liferay-portal-ee" -e cd Liferay/ee-bundles/tomcat/bin && ./catalina.sh run
 # exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch
 # exec terminator -T "dir-watcher" -e cd Liferay/dir-watch && gulp watch
 # exec terminator -T "loop-portlet" -e cd Liferay/ee-plugins/portlets/loop-portlet
-exec google-chrome --restore-last-session
-exec --no-startup-id "google-chrome --app=https://liferayeng.slack.com/messages/frontend-dev"
-exec --no-startup-id "google-chrome --app=https://web.skype.com"
+exec google-chrome-stable --restore-last-session
+exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
+exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
 #exec xautolock -locker py3lock.py

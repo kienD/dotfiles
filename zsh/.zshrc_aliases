@@ -45,8 +45,8 @@ alias gh="git help"
 
 # Git
 alias gca='g commit --amend'
-alias gcm='g cm'
-alias gco='g co'
+alias gcm='g commit -m'
+alias gco='g checkout'
 alias gs="git status"
 alias gfind="g log --grep"
 alias gitk="/usr/bin/wish $(which gitk)"
@@ -98,6 +98,9 @@ alias nrw='npm run watch'
 
 # Preview
 alias preview='xdg-open'
+
+# Polybar
+alias deploy-polybar='~/.polybar/polybar-run.sh'
 
 # Skype
 alias skype='google-chrome --force-device-scale-factor=1.2 --app=https://web.skype.com'
@@ -197,3 +200,9 @@ echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && gi
 echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && gpr-master;
 echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
 echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
+
+# xrandr
+alias xrandr-fix='xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync && xrandr --addmode LVDS-1-1 1920x1080_60.00  && xrandr --output LVDS-1-1 --mode 1920x1080_60.00'
+
+# move loop portlet to bundle
+alias loop-refresh='cp /home/kdo/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* /home/kdo/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'

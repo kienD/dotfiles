@@ -8,6 +8,7 @@ ln -is ~/dotfiles/zsh/.zshrc_aliases ~/.zshrc_aliases
 ln -is ~/dotfiles/.i3/ ~/.i3/
 ln -is ~/dotfiles/.xinitrc ~/.xinitrc
 ln -is ~/dotfiles/Xmodmap/.Xmodmap ~/.Xmodmap
+ln -is ~/dotfiles/polybar/ ~/.polybar
 
 echo "Deployment complete!"
 

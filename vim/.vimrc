@@ -69,7 +69,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
+"set background=dark
 set backupcopy=yes
 set binary
 set hlsearch
@@ -84,6 +84,10 @@ set splitright
 set tabstop=2
 set guifont=Monospace\ 16
 set so=999
+syntax on
+
+
+" let g:solarized_termcolors=256
 
 let g:plug_timeout = 5
 
@@ -94,13 +98,17 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=darkgrey ctermbg=DarkGray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgrey ctermbg=DarkGray
-
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=DarkGray
+hi Normal ctermbg=NONE
+hi texMathMatcher ctermbg=NONE
+hi texMathZoneX ctermbg=NONE
+hi texRefLabel ctermbg=NONE
+hi texStatement ctermbg=NONE
+hi NonText ctermbg=NONE
+hi SpecialKey ctermbg=NONE
 
 let g:jsx_ext_required = 0
 
-" Lightline
-" let g:lightline = {'colortheme': 'solarized'}
 set laststatus=2
 
 " Syntastic
@@ -131,7 +139,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-colorscheme gotham
+colorscheme solarized
 
 " key bindings
 map <C-\> :NERDTreeToggle<CR>

@@ -5,7 +5,7 @@
 import os
 import xcb
 from xcb.xproto import *
-from PIL import Image
+from pillow import Image
 
 XCB_MAP_STATE_VIEWABLE = 2
 
