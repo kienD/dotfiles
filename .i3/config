@@ -1,6 +1,5 @@
 # i3 config file
 
-
 #######################################################################
 # Theme
 #######################################################################
@@ -18,7 +17,6 @@ font $FONT
 
 # Gap size
 gaps inner 40
-#gaps outer 40
 
 # Borders
 for_window [class="^.*"] border pixel $BORDER_SIZE
@@ -33,7 +31,7 @@ client.urgent           #cc77ff #cc77ff $COLOR_HIGHLIGHT #bb66ff
 client.placeholder      $COLOR_NORMAL $COLOR_NORMAL $COLOR_HIGHLIGHT #bb66ff
 
 #######################################################################
-# Keybindings
+# i3 Keybindings
 #######################################################################
 
 # set mod key to alt
@@ -158,26 +156,20 @@ bindsym $mod+Shift+bracketright move workspace to output right
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-       # These bindings trigger as soon as you enter the resize mode
+	bindsym $left       resize shrink width 5 px or 5 ppt
+	bindsym $down       resize grow height 5 px or 5 ppt
+	bindsym $up         resize shrink height 5 px or 5 ppt
+	bindsym $right      resize grow width 5 px or 5 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 5 px or 5 ppt
-        bindsym $down       resize grow height 5 px or 5 ppt
-        bindsym $up         resize shrink height 5 px or 5 ppt
-        bindsym $right      resize grow width 5 px or 5 ppt
+# same bindings, but for the arrow keys
+	bindsym Left        resize shrink width 10 px or 10 ppt
+	bindsym Down        resize grow height 10 px or 10 ppt
+	bindsym Up          resize shrink height 10 px or 10 ppt
+	bindsym Right       resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -189,19 +181,27 @@ focus_follows_mouse no
 mouse_warping none
 
 ##############################################################################
-# media key bindings
+# General Bindings
 ##############################################################################
 
-# Pulse Audio controls
+# Print screen
+bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
+
+# Start rofi
+bindsym $mod+space exec rofi -show run -font "monospace 16" -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
+
+##############################################################################
+# Media Key Bindings
+##############################################################################
+
+# Pulse Audio Controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10%
-# increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10%
-# decrease screen brightness
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10% # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10% # decrease screen brightness
 
 # Media player controls
 #bindsym XF86AudioPlay exec playerctl play
@@ -209,34 +209,23 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10%
 #bindsym XF86AudioNext exec playerctl next
 #bindsym XF86AudioPrev exec playerctl previous
 
-# Print screen
-bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
+##############################################################################
+# Startup Programs
+##############################################################################
 
-# Start Chrome
-bindsym $mod+x exec google-chrome-stable --new-window
-
-# Start rofi
-bindsym $mod+space exec rofi -show run -font "monospace 16" -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
-
-# Startup
 exec xrandr --setprovideroutputsource nouveau Intel
 exec compton -bcCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 exec polybar-run
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
-#exec --no-startup-id dunst
+exec --no-startup-id dunst
 
 exec guake
-exec redshift -l 34.132268:-117.961578
 exec nitrogen --restore &
+exec redshift -l 34.132268:-117.961578
 
-# exec --no-startup-id syndaemon -d -K -t
-
-# exec terminator -T "liferay-portal-ee" -e cd Liferay/ee-bundles/tomcat/bin && ./catalina.sh run
-# exec terminator -T "loop-watcher" -e cd Liferay/ee-plugins/portlets/loop-portlet && npm run watch
-# exec terminator -T "dir-watcher" -e cd Liferay/dir-watch && gulp watch
-# exec terminator -T "loop-portlet" -e cd Liferay/ee-plugins/portlets/loop-portlet
 exec google-chrome-stable --restore-last-session
 exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
 exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
-#exec xautolock -locker py3lock.py
+
+# exec xautolock -locker py3lock.py
