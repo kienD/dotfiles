@@ -188,7 +188,7 @@ mouse_warping none
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
 # Start rofi
-bindsym $mod+space exec rofi -show run -font "monospace 16" -lines 10 -eh 2 -width 40 -hide-scrollbar -bc "#111111"  -bg "#111111" -fg "#bbbbbb" -hlfg "#111111" -hlbg "#bbbbbb"
+bindsym $mod+space exec rofi -show run -font "Source Code Pro 12" -lines 10 -eh 2 -width 40 -hide-scrollbar 
 
 ##############################################################################
 # Media Key Bindings
