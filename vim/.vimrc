@@ -7,7 +7,7 @@
 " VUNDLE
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocompatible              " be iMproved, required
+set nocompatible              " be improved, required
 filetype off                  " required
 
 "set the runtime path to include Vundle and initialize
@@ -19,8 +19,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'alvan/vim-closetag'
-"Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'henrik/vim-indexed-search'
@@ -33,8 +31,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips' " Maybe use this
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
-"Plugin 'valloric/MatchTagAlways'
-"Plugin 'valloric/youcompleteme'
 Plugin 'Yggdroot/indentline'
 
 " Syntax Files
@@ -44,18 +40,10 @@ Plugin 'mxw/vim-jsx'
 
 " Themes
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'fcevado/molokai_dark'
-Plugin 'laserswald/chameleon.vim'
-Plugin 'sickill/vim-monokai'
-Plugin 'trapd00r/neverland-vim-theme'
-"Plugin 'vim-dichromatic'
 Plugin 'whatyouhide/vim-gotham'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 " Brief help
 " :PluginList       - lists configured plugins
@@ -82,12 +70,11 @@ set shiftwidth=2
 set splitbelow
 set splitright
 set tabstop=2
-set guifont=Monospace\ 16
+set guifont=Monospace\ 10
 set so=999
 syntax on
 
-
-" let g:solarized_termcolors=256
+colorscheme solarized
 
 let g:plug_timeout = 5
 
@@ -97,15 +84,8 @@ let g:ctrlp_working_path_mode = 'ra'
 " Vim Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=darkgrey ctermbg=DarkGray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=DarkGray
-hi Normal ctermbg=NONE
-hi texMathMatcher ctermbg=NONE
-hi texMathZoneX ctermbg=NONE
-hi texRefLabel ctermbg=NONE
-hi texStatement ctermbg=NONE
-hi NonText ctermbg=NONE
-hi SpecialKey ctermbg=NONE
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=DarkGray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=DarkGray
 
 let g:jsx_ext_required = 0
 
@@ -139,7 +119,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-colorscheme solarized
 
 " key bindings
 map <C-\> :NERDTreeToggle<CR>
