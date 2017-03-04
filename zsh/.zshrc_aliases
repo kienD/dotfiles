@@ -1,11 +1,9 @@
-
 ###############################
 ########### General ###########
 ###############################
 
 alias cbip='ifconfig enx00249b13a8bf | grep 'inet addr' | cut -d ':' -f 2 | cut -d ' ' -f 1 | xsel --clipboard'
 alias localip='ifconfig enx00249b13a8bf | grep 'inet addr' | cut -d 'B' -f1'
-
 
 alias pls='sudo $(fc -ln -1)'
 
@@ -30,18 +28,12 @@ alias apache='apache2ctl'
 alias aar='add-apt-repository'
 
 # Arandr
-alias arandr-work='arandr ~/dotfiles/arandr/work_dual_screen.sh'
+alias arandr-work='arandr ~/dotfiles/arandr/dual_screen_1080p.sh'
 alias arandr-mobile='arandr ~/dotfiles/arandr/single_screen.sh'
-
-# Chrome
-alias chrome='google-chrome-stable --force-device-scale-factor=1.2 &'
 
 # Directory Shortcuts
 alias dotfiles='~/dotfiles/'
 alias pkgs='~/pkgs/'
-
-# GH to git help
-alias gh="git help"
 
 # Git
 alias gca='g commit --amend'
@@ -49,6 +41,7 @@ alias gcm='g commit -m'
 alias gco='g checkout'
 alias gs="git status"
 alias gfind="g log --grep"
+alias gh="git help"
 alias gitk="/usr/bin/wish $(which gitk)"
 alias gpr='git pull --rebase'
 alias gpr-ee='git pull --rebase upstream ee-6.2.x'
@@ -94,13 +87,11 @@ alias lock='py3lock.py'
 
 # Npm
 alias npm-check='npm list | grep'
+alias nrb='npm run build'
 alias nrw='npm run watch'
 
 # Preview
 alias preview='xdg-open'
-
-# Polybar
-alias deploy-polybar='~/.polybar/polybar-run.sh'
 
 # Skype
 alias skype='google-chrome --force-device-scale-factor=1.2 --app=https://web.skype.com'
@@ -110,7 +101,6 @@ alias slack='google-chrome --force-device-scale-factor=1.2 --app=https://liferay
 
 # thefuck
 eval $(thefuck --alias)
-
 
 # xmodmap
 alias pok3r='xmodmap ~/.Xmodmap'
@@ -140,8 +130,7 @@ echo ---------------- asset-sharing-portlet ---------------- && cd ~/Liferay/ee-
 echo ---------------- marketplace-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
 echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
 echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
-echo ---------------- token-auth-portlet ---------------- && cd
-~/Liferay/ee-plugins/portlets/token-auth-portlet && acd
+echo ---------------- token-auth-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/token-auth-portlet && acd
 echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd'
 
 alias ant-fs='ant format-source'
@@ -164,7 +153,7 @@ alias css='~/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
 
 alias dir-watcher='~/Liferay/dir-watcher/'
 alias dir-watcher-run='dir-watcher && gw' # Remove
-alias dlr='loop && acd && nrw'
+alias lpr='loop && acd && nrw'
 alias dwr='dir-watcher && gw'
 
 alias ee-bundles='~/Liferay/ee-bundles/tomcat/bin/'
@@ -175,12 +164,10 @@ alias ee-plugins='~/Liferay/ee-plugins/'
 
 alias ee-portal='~/Liferay/ee-portal/'
 
-
 alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
 alias loop-run='loop && nrw'
 alias reset-theme='theme && acd && dir-watcher-run'
 alias theme='~/Liferay/ee-plugins/themes/loop-theme/'
-
 
 alias loop-final='ant-fs-loop && sfm-loop && npm test'
 
@@ -201,8 +188,8 @@ echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && 
 echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
 echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
 
-# xrandr
-alias xrandr-fix='xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync && xrandr --addmode LVDS-1-1 1920x1080_60.00  && xrandr --output LVDS-1-1 --mode 1920x1080_60.00'
+alias update-loop='echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
+echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
 
 # move loop portlet to bundle
 alias loop-refresh='cp /home/kdo/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* /home/kdo/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
