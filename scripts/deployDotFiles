@@ -7,8 +7,11 @@ ln -is ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -is ~/dotfiles/zsh/.zshrc_aliases ~/.zshrc_aliases
 ln -is ~/dotfiles/.i3/ ~/.i3/
 ln -is ~/dotfiles/.xinitrc ~/.xinitrc
+ln -is ~/dotfiles/.Xresources ~/.Xresources
+ln -is ~/dotfiles/.xserverrc ~/.xserverrc
 ln -is ~/dotfiles/Xmodmap/.Xmodmap ~/.Xmodmap
 ln -is ~/dotfiles/polybar/ ~/.polybar
+ln -is ~/dotfiles/scripts/ ~/scripts
+ln -is ~/dotfiles/intellij/.ideavimrc ~/.intellij/.ideavimrc
 
 echo "Deployment complete!"
-

@@ -58,7 +58,7 @@ alias gsp-master='g stash && gpr-master && gstp'
 alias github-pulls='~/pkgs/github-pulls/ && npm run dev &'
 
 # Gitpr
-alias gitpr="/home/kdo/pkgs/git-tools/git-pull-request/git-pull-request.sh"
+alias gitpr="/home/kdot/pkgs/git-tools/git-pull-request/git-pull-request.sh"
 alias gitpr-bryce='gitpr -u bryceosterhaus -b ee-6.2.x submit'
 alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
 alias gitpr-matt='gitpr -u matthewkong -b ee-6.2.x submit'
@@ -192,4 +192,4 @@ alias update-loop='echo ---------------- EE-PORTAL ---------------- && cd ~/Life
 echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
 
 # move loop portlet to bundle
-alias loop-refresh='cp /home/kdo/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* /home/kdo/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
+alias loop-refresh='cp /home/kdot/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* /home/kdot/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'

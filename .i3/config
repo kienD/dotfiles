@@ -188,7 +188,7 @@ mouse_warping none
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
 # Start rofi
-bindsym $mod+space exec rofi -show run -font "Source Code Pro 12" -lines 10 -eh 2 -width 40 -hide-scrollbar 
+bindsym $mod+space exec rofi -show run -font "Source Code Pro 12" -lines 10 -eh 2 -width 40 -hide-scrollbar
 
 ##############################################################################
 # Media Key Bindings
@@ -225,7 +225,6 @@ exec nitrogen --restore &
 exec redshift -l 34.132268:-117.961578
 
 exec google-chrome-stable --restore-last-session
-exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
 exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
 
 # exec xautolock -locker py3lock.py
