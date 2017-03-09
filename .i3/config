@@ -6,12 +6,24 @@
 
 # Theme variables
 set $FONT pango:Source Code Pro 12
-set $BORDER_SIZE 3
-set $COLOR_ACCENT       #222222
-set $COLOR_HIGHLIGHT    #111111
-set $COLOR_NORMAL       #bbbbbb
-set $COLOR_INDICATOR    #bbbbbb
+set $BORDER_SIZE 1
 
+set $bg_active                  #667F86
+set $bg_inactive                #002B36
+set bg_urgent                   #FF2800
+
+set $border_active              $bg_active
+set $border_inactive            $bg_inactive
+set $border_urgent              $B27B78
+
+set $text_active                #FDFEFF
+set $text_inactive              #212121
+
+set $bg_active_workspace        #383E47
+set $bg_inactive_workspace      #C48D62
+
+set $bg_bar                     #383E47AA
+set $indicator                  #03C0FF
 # Font
 font $FONT
 
@@ -23,12 +35,12 @@ for_window [class="^.*"] border pixel $BORDER_SIZE
 
 for_window [class="^X-terminal-emulator$"] border none
 
-# Appearance
-client.focused          $COLOR_ACCENT $COLOR_ACCENT $COLOR_HIGHLIGHT $COLOR_INDICATOR
-client.focused_inactive $COLOR_NORMAL $COLOR_NORMAL $COLOR_HIGHLIGHT $COLOR_NORMAL
-client.unfocused        $COLOR_NORMAL $COLOR_NORMAL $COLOR_HIGHLIGHT $COLOR_NORMAL
-client.urgent           #cc77ff #cc77ff $COLOR_HIGHLIGHT #bb66ff
-client.placeholder      $COLOR_NORMAL $COLOR_NORMAL $COLOR_HIGHLIGHT #bb66ff
+# Appearance 						border							background					text						 		 indicator
+client.focused          $border_active      $bg_active          $text_active         $border_active
+client.unfocused        $border_inactive    $bg_inactive        $text_inactive       $border_inactive
+client.focused_inactive $border_inactive    $bg_inactive        $text_inactive       $border_inactive
+client.urgent           $border_urgent      $bg_urgent          $text-color          $border_urgent
+client.placeholder      $border_inactive 		$bg_inactive 				$text_inactive			 $border_inactive 
 
 #######################################################################
 # i3 Keybindings
@@ -223,6 +235,7 @@ exec --no-startup-id dunst
 exec guake
 exec nitrogen --restore &
 exec redshift -l 34.132268:-117.961578
+exec polybar-run
 
 exec google-chrome-stable --restore-last-session
 exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
