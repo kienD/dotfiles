@@ -57,7 +57,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
-"set background=dark
+set background=dark
 set backupcopy=yes
 set binary
 set hlsearch
