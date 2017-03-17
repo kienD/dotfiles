@@ -20,7 +20,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'crusoexia/vim-monokai'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dunckr/vim-monokai-soda'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
@@ -70,11 +72,12 @@ set shiftwidth=2
 set splitbelow
 set splitright
 set tabstop=2
-set guifont=Monospace\ 10
+set guifont=Source\ Code\ Pro\ 10
 set so=999
 syntax on
+set t_Co=256
 
-colorscheme solarized
+colorscheme monokai
 
 let g:plug_timeout = 5
 
@@ -84,8 +87,8 @@ let g:ctrlp_working_path_mode = 'ra'
 " Vim Indent Guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=DarkGray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=DarkGray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=none
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
 
 let g:jsx_ext_required = 0
 
