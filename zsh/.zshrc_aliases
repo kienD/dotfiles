@@ -13,8 +13,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias sbp='source ~/.bash_profile'
-alias szrc='source ~/.zshrc'
+alias sbp='source $HOME/.bash_profile'
+alias szrc='source $HOME/.zshrc'
 
 # Ant
 alias aa='ant all'
@@ -28,12 +28,12 @@ alias apache='apache2ctl'
 alias aar='add-apt-repository'
 
 # Arandr
-alias arandr-work='arandr ~/dotfiles/arandr/dual_screen_1080p.sh'
-alias arandr-mobile='arandr ~/dotfiles/arandr/single_screen.sh'
+alias arandr-work='arandr $HOME/dotfiles/arandr/dual_screen_1080p.sh'
+alias arandr-mobile='arandr $HOME/dotfiles/arandr/single_screen.sh'
 
 # Directory Shortcuts
-alias dotfiles='~/dotfiles/'
-alias pkgs='~/pkgs/'
+alias dotfiles='$HOME/dotfiles/'
+alias pkgs='$HOME/pkgs/'
 
 # Git
 alias gca='g commit --amend'
@@ -55,10 +55,10 @@ alias gsp-ee='g stash && gpr-ee && gstp'
 alias gsp-master='g stash && gpr-master && gstp'
 
 # Github-pulls
-alias github-pulls='~/pkgs/github-pulls/ && npm run dev &'
+alias github-pulls='$HOME/pkgs/github-pulls/ && npm run dev &'
 
 # Gitpr
-alias gitpr="/home/kdo/pkgs/git-tools/git-pull-request/git-pull-request.sh"
+alias gitpr="$HOME/pkgs/git-tools/git-pull-request/git-pull-request.sh"
 alias gitpr-bryce='gitpr -u bryceosterhaus -b ee-6.2.x submit'
 alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
 alias gitpr-matt='gitpr -u matthewkong -b ee-6.2.x submit'
@@ -103,7 +103,7 @@ alias slack='google-chrome --force-device-scale-factor=1.2 --app=https://liferay
 eval $(thefuck --alias)
 
 # xmodmap
-alias pok3r='xmodmap ~/.Xmodmap'
+alias pok3r='xmodmap $HOME/.Xmodmap'
 
 ###############################
 ########### Liferay ###########
@@ -111,6 +111,7 @@ alias pok3r='xmodmap ~/.Xmodmap'
 
 # Start liferay service
 alias cr='./catalina.sh run'
+alias crd='./catalina.sh jpda run'
 
 # Source format all changes
 function sfm {
@@ -123,73 +124,73 @@ function sfm {
 
 # Loop Project
 alias deploy-loop='
-echo ---------------- loop-theme ---------------- && cd ~/Liferay/ee-plugins/themes/loop-theme && acd &&
-echo ---------------- push-notifications-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/push-notifications-portlet && acd &&
-echo ---------------- asset-entry-set-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
-echo ---------------- asset-sharing-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
-echo ---------------- marketplace-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
-echo ---------------- url-metadata-scraper-web ---------------- && cd ~/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
-echo ---------------- portal-compat-hook ---------------- && cd ~/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
-echo ---------------- token-auth-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/token-auth-portlet && acd
-echo ---------------- loop-portlet ---------------- && cd ~/Liferay/ee-plugins/portlets/loop-portlet && acd'
+echo ---------------- loop-theme ---------------- && cd $HOME/Liferay/ee-plugins/themes/loop-theme && acd &&
+echo ---------------- push-notifications-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/push-notifications-portlet && acd &&
+echo ---------------- asset-entry-set-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
+echo ---------------- asset-sharing-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
+echo ---------------- marketplace-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
+echo ---------------- url-metadata-scraper-web ---------------- && cd $HOME/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
+echo ---------------- portal-compat-hook ---------------- && cd $HOME/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
+echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/token-auth-portlet && acd
+echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && acd'
 
 alias ant-fs='ant format-source'
 
 alias ant-fs-loop='
-cd ~/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
-cd ~/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
+cd $HOME/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
+cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
-alias actions='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/actions/'
-alias components='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
-alias controllers='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/controllers/'
-alias lib='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/lib/'
-alias middleware='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/middleware/'
-alias reducers='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/reducers/'
-alias util='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/util/'
-alias views='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/views'
-alias webinf='~/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/'
+alias actions='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/actions/'
+alias components='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
+alias controllers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/controllers/'
+alias lib='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/lib/'
+alias middleware='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/middleware/'
+alias reducers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/reducers/'
+alias util='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/util/'
+alias views='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/views'
+alias webinf='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/'
 
-alias css='~/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
+alias css='$HOME/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
 
-alias dir-watcher='~/Liferay/dir-watcher/'
+alias dir-watcher='$HOME/Liferay/dir-watcher/'
 alias dir-watcher-run='dir-watcher && gw' # Remove
 alias lpr='loop && acd && nrw'
 alias dwr='dir-watcher && gw'
 
-alias ee-bundles='~/Liferay/ee-bundles/tomcat/bin/'
+alias ee-bundles='$HOME/Liferay/ee-bundles/tomcat/bin/'
 alias ee-bundles-run='ee-bundles && cr'
 alias eebr='ee-bundles && cr'
 
-alias ee-plugins='~/Liferay/ee-plugins/'
+alias ee-plugins='$HOME/Liferay/ee-plugins/'
 
-alias ee-portal='~/Liferay/ee-portal/'
+alias ee-portal='$HOME/Liferay/ee-portal/'
 
-alias loop='~/Liferay/ee-plugins/portlets/loop-portlet/'
+alias loop='$HOME/Liferay/ee-plugins/portlets/loop-portlet/'
 alias loop-run='loop && nrw'
 alias reset-theme='theme && acd && dir-watcher-run'
-alias theme='~/Liferay/ee-plugins/themes/loop-theme/'
+alias theme='$HOME/Liferay/ee-plugins/themes/loop-theme/'
 
 alias loop-final='ant-fs-loop && sfm-loop && npm test'
 
 alias sfm-loop='
-cd ~/Liferay/ee-plugins/themes/loop-theme && sfme &&
-cd ~/Liferay/ee-plugins/portlets/loop-portlet && sfme'
+cd $HOME/Liferay/ee-plugins/themes/loop-theme && sfme &&
+cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && sfme'
 
 alias sfme='sfm ee-6.2.x'
 
 alias reset-dist='
-cd ~/Liferay/ee-plugins/portlets/loop-portlet &&
+cd $HOME/Liferay/ee-plugins/portlets/loop-portlet &&
 git checkout -- docroot/js/dist/* webpack.config.js'
 
 # Update Liferay
 alias update-liferay='
-echo ---------------- CE-PORTAL ---------------- && cd ~/Liferay/ce-portal && git checkout master && gpr-master;
-echo ---------------- CE-PLUGINS ---------------- && cd ~/Liferay/ce-plugins && git checkout master && gpr-master;
-echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
-echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
+echo ---------------- CE-PORTAL ---------------- && cd $HOME/Liferay/ce-portal && git checkout master && gpr-master;
+echo ---------------- CE-PLUGINS ---------------- && cd $HOME/Liferay/ce-plugins && git checkout master && gpr-master;
+echo ---------------- EE-PORTAL ---------------- && cd $HOME/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
+echo ---------------- EE-PLUGINS ---------------- && cd $HOME/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
 
-alias update-loop='echo ---------------- EE-PORTAL ---------------- && cd ~/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
-echo ---------------- EE-PLUGINS ---------------- && cd ~/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
+alias update-loop='echo ---------------- EE-PORTAL ---------------- && cd $HOME/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
+echo ---------------- EE-PLUGINS ---------------- && cd $HOME/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
 
 # move loop portlet to bundle
-alias loop-refresh='cp /home/kdo/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* /home/kdo/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
+alias loop-refresh='cp $HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* $HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
