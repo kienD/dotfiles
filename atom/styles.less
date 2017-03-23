@@ -1,0 +1,29 @@
+.editor.is-focused {
+	.line.cursor-line {
+		background: transparent !important;
+	}
+}
+
+html, html * {
+  background: rgba(0, 0, 0, 0);
+}
+
+atom-pane, atom-panel, atom-notification {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+atom-overlay > * {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+atom-text-editor::shadow {
+  .cursor-line {
+    background-color: rgba(200, 200, 200, 0.3) !important;
+  }
+  .selection .region {
+    background-color: rgba(200, 200, 200, 0.2) !important;
+  }
+  .gutter {
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+}
