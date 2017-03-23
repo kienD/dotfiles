@@ -64,6 +64,7 @@ alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
 alias gitpr-matt='gitpr -u matthewkong -b ee-6.2.x submit'
 alias gitpr-mike='gitpr -u mthadley -b ee-6.2.x submit'
 alias gitpr-nate='gitpr -u natecavanaugh -b ee-6.2.x submit'
+alias gitpr-wes='gitpr -u wesleygong -b ee-6.2.x submit'
 
 
 # Gradlew from any level
