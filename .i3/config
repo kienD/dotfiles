@@ -35,12 +35,12 @@ for_window [class="^.*"] border pixel $BORDER_SIZE
 
 for_window [class="^X-terminal-emulator$"] border none
 
-# Appearance 						border							background					text						 		 indicator
+# Appearance            border              background          text                 indicator
 client.focused          $border_active      $bg_active          $text_active         $border_active
 client.unfocused        $border_inactive    $bg_inactive        $text_inactive       $border_inactive
 client.focused_inactive $border_inactive    $bg_inactive        $text_inactive       $border_inactive
 client.urgent           $border_urgent      $bg_urgent          $text-color          $border_urgent
-client.placeholder      $border_inactive 		$bg_inactive 				$text_inactive			 $border_inactive 
+client.placeholder      $border_inactive    $bg_inactive        $text_inactive       $border_inactive
 
 #######################################################################
 # i3 Keybindings
@@ -199,8 +199,8 @@ mouse_warping none
 # Print screen
 bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
-# Start rofi
-bindsym $mod+space exec rofi -show run -font "Source Code Pro 12" -lines 10 -eh 2 -width 40 -hide-scrollbar 
+# Rofi
+bindsym $mod+space exec rofi -show run
 
 ##############################################################################
 # Media Key Bindings
@@ -227,7 +227,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10% # decrease screen brightn
 
 exec xrandr --setprovideroutputsource nouveau Intel
 exec compton -bcCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
-exec polybar-run
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
@@ -235,7 +234,7 @@ exec --no-startup-id dunst
 exec guake
 exec nitrogen --restore &
 exec redshift -l 34.132268:-117.961578
-exec polybar-run
+#exec polybar-run
 
 exec google-chrome-stable --restore-last-session
 exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
