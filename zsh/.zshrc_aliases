@@ -41,7 +41,6 @@ alias gcm='g commit -m'
 alias gco='g checkout'
 alias gs="git status"
 alias gfind="g log --grep"
-alias gh="git help"
 alias gitk="/usr/bin/wish $(which gitk)"
 alias gpr='git pull --rebase'
 alias gpr-ee='git pull --rebase upstream ee-6.2.x'
@@ -90,6 +89,7 @@ alias lock='py3lock.py'
 alias npm-check='npm list | grep'
 alias nrb='npm run build'
 alias nrw='npm run watch'
+alias anrw='acd && lsl && nrw'
 
 # Preview
 alias preview='xdg-open'
@@ -113,6 +113,16 @@ alias pok3r='xmodmap $HOME/.Xmodmap'
 # Start liferay service
 alias cr='./catalina.sh run'
 alias crd='./catalina.sh jpda run'
+
+# ant format source all changes
+function afsm {
+	if [ "$1" ]; then
+		git diff --stat --relative --name-only "$1".. | grep -E '.(tag|jsp.?|vm|ftl|js|(s)?css)$' | xargs ant-fs;
+	else
+		echo -e "$fg_bold[red]Please choose a branch to compare changes to.$reset_color EG: afsm ee-6.2.x"
+	fi
+}
+
 
 # Source format all changes
 function sfm {
@@ -168,7 +178,7 @@ alias ee-portal='$HOME/Liferay/ee-portal/'
 
 alias loop='$HOME/Liferay/ee-plugins/portlets/loop-portlet/'
 alias loop-run='loop && nrw'
-alias reset-theme='theme && acd && dir-watcher-run'
+alias reset-theme='theme && acd'
 alias theme='$HOME/Liferay/ee-plugins/themes/loop-theme/'
 
 alias loop-final='ant-fs-loop && sfm-loop && npm test'
