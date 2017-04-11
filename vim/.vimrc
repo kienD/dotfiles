@@ -22,12 +22,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'junegunn/fzf'
-Plugin 'dunckr/vim-monokai-soda'
+Plugin 'ElmCast/elm-vim'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'lambdatoast/elm.vim'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
@@ -75,7 +73,7 @@ set splitbelow
 set splitright
 set tabstop=2
 set guifont=Source\ Code\ Pro\ 10
-set so=999
+" set so=999
 syntax on
 set t_Co=256
 
@@ -84,13 +82,25 @@ colorscheme monokai
 let g:plug_timeout = 5
 
 " CtrlP Vim
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'a'
+let g:ctrlp_custom_ignore = {
+      \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build)$',
+      \ }
 
 " Vim Indent Guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=none
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=none
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
+
+" ElmCast/elm-vim
+let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 1
+let g:elm_make_show_warnings = 1
+let g:elm_detailed_complete = 1
+
+" Indent Line
+let g:indentLine_char = '·'
 
 let g:jsx_ext_required = 0
 
@@ -98,8 +108,12 @@ set laststatus=2
 
 " Syntastic
 let g:syntastic_css_checkers = ['csf']
-let g:syntastic_javascript_checkers = ['csf']
 let g:syntastic_scss_checkers = ['csf']
+let g:syntastic_javascript_checkers = ['csf']
+
+" let g:syntastic_show_warnings = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.xml"
 let g:mta_filetypes = {
@@ -124,6 +138,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap j jzz
+nnoremap k kzz
 
 " key bindings
 map <C-\> :NERDTreeToggle<CR>
