@@ -33,9 +33,6 @@ fi
 # Start window manager
 exec i3
 
-# Start status bar
-exec polybar-run
-
 # Load Custom Xmodmap Layer
 if [ -s ~/.Xmodmap ]; then
 	xmodmap ~/.Xmodmap
