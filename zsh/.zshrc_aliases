@@ -83,7 +83,7 @@ fi
 alias gw='gulp watch'
 
 # Lock screen
-alias lock='py3lock.py'
+alias lock='i3lock -fi ~/Pictures/wallpapers/rick-wallpaper.png'
 
 # Npm
 alias npm-check='npm list | grep'
