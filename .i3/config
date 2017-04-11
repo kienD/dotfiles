@@ -234,10 +234,10 @@ exec --no-startup-id dunst
 exec guake
 exec nitrogen --restore &
 exec redshift -l 34.132268:-117.961578
-#exec polybar-run
+exec_always --no-startup-id "/home/kdo/dotfiles/scripts/polybar-run"
 
 exec google-chrome-stable --restore-last-session
 exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
 exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
 
-# exec xautolock -locker py3lock.py
+exec xautolock -locker i3lock -fi ~/Pictures/wallpapers/unkown-woman.jpg 
