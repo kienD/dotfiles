@@ -143,7 +143,7 @@ echo ---------------- marketplace-portlet ---------------- && cd $HOME/Liferay/e
 echo ---------------- url-metadata-scraper-web ---------------- && cd $HOME/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
 echo ---------------- portal-compat-hook ---------------- && cd $HOME/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
 echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/token-auth-portlet && acd
-echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && acd'
+echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && acd && lsl'
 
 alias ant-fs='ant format-source'
 
@@ -155,6 +155,7 @@ alias actions='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/act
 alias components='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
 alias controllers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/controllers/'
 alias lib='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/lib/'
+alias loopjs='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/'
 alias middleware='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/middleware/'
 alias reducers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/reducers/'
 alias util='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/util/'
