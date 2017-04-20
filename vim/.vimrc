@@ -87,12 +87,6 @@ let g:ctrlp_custom_ignore = {
       \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build)$',
       \ }
 
-" Vim Indent Guides
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indent_guides_auto_colors = 0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=none
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=none
-
 " ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
@@ -141,7 +135,17 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap j jzz
 nnoremap k kzz
 
-" key bindings
+" Key Bindings
 map <C-\> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Macros
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Break a 3 attribute single-line tag into a multi-line tag
+let @n='f xif xif xif>i'
+
+" Break text after space into new line
+let @l='f xi'
