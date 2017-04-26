@@ -50,6 +50,7 @@ alias gpush-ee='git push origin ee-6.2.x'
 alias gpush-master='git push origin master'
 alias gc='git checkout'
 alias gcb='git checkout -b'
+alias gsgco='g stash && gco'
 alias gsp-ee='g stash && gpr-ee && gstp'
 alias gsp-master='g stash && gpr-master && gstp'
 
