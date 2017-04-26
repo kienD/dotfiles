@@ -33,6 +33,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips' " Maybe use this
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'valloric/youcompleteme'
 Plugin 'Yggdroot/indentline'
 
 " Syntax Files
@@ -61,11 +62,11 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
 set backupcopy=yes
-set binary
 set hlsearch
 set ignorecase
 set mouse=a
 set noeol
+set nofixeol
 set number
 set relativenumber
 set shiftwidth=2
@@ -149,3 +150,6 @@ let @n='f xif xif xif>i'
 
 " Break text after space into new line
 let @l='f xi'
+
+" Trim js ext off imports & add ;
+let @i = 'vbbxa;'
