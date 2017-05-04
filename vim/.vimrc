@@ -28,6 +28,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mthadley/syntastic-csf'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'rudes/vim-java'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips' " Maybe use this
