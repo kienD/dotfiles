@@ -157,6 +157,7 @@ alias components='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/
 alias controllers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/controllers/'
 alias lib='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/lib/'
 alias loopjs='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/'
+alias loopsrc='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src'
 alias middleware='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/middleware/'
 alias reducers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/reducers/'
 alias util='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/util/'
