@@ -24,6 +24,56 @@ then
 fi
 
 # Functions
+
+# function lsl {
+# 	local src_dir="$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot"
+# 	local dst_dir="$HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/"
+
+# 	recursiveHardLink $src_dir $dst_dir
+# }
+
+# function recursiveHardLink {
+# 	for file in "$1"/*; do
+# 		local filename=${file##*/}
+# 		local dst="$2$filename"
+
+# 		if [ -d $file ]
+# 		then
+# 			recursiveHardLink "$file" "$dst/"
+# 		else
+# 			[ -e "$dst" ] && rm "$dst"
+
+# 			echo "Linking $filename"
+# 			ln -f "$file" "$dst"
+# 		fi
+# 	done
+# }
+
+function copyLoopJsp {
+	local src_dir="$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot"
+	local dst_dir="$HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/"
+
+	copyJsp $src_dir $dst_dir
+}
+
+function copyJsp {
+	for file in "$1"/*; do
+		local filename=${file##*/}
+		local dst="$2$filename"
+
+		if [ -d $file ]
+		then
+			copyJsp "$file" "$dst/"
+		elif [[ $file == *.jsp  ]]
+		then
+			[ -e "$dst" ] && rm "$dst"
+
+			echo "Copying $filename"
+			cp "$file" "$dst"
+		fi
+	done
+}
+
 function lsl {
 	local src_dir="$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist"
 	local dst_dir="$HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist"
