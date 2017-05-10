@@ -1,6 +1,9 @@
 # Set default Editor to VIM
+export BROWSER=google-chrome-stable
 export VISUAL=vim
+
 export EDITOR="$VISUAL"
+
 
 # Exports
 export PATH=$PATH:/home/kdo/scripts
