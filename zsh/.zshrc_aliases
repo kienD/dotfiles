@@ -168,7 +168,8 @@ alias css='$HOME/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
 
 alias dir-watcher='$HOME/Liferay/dir-watcher/'
 alias dir-watcher-run='dir-watcher && gw' # Remove
-alias lpr='loop && acd && nrw'
+alias dist-clean='gco -- $HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/*'
+alias lpr='loop && anrw'
 alias dwr='dir-watcher && gw'
 
 alias ee-bundles='$HOME/Liferay/ee-bundles/tomcat/bin/'
