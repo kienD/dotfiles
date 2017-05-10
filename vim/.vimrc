@@ -86,8 +86,8 @@ let g:plug_timeout = 5
 " CtrlP Vim
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_custom_ignore = {
-      \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build)$',
-      \ }
+	\ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
+	\ }
 
 " ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
