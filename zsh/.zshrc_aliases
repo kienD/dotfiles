@@ -185,7 +185,7 @@ alias loop-run='loop && nrw'
 alias reset-theme='theme && acd'
 alias theme='$HOME/Liferay/ee-plugins/themes/loop-theme/'
 
-alias loop-final='ant-fs-loop && sfm-loop && npm test'
+alias loop-final='loop && npm test && ant-fs-loop && sfm-loop'
 
 alias sfm-loop='
 cd $HOME/Liferay/ee-plugins/themes/loop-theme && sfme &&
