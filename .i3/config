@@ -212,8 +212,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Media player controls
 #bindsym XF86AudioPlay exec playerctl play
@@ -231,6 +231,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id powertop --auto-tune
+exec --no-startup-id syndaemon -i 0.5 -t -K -R
 
 exec guake
 exec nitrogen --restore &
