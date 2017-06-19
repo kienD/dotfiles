@@ -19,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'airblade/vim-gitgutter'
+Plugin 'alvan/vim-closetag'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -79,6 +80,9 @@ set guifont=Source\ Code\ Pro\ 10
 " set so=999
 syntax on
 set t_Co=256
+
+" Set clipboard as shared between X session and Vim
+set clipboard=unnamedplus
 
 colorscheme monokai
 
