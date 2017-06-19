@@ -17,6 +17,9 @@ plugins=(alias-tips git)
 # User configuration
 source $ZSH/oh-my-zsh.sh
 
+# autojump
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh autoload -U compinit && compinit -u
+
 # Alias definitions
 if [ -f "$HOME/.zshrc_aliases" ]
 then
