@@ -152,21 +152,6 @@ alias ant-fs-loop='
 cd $HOME/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
 cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
 
-alias actions='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/actions/'
-alias components='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/components/'
-alias controllers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/controllers/'
-alias lib='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/lib/'
-alias loopjs='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/'
-alias loopsrc='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/'
-alias middleware='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/middleware/'
-alias pages='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/pages/'
-alias reducers='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/src/reducers/'
-alias util='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/util/'
-alias views='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/jsp/loop/views/'
-alias webinf='$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/WEB-INF/'
-
-alias css='$HOME/Liferay/ee-plugins/themes/loop-theme/docroot/_diffs/css/'
-
 alias dir-watcher='$HOME/Liferay/dir-watcher/'
 alias dir-watcher-run='dir-watcher && gw' # Remove
 alias dist-clean='gco -- $HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/*'
