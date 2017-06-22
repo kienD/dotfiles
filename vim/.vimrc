@@ -67,7 +67,7 @@ colorscheme monokai
 syntax on
 
 set background=dark
-set backupdir=/tmp
+set dir=/tmp
 set expandtab
 set guifont=Source\ Code\ Pro\ 10
 set hlsearch
