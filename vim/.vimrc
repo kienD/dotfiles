@@ -28,7 +28,6 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mthadley/syntastic-csf'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rudes/vim-java'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -63,43 +62,43 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme monokai
+
+syntax on
+
 set background=dark
-set backupcopy=yes
+set backupdir=/tmp
+set expandtab
+set guifont=Source\ Code\ Pro\ 10
 set hlsearch
 set ignorecase
 set mouse=a
-set noeol
-set nofixeol
+set nobackup
 set number
 set relativenumber
 set shiftwidth=2
 set splitbelow
 set splitright
+set sts=2
 set tabstop=2
-set guifont=Source\ Code\ Pro\ 10
-" set so=999
-syntax on
 set t_Co=256
 
 " Set clipboard as shared between X session and Vim
 set clipboard=unnamedplus
-
-colorscheme monokai
 
 let g:plug_timeout = 5
 
 " CtrlP Vim
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_custom_ignore = {
-	\ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
-	\ }
+  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
+  \ }
 
 " ElmCast/elm-vim
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
 let g:elm_make_show_warnings = 1
 let g:elm_detailed_complete = 1
-
 " Indent Line
 let g:indentLine_char = '·'
 
@@ -118,20 +117,20 @@ let g:syntastic_javascript_checkers = ['csf']
 
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.xml"
 let g:mta_filetypes = {
-	\ 'html' : 1,
-	\ 'xhtml': 1,
-	\ 'xml' : 1,
-	\ 'js' : 1,
-	\ 'jsx' : 1,
-	\ 'jsp': 1
-	\}
+  \ 'html' : 1,
+  \ 'xhtml': 1,
+  \ 'xml' : 1,
+  \ 'js' : 1,
+  \ 'jsx' : 1,
+  \ 'jsp': 1
+  \}
 
 function! s:DiffWithSaved()
-	let filetype=&ft
-		diffthis
-			vnew | r # | normal! 1Gdd
-				diffthis
-					exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+  let filetype=&ft
+    diffthis
+      vnew | r # | normal! 1Gdd
+        diffthis
+          exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 
@@ -146,6 +145,22 @@ nnoremap k kzz
 map <C-\> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto Commands
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autoreload file on change
+set autoread
+autocmd CursorHold * checktime
+
+" Remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Force Syntax highlighting for certain  file ext
+autocmd BufRead, BufNewFile *.jspf,*.tag set filetype=jsp
+
+" Work settings for trailing newlines
+au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
