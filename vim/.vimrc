@@ -157,10 +157,10 @@ autocmd CursorHold * checktime
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Force Syntax highlighting for certain  file ext
-autocmd BufRead, BufNewFile *.jspf,*.tag set filetype=jsp
+autocmd BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Work settings for trailing newlines
-au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=4 sts=4 ts=4 noet
+au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
