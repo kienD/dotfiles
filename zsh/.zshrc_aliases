@@ -60,6 +60,7 @@ alias github-pulls='$HOME/pkgs/github-pulls/ && npm run dev &'
 # Gitpr
 alias gitpr="$HOME/pkgs/git-tools/git-pull-request/git-pull-request.sh"
 alias gitpr-bryce='gitpr -u bryceosterhaus -b ee-6.2.x submit'
+alias gitpr-calvin='gitpr -u CalvinKeum -b ee-6.2.x submit'
 alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
 alias gitpr-matt='gitpr -u matthewkong -b ee-6.2.x submit'
 alias gitpr-mike='gitpr -u mthadley -b ee-6.2.x submit'
