@@ -26,7 +26,11 @@ keycode 9 = Escape asciitilde Escape
 !
 ! Super + BackSpace = Delete
 keycode 22 = BackSpace BackSpace Delete
-
+!
+! Super + Home
+keycode 56 = b B Home
+keycode 57 = n N End
+!
 ! Function Keys
 keycode  10 = 1 exclam F1 exclam
 keycode  11 = 2 at F2 at
