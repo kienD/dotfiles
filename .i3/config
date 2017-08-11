@@ -242,4 +242,4 @@ exec google-chrome-stable --restore-last-session
 exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
 exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
 
-exec xautolock -locker i3lock -fi ~/Pictures/wallpapers/unkown-woman.jpg 
+exec xautolock -locker i3lock -fi ~/Pictures/wallpapers/unknown-woman.jpg
