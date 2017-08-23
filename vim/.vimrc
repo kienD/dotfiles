@@ -69,7 +69,7 @@ syntax on
 set background=dark
 set dir=/tmp
 set expandtab
-set guifont=Source\ Code\ Pro\ 10
+set guifont=Source\ Code\ Pro\ 14
 set hlsearch
 set ignorecase
 set mouse=a
@@ -82,6 +82,9 @@ set splitright
 set sts=2
 set tabstop=2
 set t_Co=256
+set ttymouse=sgr
+set term=rxvt-256color
+
 
 " Set clipboard as shared between X session and Vim
 set clipboard=unnamedplus
