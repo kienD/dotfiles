@@ -62,6 +62,7 @@ alias gitpr="$HOME/pkgs/git-tools/git-pull-request/git-pull-request.sh"
 alias gitpr-bryce='gitpr -u bryceosterhaus -b ee-6.2.x submit'
 alias gitpr-calvin='gitpr -u CalvinKeum -b ee-6.2.x submit'
 alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
+alias gitpr-loop-release='gitpr -u wesleygong -b loop-release submit'
 alias gitpr-matt='gitpr -u matthewkong -b ee-6.2.x submit'
 alias gitpr-mike='gitpr -u mthadley -b ee-6.2.x submit'
 alias gitpr-nate='gitpr -u natecavanaugh -b ee-6.2.x submit'
@@ -145,7 +146,7 @@ echo ---------------- marketplace-portlet ---------------- && cd $HOME/Liferay/e
 echo ---------------- url-metadata-scraper-web ---------------- && cd $HOME/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
 echo ---------------- portal-compat-hook ---------------- && cd $HOME/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
 echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/token-auth-portlet && acd
-echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && acd && lsl'
+echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && anrw'
 
 alias ant-fs='ant format-source'
 
@@ -158,6 +159,7 @@ alias dir-watcher-run='dir-watcher && gw' # Remove
 alias dist-clean='gco -- $HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/*'
 alias lpr='loop && anrw'
 alias dwr='dir-watcher && gw'
+alias adwr='reset-theme && dwr'
 
 alias ee-bundles='$HOME/Liferay/ee-bundles/tomcat/bin/'
 alias ee-bundles-run='ee-bundles && cr'
@@ -168,7 +170,8 @@ alias ee-plugins='$HOME/Liferay/ee-plugins/'
 alias ee-portal='$HOME/Liferay/ee-portal/'
 
 alias loop='$HOME/Liferay/ee-plugins/portlets/loop-portlet/'
-alias loop-run='loop && nrw'
+alias loop-run='loop && anrw'
+alias lr = 'loop-run'
 alias reset-theme='theme && acd'
 alias theme='$HOME/Liferay/ee-plugins/themes/loop-theme/'
 
@@ -196,3 +199,7 @@ echo ---------------- EE-PLUGINS ---------------- && cd $HOME/Liferay/ee-plugins
 
 # move loop portlet to bundle
 alias loop-refresh='cp $HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* $HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
+
+
+# fix resolution for LVDS
+alias fixres='xrandr --newmode "1920x1080_60.00" 173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync && xrandr --addmode LVDS-1-1 1920x1080_60.00'
