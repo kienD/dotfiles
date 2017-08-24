@@ -28,7 +28,7 @@ set $indicator                  #03C0FF
 font $FONT
 
 # Gap size
-gaps inner 40
+gaps inner 34
 
 # Borders
 for_window [class="^.*"] border pixel $BORDER_SIZE
@@ -207,27 +207,30 @@ bindsym $mod+space exec rofi -show run
 ##############################################################################
 
 # Pulse Audio Controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up  5 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down 5 #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pulseaudio-ctl mute  # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pulseaudio-ctl mute-input # mute mic
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
-#bindsym XF86AudioPlay exec playerctl play
-#bindsym XF86AudioPause exec playerctl pause
-#bindsym XF86AudioNext exec playerctl next
-#bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 ##############################################################################
 # Startup Programs
 ##############################################################################
 
-exec xrandr --setprovideroutputsource nouveau Intel
+# exec xrandr --setprovideroutputsource nouveau Intel
 exec compton -bcCfG --detect-client-opacity --fade-delta=5 --shadow-opacity=0.5 --shadow-offset-x=-5 --shadow-offset-y=-5 &
 exec --no-startup-id blueman-applet
+# exec --no-startup-id nm-applet
+exec --no-startup-id powertop --auto-tune
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id powertop --auto-tune
@@ -235,11 +238,11 @@ exec --no-startup-id syndaemon -i 0.5 -t -K -R
 
 exec guake
 exec nitrogen --restore &
-exec redshift -l 34.132268:-117.961578
+exec redshift -l 34.132268:-117.961578 -t 6500k:2200k
 exec_always --no-startup-id "/home/kdo/dotfiles/scripts/polybar-run"
 
-exec google-chrome-stable --force-device-scale-factor=1.2 --restore-last-session
-exec --no-startup-id "google-chrome-stable  --force-device-scale-factor=1.2 --app=https://liferayeng.slack.com/messages/frontend-dev"
-exec --no-startup-id "google-chrome-stable --force-device-scale-factor=1.2 --app=https://web.skype.com"
+exec google-chrome-stable --restore-last-session
+# exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
+# exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
 
 exec xautolock -locker i3lock -fi ~/Pictures/wallpapers/unknown-woman.jpg

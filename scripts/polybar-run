@@ -2,8 +2,8 @@
 
 killall polybar
 
-polybar bar1 -c ~/polybar/polybar.conf &
-polybar bar2 -c ~/polybar/polybar.conf &
-polybar topbar1 -c ~/polybar/polybar.conf &
-polybar topbar2 -c ~/polybar/polybar.conf &
+polybar bar1 -c ~/dotfiles/polybar/polybar.conf &
+polybar bar2 -c ~/dotfiles/polybar/polybar.conf &
+polybar topbar1 -c ~/dotfiles/polybar/polybar.conf &
+polybar topbar2 -c ~/dotfiles/polybar/polybar.conf &
 

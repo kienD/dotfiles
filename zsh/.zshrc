@@ -26,6 +26,9 @@ then
 	source $HOME/.zshrc_aliases
 fi
 
+# autojump
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh autoload -U compinit && compinit -u
+
 # Functions
 
 # Loop
@@ -68,6 +71,9 @@ function lsl {
 		ln -f "$file" "$dst"
 	done
 }
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
 
 # Vim - disable Ctrl-S and Ctrl-Q in terminals
 stty -ixon

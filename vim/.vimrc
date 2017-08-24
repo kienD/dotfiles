@@ -87,7 +87,6 @@ set t_Co=256
 set ttymouse=sgr
 set term=rxvt-256color
 
-
 " Set clipboard as shared between X session and Vim
 set clipboard=unnamedplus
 
