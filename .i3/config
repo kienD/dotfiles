@@ -10,11 +10,11 @@ set $BORDER_SIZE 1
 
 set $bg_active                  #667F86
 set $bg_inactive                #002B36
-set bg_urgent                   #FF2800
+set $bg_urgent                   #FF2800
 
 set $border_active              $bg_active
 set $border_inactive            $bg_inactive
-set $border_urgent              $B27B78
+set $border_urgent              #B27B78
 
 set $text_active                #FDFEFF
 set $text_inactive              #212121
