@@ -39,6 +39,7 @@ do
     if ! DPActive && DPConnected
     then
         ActivateDP
+        nitrogen --restore
     fi
 
     if DPActive && ! DPConnected
