@@ -12,7 +12,7 @@ export UPDATE_ZSH_DAYS=14
 HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(alias-tips git)
+plugins=(alias-tips git git-open)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
@@ -27,6 +27,27 @@ then
 fi
 
 # Functions
+
+# Submit pull-request
+function submit-pr {
+	pipeVal=$(< /dev/stdin);
+
+	branch=$(get_branch)
+
+	if [ "$2" ]; then
+		branch="$2"
+	fi
+
+	if [ "$1" ]; then
+		gh pr --submit "$1" --title "$pipeVal" --description 'Jira Issue: '"[$branch](https://issues.liferay.com/browse/$branch)"'';
+	else
+		echo -e "Please enter correct format $fg_bold[red]submit <USER> <BRANCH>$reset_color"
+	fi
+}
+
+function get-branch {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
 
 # function lsl {
 # 	local src_dir="$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot"
@@ -52,6 +73,7 @@ fi
 # 	done
 # }
 
+# Loop
 function copyLoopJsp {
 	local src_dir="$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot"
 	local dst_dir="$HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/"
