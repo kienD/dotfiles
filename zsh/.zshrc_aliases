@@ -139,13 +139,15 @@ function sfm {
 # Loop Project
 alias deploy-loop='
 echo ---------------- loop-theme ---------------- && cd $HOME/Liferay/ee-plugins/themes/loop-theme && acd &&
+echo ---------------- loop-shared ---------------- && cd $HOME/Liferay/ee-plugins/shared/loop-shared && acd &&
 echo ---------------- push-notifications-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/push-notifications-portlet && acd &&
 echo ---------------- asset-entry-set-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
 echo ---------------- asset-sharing-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
 echo ---------------- marketplace-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
 echo ---------------- url-metadata-scraper-web ---------------- && cd $HOME/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
 echo ---------------- portal-compat-hook ---------------- && cd $HOME/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
-echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/token-auth-portlet && acd
+echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/token-auth-portlet && acd &&
+echo ---------------- elasticsearch-web ---------------- && cd $HOME/Liferay/ee-plugins/webs/elasticsearch-web && acd &&
 echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && anrw'
 
 alias ant-fs='ant format-source'
