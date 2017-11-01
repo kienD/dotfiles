@@ -2,12 +2,13 @@
 
 import getpass
 import os
-import pygit2
 import subprocess
 import sys
+
+import pygit2
 import requests
 
-COOKIES_PATH = '/tmp/jira-tools'
+COOKIES_PATH = '/tmp/jira-tools' # look into using the $TMPDIR env variable before falling back to tmp
 REPO_PATH = '/home/kdo/Liferay/ee-plugins'
 SESSION_API_URL = 'https://issues.liferay.com/rest/auth/1/session'
 
@@ -51,7 +52,7 @@ def get_title(branch_name):
 
     url = 'https://issues.liferay.com/rest/api/2/issue/' + branch_name + '?fields=summary'
 
-    request = requests.get(url, cookies=get_cookies())
+    request = requests.get(url, cookies=cookies)
 
     if request.status_code == 401:
         create_new_session()
@@ -74,6 +75,6 @@ def main():
 
     description = 'Jira Issue: [' + branch_name + '](https://issues.liferay.com/browse/' + branch_name + ')'
 
-    subprocess.call(['gh', 'pr', '-s', sys.argv[1], '-b', sys.argv[2], '-t',  title, '-D', description])
+    subprocess.call(['gh', 'pr', '-s', sys.argv[1], '-b', sys.argv[2], '-t', title, '-D', description])
 
 main()

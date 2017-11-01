@@ -57,16 +57,17 @@ alias gsp-master='g stash && gpr-master && gstp'
 # Github-pulls
 alias github-pulls='$HOME/pkgs/github-pulls/ && npm run dev &'
 
-# Gitpr
-alias gitpr="$HOME/pkgs/git-tools/git-pull-request/git-pull-request.sh"
-alias gitpr-bryce='gitpr -u bryceosterhaus -b ee-6.2.x submit'
-alias gitpr-calvin='gitpr -u CalvinKeum -b ee-6.2.x submit'
-alias gitpr-evan='gitpr -u ethib137 -b ee-6.2.x submit'
-alias gitpr-loop-release='gitpr -u wesleygong -b loop-release submit'
-alias gitpr-matt='gitpr -u matthewkong -b ee-6.2.x submit'
-alias gitpr-mike='gitpr -u mthadley -b ee-6.2.x submit'
-alias gitpr-nate='gitpr -u natecavanaugh -b ee-6.2.x submit'
-alias gitpr-wes='gitpr -u wesleygong -b ee-6.2.x submit'
+# ghpr
+alias ghpr='jira_tools.py'
+alias ghpr-bryce='ghpr bryceosterhaus ee-6.2.x'
+alias ghpr-calvin='ghpr CalvinKeum ee-6.2.x'
+alias ghpr-evan='ghpr ethib137 ee-6.2.x'
+alias ghpr-josh='ghpr jwu910 ee-6.2.x'
+alias ghpr-loop-release='ghpr wesleygong loop-release'
+alias ghpr-matt='ghpr matthewkong ee-6.2.x'
+alias ghpr-mike='ghpr mthadley ee-6.2.x'
+alias ghpr-nate='ghpr natecavanaugh ee-6.2.x'
+alias ghpr-wes='ghpr wesleygong ee-6.2.x'
 
 
 # Gradlew from any level
