@@ -24,10 +24,6 @@ def get_credentials():
     return requests.auth.HTTPBasicAuth(username, password)
 
 def get_cookies():
-    print(os.path.exists(COOKIES_PATH))
-    if os.path.exists(COOKIES_PATH):
-        print(os.path.getsize(COOKIES_PATH) > 0)
-
     if os.path.exists(COOKIES_PATH) and os.path.getsize(COOKIES_PATH) > 0:
         file = open(COOKIES_PATH, 'r')
 
@@ -47,7 +43,10 @@ def get_title(branch_name):
 
         request = requests.get(url, auth=auth)
 
-        save_cookies(request.cookies['JSESSIONID'])
+        if request.status_code == 200:
+            save_cookies(request.cookies['JSESSIONID'])
+        else:
+            sys.exit()
 
     if request.status_code == 401:
         os.remove(COOKIES_PATH)
@@ -56,7 +55,7 @@ def get_title(branch_name):
     elif request.status_code == 200:
         return branch_name + ' ' + request.json()['fields']['summary']
     else:
-        print('We cannot complete your request at this time.  Please try again later.')
+        print(request.json()['errorMessages'][0])
 
 def save_cookies(cookies):
     file = open(COOKIES_PATH, 'w')
