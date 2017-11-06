@@ -9,6 +9,8 @@ ln -is ~/dotfiles/.i3/ ~/.i3/
 ln -is ~/dotfiles/.xinitrc ~/.xinitrc
 ln -is ~/dotfiles/Xmodmap/.Xmodmap ~/.Xmodmap
 ln -is ~/dotfiles/polybar/ ~/.polybar
+ln -is ~/dotfiles/git/.gitignore_global ~/.gitignore_global
+ln -is ~/dotfiles/xorg/.Xresources ~/.Xresources
 
 echo "Deployment complete!"
 
