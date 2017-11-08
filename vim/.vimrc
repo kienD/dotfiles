@@ -93,10 +93,11 @@ set clipboard=unnamedplus
 let g:plug_timeout = 5
 
 " Airline
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 
 " CtrlP Vim
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
@@ -110,6 +111,9 @@ let g:elm_detailed_complete = 1
 
 " Indent Line
 let g:indentLine_char = '·'
+
+" Nerdtree
+let NERDTreeShowHidden=1
 
 let g:jsx_ext_required = 0
 
