@@ -77,3 +77,6 @@ source /usr/share/nvm/init-nvm.sh
 
 # Vim - disable Ctrl-S and Ctrl-Q in terminals
 stty -ixon
+
+# Adding autocomplete for 'we'
+[ -f ~/.we_autocomplete ] && source ~/.we_autocomplete
