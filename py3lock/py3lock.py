@@ -1,10 +1,6 @@
-#!/usr/bin/python2.7
-# -*- coding: utf-8 -*-
-# vim:ts=2:sw=2:expandtab
-
 import os
-import xcb
-from xcb.xproto import *
+import xcffib
+from xcffib.xproto import *
 from PIL import Image
 
 XCB_MAP_STATE_VIEWABLE = 2
@@ -15,12 +11,12 @@ def screenshot():
 def xcb_fetch_windows():
   """ Returns an array of rects of currently visible windows. """
 
-  x = xcb.connect()
+  x = xcffib.connect()
   root = x.get_setup().roots[0].root
 
   rects = []
 
-  # iterate through top-level windows
+  #iterate through top-level windows
   for child in x.core.QueryTree(root).reply().children:
     # make sure we only consider windows that are actually visible
     attributes = x.core.GetWindowAttributes(child).reply()
@@ -34,10 +30,14 @@ def xcb_fetch_windows():
 def obscure_image(image):
   """ Obscures the given image. """
   size = image.size
-  pixel_size = 9
+  pixel_size = 10
 
-  image = image.resize((size[0] / pixel_size, size[1] / pixel_size), Image.NEAREST)
-  image = image.resize((size[0], size[1]), Image.NEAREST)
+  height = size[1] // pixel_size
+  width = size[0] // pixel_size
+
+  if height > 1 or width > 1:
+    image = image.resize((width, height), Image.NEAREST)
+    image = image.resize((size[0], size[1]), Image.NEAREST)
 
   return image
 
