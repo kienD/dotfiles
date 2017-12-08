@@ -12,8 +12,8 @@ MONITOR=LVDS1
 
 function ActivateDP {
     echo "Switching to DP1"
-    exec ~/dotfiles/arandr/work_dual_screen.sh
-    MONITOR=DP-1
+    exec ~/dotfiles/arandr/dual_screen_1080p.sh
+    MONITOR=DP-0
 }
 
 function DeactivateDP {
@@ -25,11 +25,11 @@ function DeactivateDP {
 # functions to check if DP is connected and in use
 
 function DPActive {
-    [ $MONITOR = "DP-1" ]
+    [ $MONITOR = "DP-0" ]
 }
 
 function DPConnected {
-    xrandr | grep "^DP-1" | grep -w connected
+    xrandr | grep "^DP-0" | grep -w connected
 }
 
 # actual script
