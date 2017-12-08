@@ -8,7 +8,7 @@ rofi.color-normal:                   #FFFFFF,#525D76,#F5F5F5,#5294E2,#FFFFFF
 rofi.color-urgent:                   #FFFFFF,#DC322F,#F5F5F5,#5294E2,#DC322F
 rofi.color-window:                   #FFFFFF,#F5F5F5
 
-rofi.font: Source Code Pro 14
+rofi.font: Source Code Pro 12
 rofi.eh: 2
 rofi.hide-scrollbar: true
 rofi.lines: 10
@@ -29,7 +29,7 @@ URxvt.saveLines: 20000
 URxvt.background: [90]#000000
 URxvt.depth: 32
 URxvt.cursorColor: #D0D0D0
-URxvt.font: xft:Source Code Pro:size=18
+URxvt.font: xft:Source Code Pro:pixelsize=14, xft:Inconsolata\ for\ Powerline:pixelsize=14
 URxvt.foreground: #D0D0D0
 URxvt.letterSpace: -1
 
