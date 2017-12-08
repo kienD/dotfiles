@@ -44,14 +44,17 @@ alias gfind="g log --grep"
 alias gitk="/usr/bin/wish $(which gitk)"
 alias gpr='git pull --rebase'
 alias gpr-ee='git pull --rebase upstream ee-6.2.x'
+alias gpr-faro='git pull --rebase upstream 7.0.x-private'
 alias gpr-master='git pull --rebase upstream master'
 alias gpush='git push'
 alias gpush-ee='git push origin ee-6.2.x'
+alias gpush-faro='git push origin 7.0.x-private'
 alias gpush-master='git push origin master'
 alias gc='git checkout'
 alias gcb='git checkout -b'
 alias gsgco='g stash && gco'
 alias gsp-ee='g stash && gpr-ee && gstp'
+alias gsp-faro='g stash && gpr-faro && gstp'
 alias gsp-master='g stash && gpr-master && gstp'
 
 # Github-pulls
@@ -62,6 +65,7 @@ alias ghpr='jira_tools.py'
 alias ghpr-bryce='ghpr bryceosterhaus ee-6.2.x'
 alias ghpr-calvin='ghpr CalvinKeum ee-6.2.x'
 alias ghpr-evan='ghpr ethib137 ee-6.2.x'
+alias ghpr-faro='ghpr liferay 7.0.x-private'
 alias ghpr-josh='ghpr jwu910 ee-6.2.x'
 alias ghpr-loop-release='ghpr wesleygong loop-release'
 alias ghpr-matt='ghpr matthewkong ee-6.2.x'
@@ -87,7 +91,7 @@ fi
 alias gw='gulp watch'
 
 # Lock screen
-alias lock='i3lock -fi ~/Pictures/wallpapers/rick-wallpaper.png'
+alias lock='/home/kdo/dotfiles/py3lock/py3lock.py'
 
 # Npm
 alias npm-check='npm list | grep'
@@ -99,10 +103,10 @@ alias anrw='acd && lsl && nrw'
 alias preview='xdg-open'
 
 # Skype
-alias skype='google-chrome --force-device-scale-factor=1.2 --app=https://web.skype.com'
+alias skype='google-chrome --app=https://web.skype.com'
 
 # Slack
-alias slack='google-chrome --force-device-scale-factor=1.2 --app=https://liferayeng.slack.com/messages/frontend-dev'
+alias slack='google-chrome --app=https://liferayeng.slack.com/messages/frontend-dev'
 
 # thefuck
 eval $(thefuck --alias)
@@ -139,23 +143,23 @@ function sfm {
 
 # Loop Project
 alias deploy-loop='
-echo ---------------- loop-theme ---------------- && cd $HOME/Liferay/ee-plugins/themes/loop-theme && acd &&
-echo ---------------- loop-shared ---------------- && cd $HOME/Liferay/ee-plugins/shared/loop-shared && acd &&
-echo ---------------- push-notifications-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/push-notifications-portlet && acd &&
-echo ---------------- asset-entry-set-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/asset-entry-set-portlet && acd &&
-echo ---------------- asset-sharing-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/asset-sharing-portlet && acd &&
-echo ---------------- marketplace-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/marketplace-portlet && acd &&
-echo ---------------- url-metadata-scraper-web ---------------- && cd $HOME/Liferay/ee-plugins/webs/url-metadata-scraper-web && acd &&
-echo ---------------- portal-compat-hook ---------------- && cd $HOME/Liferay/ee-plugins/hooks/portal-compat-hook && acd &&
-echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/token-auth-portlet && acd &&
-echo ---------------- elasticsearch-web ---------------- && cd $HOME/Liferay/ee-plugins/webs/elasticsearch-web && acd &&
-echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && anrw'
+echo ---------------- loop-theme ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && acd &&
+echo ---------------- loop-shared ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/shared/loop-shared && acd &&
+echo ---------------- push-notifications-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/push-notifications-portlet && acd &&
+echo ---------------- asset-entry-set-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/asset-entry-set-portlet && acd &&
+echo ---------------- asset-sharing-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/asset-sharing-portlet && acd &&
+echo ---------------- marketplace-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/marketplace-portlet && acd &&
+echo ---------------- url-metadata-scraper-web ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/webs/url-metadata-scraper-web && acd &&
+echo ---------------- portal-compat-hook ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/hooks/portal-compat-hook && acd &&
+echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/token-auth-portlet && acd &&
+echo ---------------- elasticsearch-web ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/webs/elasticsearch-web && acd &&
+echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && anrw'
 
 alias ant-fs='ant format-source'
 
 alias ant-fs-loop='
-cd $HOME/Liferay/ee-plugins/themes/loop-theme && ant-fs &&
-cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && ant-fs'
+cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && ant-fs &&
+cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && ant-fs'
 
 alias dir-watcher='$HOME/Liferay/dir-watcher/'
 alias dir-watcher-run='dir-watcher && gw' # Remove
@@ -164,30 +168,34 @@ alias lpr='loop && anrw'
 alias dwr='dir-watcher && gw'
 alias adwr='reset-theme && dwr'
 
-alias ee-bundles='$HOME/Liferay/ee-bundles/tomcat/bin/'
+alias ee-bundles='$HOME/Liferay/ee-6.2.x/bundles/tomcat-7.0.62'
 alias ee-bundles-run='ee-bundles && cr'
 alias eebr='ee-bundles && cr'
 
-alias ee-plugins='$HOME/Liferay/ee-plugins/'
+alias ee-plugins='$HOME/Liferay/ee-6.2.x/ee-plugins/'
 
-alias ee-portal='$HOME/Liferay/ee-portal/'
+alias ee-portal='$HOME/Liferay/ee-7.0.x/ee-portal/'
 
-alias loop='$HOME/Liferay/ee-plugins/portlets/loop-portlet/'
+alias faro-bundles='$HOME/Liferay/ee-7.0.x/bundles/tomcat-8.0.32'
+alias faro-bundles-run='faro-bundles && cr'
+alias farobr='faro-bundles && cr'
+
+alias loop='$HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/'
 alias loop-run='loop && anrw'
 alias lr='loop-run'
 alias reset-theme='theme && acd'
-alias theme='$HOME/Liferay/ee-plugins/themes/loop-theme/'
+alias theme='$HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme/'
 
 alias loop-final='loop && npm test && ant-fs-loop && sfm-loop'
 
 alias sfm-loop='
-cd $HOME/Liferay/ee-plugins/themes/loop-theme && sfme &&
-cd $HOME/Liferay/ee-plugins/portlets/loop-portlet && sfme'
+cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && sfme &&
+cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && sfme'
 
 alias sfme='sfm ee-6.2.x'
 
 alias reset-dist='
-cd $HOME/Liferay/ee-plugins/portlets/loop-portlet &&
+cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet &&
 git checkout -- docroot/js/dist/* webpack.config.js'
 
 # Update Liferay
@@ -201,7 +209,7 @@ alias update-loop='echo ---------------- EE-PORTAL ---------------- && cd $HOME/
 echo ---------------- EE-PLUGINS ---------------- && cd $HOME/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
 
 # move loop portlet to bundle
-alias loop-refresh='cp $HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/* $HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
+alias loop-refresh='cp $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/docroot/js/dist/* $HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
 
 
 # fix resolution for LVDS

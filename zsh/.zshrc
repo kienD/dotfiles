@@ -55,8 +55,8 @@ function copyJsp {
 }
 
 function lsl {
-	local src_dir="$HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist"
-	local dst_dir="$HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist"
+	local src_dir="$HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/docroot/js/dist"
+	local dst_dir="$HOME/Liferay/ee-6.2.x/bundles/tomcat-7.0.62/webapps/loop-portlet/js/dist"
 
 	for file in "$src_dir"/*; do
 		local filename=${file##*/}
