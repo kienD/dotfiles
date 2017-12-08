@@ -4,62 +4,48 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
-" VUNDLE
+" VimPlug
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocompatible              " be improved, required
-filetype off                  " required
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-"let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 " Plugins
-Plugin 'airblade/vim-gitgutter'
-Plugin 'alvan/vim-closetag'
-Plugin 'christoomey/vim-sort-motion'
-Plugin 'crusoexia/vim-monokai'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ElmCast/elm-vim'
-Plugin 'henrik/vim-indexed-search'
-" Plugin 'itchyny/lightline.vim'
-Plugin 'jiangmiao/auto-pairs'
-" Plugin 'mthadley/syntastic-csf'
-Plugin 'rudes/vim-java'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips' " Maybe use this
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'valloric/youcompleteme'
-Plugin 'vim-airline/vim-airline'
-Plugin 'w0rp/ale'
-Plugin 'Yggdroot/indentline'
+Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
+Plug 'christoomey/vim-sort-motion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ElmCast/elm-vim'
+Plug 'henrik/vim-indexed-search'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-plug'
+" Plug 'mthadley/syntastic-csf'
+Plug 'rudes/vim-java'
+Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/syntastic'
+" Plug 'SirVer/ultisnips' " Maybe use this
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'valloric/youcompleteme'
+Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
+Plug 'Yggdroot/indentline'
 
 " Syntax Files
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Themes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'whatyouhide/vim-gotham'
+Plug 'crusoexia/vim-monokai'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
@@ -71,7 +57,7 @@ syntax on
 set background=dark
 set dir=/tmp
 set expandtab
-" set guifont=Source\ Code\ Pro\ 14
+set guifont=Source\ Code\ Pro\ 10
 set hlsearch
 set ignorecase
 set mouse=a
@@ -83,39 +69,33 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
-set t_Co=256
-set ttymouse=sgr
 set term=rxvt-256color
-
+set ttymouse=urxvt
+set t_Co=256
 
 " Set clipboard as shared between X session and Vim
 set clipboard=unnamedplus
 
-let g:plug_timeout = 5
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Airline
-" let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_symbols.branch = 'λ'
+let g:airline_symbols.linenr = '≡'
+let g:airline_symbols.maxlinenr = 'ln'
 let g:airline#extensions#ale#enabled = 1
 
-" CtrlP Vim
-let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
-  \ }
+" Ale
+highlight ALEError ctermbg=Blue
 
-" ElmCast/elm-vim
-let g:elm_setup_keybindings = 0
-let g:elm_format_autosave = 1
-let g:elm_make_show_warnings = 1
-let g:elm_detailed_complete = 1
-
-" Indent Line
-let g:indentLine_char = '·'
-
-let g:jsx_ext_required = 0
-
-set laststatus=2
-
+" Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.xml"
 let g:mta_filetypes = {
   \ 'html' : 1,
@@ -126,6 +106,41 @@ let g:mta_filetypes = {
   \ 'jsp': 1
   \}
 
+" CtrlP Vim
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
+  \ }
+
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'a'
+
+" ElmCast/elm-vim
+let g:elm_detailed_complete = 1
+let g:elm_format_autosave = 1
+let g:elm_make_show_warnings = 1
+let g:elm_setup_keybindings = 0
+
+" Indent Line
+let g:indentLine_char = '•'
+
+let g:jsx_ext_required = 0
+
+set laststatus=2
+
+" NerdTree
+let NERDTreeShowHidden = 1
+
+" Syntastic
+let g:syntastic_css_checkers = ['csf']
+let g:syntastic_scss_checkers = ['csf']
+let g:syntastic_javascript_checkers = ['csf']
+
+" vim-javascript
+let g:jsx_ext_required = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 function! s:DiffWithSaved()
   let filetype=&ft
     diffthis
@@ -135,6 +150,7 @@ function! s:DiffWithSaved()
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 
+" Key Bindings
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -142,7 +158,6 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap j jzz
 nnoremap k kzz
 
-" Key Bindings
 map <C-\> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
