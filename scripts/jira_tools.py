@@ -9,13 +9,20 @@ import pygit2
 import requests
 
 COOKIES_PATH = '/tmp/jira-tools' # look into using the $TMPDIR env variable before falling back to tmp
-REPO_PATH = '/home/kdo/Liferay/ee-plugins'
+REPO_PATH = '/home/kdo/Liferay/ee-7.0.x/com-liferay-osb-faro-private'
 SESSION_API_URL = 'https://issues.liferay.com/rest/auth/1/session'
 
 def get_branch_name():
-    repo = pygit2.Repository(REPO_PATH)
+    branch_name = ''
 
-    return repo.head.shorthand
+    if len(sys.argv) > 3:
+        branch_name = sys.argv[3]
+    elif branch_name == '':
+        repo = pygit2.Repository(REPO_PATH)
+
+        branch_name = repo.head.shorthand
+
+    return branch_name
 
 def get_credentials():
     username = input('Username: ')
