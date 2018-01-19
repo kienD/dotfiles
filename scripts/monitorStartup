@@ -1,0 +1,50 @@
+#!/usr/bin/python3
+
+import subprocess
+import time
+
+
+MONITOR = 'LVDS'
+
+
+def activate_dp():
+    global MONITOR
+    MONITOR = 'DP'
+
+    subprocess.call(['/home/kdo/dotfiles/arandr/dual_screen_1080p.sh'])
+    subprocess.call(['nitrogen', '--restore'])
+    subprocess.call(['/home/kdo/dotfiles/scripts/polybar-run'])
+
+
+def deactivate_dp():
+    global MONITOR
+    MONITOR = 'LVDS'
+
+    subprocess.call(['/home/kdo/dotfiles/arandr/single_screen.sh'])
+    subprocess.call(['nitrogen', '--restore'])
+    subprocess.call(['/home/kdo/dotfiles/scripts/polybar-run'])
+
+
+def dp_active():
+    return MONITOR == 'DP'
+
+
+def dp_connected():
+    xrandr_output = subprocess.check_output(['xrandr']).decode('utf-8')
+
+    display_count = xrandr_output.count(' connected ')
+
+    return display_count >= 2
+
+
+def main():
+    while True:
+        if dp_connected() and not dp_active():
+            activate_dp()
+        elif not dp_connected() and dp_active():
+            deactivate_dp()
+
+    time.sleep(1)
+
+
+main()
