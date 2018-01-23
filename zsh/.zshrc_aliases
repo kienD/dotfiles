@@ -36,35 +36,31 @@ alias dotfiles='$HOME/dotfiles/'
 alias pkgs='$HOME/pkgs/'
 
 # Git
+alias gc='git checkout'
 alias gca='g commit --amend'
+alias gcb='git checkout -b'
 alias gcm='g commit -m'
-alias gco='g checkout'
-alias gs="git status"
+alias gco-faro='gco 7.0.x-private'
 alias gfind="g log --grep"
 alias gitk="/usr/bin/wish $(which gitk)"
-alias gpr='git pull --rebase'
 alias gpr-ee='git pull --rebase upstream ee-6.2.x'
 alias gpr-faro='git pull --rebase upstream 7.0.x-private'
 alias gpr-master='git pull --rebase upstream master'
-alias gpush='git push'
+alias gpr='git pull --rebase'
 alias gpush-ee='git push origin ee-6.2.x'
 alias gpush-faro='git push origin 7.0.x-private'
 alias gpush-master='git push origin master'
-alias gc='git checkout'
-alias gcb='git checkout -b'
+alias gpush='git push'
+alias gs="git status"
 alias gsgco='g stash && gco'
 alias gsp-ee='g stash && gpr-ee && gstp'
 alias gsp-faro='g stash && gpr-faro && gstp'
 alias gsp-master='g stash && gpr-master && gstp'
 
-# Github-pulls
-alias github-pulls='$HOME/pkgs/github-pulls/ && npm run dev &'
-
 # ghpr
 alias ghpr='jira_tools.py'
 alias ghpr-bryce='ghpr bryceosterhaus ee-6.2.x'
 alias ghpr-calvin='ghpr CalvinKeum ee-6.2.x'
-alias ghpr-evan='ghpr ethib137 ee-6.2.x'
 alias ghpr-faro='ghpr liferay 7.0.x-private'
 alias ghpr-josh='ghpr jwu910 ee-6.2.x'
 alias ghpr-loop-release='ghpr wesleygong loop-release'
@@ -96,7 +92,9 @@ alias lock='/home/kdo/dotfiles/py3lock/py3lock.py'
 # Npm
 alias npm-check='npm list | grep'
 alias nrb='npm run build'
+alias nrs='npm run start'
 alias nrw='npm run watch'
+
 alias anrw='acd && lsl && nrw'
 
 # Preview
@@ -141,6 +139,19 @@ function sfm {
 	fi
 }
 
+# Faro Project
+alias deploy-faro='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && gradle deploy && npm run start'
+alias faro-bundles='$HOME/Liferay/ee-7.0.x/bundles/tomcat-8.0.32/bin'
+alias faro-bundles-run='faro-bundles && cr'
+alias faro-final='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && gradle formatSource &&  npm run test'
+alias farobr='faro-bundles && cr'
+alias gnrs='gradle deploy && nrs'
+alias start-faro-docker='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && gradle startDocker'
+alias sfd='start-faro-docker'
+alias sfdl='start-faro-docker && faro-logs'
+
+alias faro-logs='docker logs -f com-liferay-osb-faro-private'
+
 # Loop Project
 alias deploy-loop='
 echo ---------------- loop-theme ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && acd &&
@@ -163,22 +174,18 @@ cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && ant-fs'
 
 alias dir-watcher='$HOME/Liferay/dir-watcher/'
 alias dir-watcher-run='dir-watcher && gw' # Remove
-alias dist-clean='gco -- $HOME/Liferay/ee-plugins/portlets/loop-portlet/docroot/js/dist/*'
+alias dist-clean='gco -- $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/docroot/js/dist/*'
 alias lpr='loop && anrw'
 alias dwr='dir-watcher && gw'
 alias adwr='reset-theme && dwr'
 
-alias ee-bundles='$HOME/Liferay/ee-6.2.x/bundles/tomcat-7.0.62'
+alias ee-bundles='$HOME/Liferay/ee-6.2.x/bundles/tomcat-7.0.62/bin'
 alias ee-bundles-run='ee-bundles && cr'
 alias eebr='ee-bundles && cr'
 
 alias ee-plugins='$HOME/Liferay/ee-6.2.x/ee-plugins/'
 
 alias ee-portal='$HOME/Liferay/ee-7.0.x/ee-portal/'
-
-alias faro-bundles='$HOME/Liferay/ee-7.0.x/bundles/tomcat-8.0.32'
-alias faro-bundles-run='faro-bundles && cr'
-alias farobr='faro-bundles && cr'
 
 alias loop='$HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/'
 alias loop-run='loop && anrw'
@@ -193,24 +200,6 @@ cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && sfme &&
 cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && sfme'
 
 alias sfme='sfm ee-6.2.x'
-
-alias reset-dist='
-cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet &&
-git checkout -- docroot/js/dist/* webpack.config.js'
-
-# Update Liferay
-alias update-liferay='
-echo ---------------- CE-PORTAL ---------------- && cd $HOME/Liferay/ce-portal && git checkout master && gpr-master;
-echo ---------------- CE-PLUGINS ---------------- && cd $HOME/Liferay/ce-plugins && git checkout master && gpr-master;
-echo ---------------- EE-PORTAL ---------------- && cd $HOME/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
-echo ---------------- EE-PLUGINS ---------------- && cd $HOME/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
-
-alias update-loop='echo ---------------- EE-PORTAL ---------------- && cd $HOME/Liferay/ee-portal && git checkout ee-6.2.x && gpr-ee;
-echo ---------------- EE-PLUGINS ---------------- && cd $HOME/Liferay/ee-plugins && git checkout ee-6.2.x && gpr-ee'
-
-# move loop portlet to bundle
-alias loop-refresh='cp $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/docroot/js/dist/* $HOME/Liferay/ee-bundles/tomcat/webapps/loop-portlet/js/dist/'
-
 
 # fix resolution for LVDS
 alias fixres='xrandr --newmode "1920x1080_60.00" 173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync && xrandr --addmode LVDS-1-1 1920x1080_60.00'
