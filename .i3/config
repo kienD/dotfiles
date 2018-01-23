@@ -232,6 +232,7 @@ exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id powertop --auto-tune
 exec --no-startup-id syndaemon -i 0.5 -t -K -R
+exec --no-startup-id "/home/kdo/dotfiles/scripts/monitorStartup"
 
 exec guake
 exec nitrogen --restore &
