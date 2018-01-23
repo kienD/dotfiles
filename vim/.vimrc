@@ -138,6 +138,9 @@ let g:syntastic_javascript_checkers = ['csf']
 " vim-javascript
 let g:jsx_ext_required = 0
 
+" Vim Sort Motion
+let g:sort_motion_flags = "ui"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""
