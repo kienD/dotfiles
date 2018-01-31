@@ -196,8 +196,11 @@ mouse_warping none
 # General Bindings
 ##############################################################################
 
+# Lockscreen
+bindsym $mod+Escape  exec "/home/kdo/dotfiles/py3lock/py3lock.py"
+
 # Print screen
-bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
+bindsym Print exec scrot -e 'mv $f ~/Pictures/screenshots/' # need to fix this
 
 # Rofi
 bindsym $mod+space exec rofi -show run
@@ -235,12 +238,11 @@ exec --no-startup-id syndaemon -i 0.5 -t -K -R
 exec --no-startup-id "/home/kdo/dotfiles/scripts/monitorStartup"
 
 exec guake
-exec nitrogen --restore &
 exec redshift -l 34.132268:-117.961578
 exec_always --no-startup-id "/home/kdo/dotfiles/scripts/polybar-run"
 
 exec google-chrome-stable --restore-last-session
-exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
-exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
+# exec --no-startup-id "google-chrome-stable --app=https://liferayeng.slack.com/messages/frontend-dev"
+# exec --no-startup-id "google-chrome-stable --app=https://web.skype.com"
 
 exec xautolock -locker /home/kdo/dotfiles/py3lock/py3lock.py

@@ -65,6 +65,7 @@ alias ghpr-faro='ghpr liferay 7.0.x-private'
 alias ghpr-josh='ghpr jwu910 ee-6.2.x'
 alias ghpr-loop-release='ghpr wesleygong loop-release'
 alias ghpr-matt='ghpr matthewkong ee-6.2.x'
+alias ghpr-metal='ghpr metal master'
 alias ghpr-mike='ghpr mthadley ee-6.2.x'
 alias ghpr-nate='ghpr natecavanaugh ee-6.2.x'
 alias ghpr-wes='ghpr wesleygong ee-6.2.x'
@@ -99,12 +100,6 @@ alias anrw='acd && lsl && nrw'
 
 # Preview
 alias preview='xdg-open'
-
-# Skype
-alias skype='google-chrome --app=https://web.skype.com'
-
-# Slack
-alias slack='google-chrome --app=https://liferayeng.slack.com/messages/frontend-dev'
 
 # thefuck
 eval $(thefuck --alias)
@@ -145,7 +140,7 @@ alias faro-bundles='$HOME/Liferay/ee-7.0.x/bundles/tomcat-8.0.32/bin'
 alias faro-bundles-run='faro-bundles && cr'
 alias faro-final='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && gradle formatSource &&  npm run test'
 alias farobr='faro-bundles && cr'
-alias gnrs='gradle deploy && nrs'
+alias gnrs='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && gradle deploy && $HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && nrs'
 alias start-faro-docker='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && gradle startDocker'
 alias sfd='start-faro-docker'
 alias sfdl='start-faro-docker && faro-logs'
