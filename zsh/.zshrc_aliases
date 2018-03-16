@@ -88,7 +88,7 @@ fi
 alias gw='gulp watch'
 
 # Lock screen
-alias lock='/home/kdo/dotfiles/py3lock/py3lock.py'
+alias lock='$HOME/dotfiles/py3lock/py3lock.py'
 
 # Npm
 alias npm-check='npm list | grep'
