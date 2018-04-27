@@ -74,7 +74,7 @@ set ttymouse=xterm2
 set t_Co=256
 
 " Set clipboard as shared between X session and Vim
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
