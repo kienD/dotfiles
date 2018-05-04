@@ -69,8 +69,8 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
-set term=rxvt-256color
-set ttymouse=xterm2
+" set term=rxvt-256color
+" set ttymouse=xterm2
 set t_Co=256
 
 " Set clipboard as shared between X session and Vim
