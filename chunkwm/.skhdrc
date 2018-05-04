@@ -11,6 +11,9 @@ alt - s : chunkc tiling::desktop --layout monocle
 # kill focused window
 shift + alt - q : chunkc tiling::window --close
 
+# open a new instance of iTerm
+shift + alt - return : open -na /Applications/iTerm.app
+
 # change focus
 alt - h : chunkc tiling::window --focus west
 alt - j : chunkc tiling::window --focus south
@@ -28,6 +31,19 @@ shift + alt - l : chunkc tiling::window --warp east
 
 alt - r : chunkc tiling::desktop --rotate 90
 
+# move monitor focus
+# alt - z  : chunkc tiling::monitor -f prev
+# alt - c  : chunkc tiling::monitor -f next
+# alt - 1  : chunkc tiling::monitor -f 1
+# alt - 2  : chunkc tiling::monitor -f 2
+# alt - 3  : chunkc tiling::monitor -f 3
+# alt - 4  : chunkc tiling::monitor -f 4
+# alt - 5  : chunkc tiling::monitor -f 5
+# alt - 6  : chunkc tiling::monitor -f 6
+# alt - 7  : chunkc tiling::monitor -f 7
+# alt - 8  : chunkc tiling::monitor -f 8
+# alt - 9  : chunkc tiling::monitor -f 9
+
 # move focused container to workspace
 shift + alt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
 shift + alt - p : chunkc tiling::window --send-to-desktop prev
@@ -38,3 +54,10 @@ shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
 shift + alt - 4 : chunkc tiling::window --send-to-desktop 4
 shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
 shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
+
+# resize region
+shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
+shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
+
