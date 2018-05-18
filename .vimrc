@@ -184,6 +184,7 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
 """""""""""""""""""""""""""""""""""""""""""""""""""
+runtime macros/matchit.vim
 
 " Break a 3 attribute single-line tag into a multi-line tag
 let @n='f xif xif xif>i'
