@@ -22,13 +22,14 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'henrik/vim-indexed-search'
+Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-plug'
 " Plug 'mthadley/syntastic-csf'
 Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
 " Plug 'scrooloose/syntastic'
-" Plug 'SirVer/ultisnips' " Maybe use this
+Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -57,7 +58,6 @@ syntax on
 set background=dark
 set dir=/tmp
 set expandtab
-set guifont=Source\ Code\ Pro\ 10
 set hlsearch
 set ignorecase
 set mouse=a
@@ -69,13 +69,14 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
-" set term=rxvt-256color
-" set ttymouse=xterm2
 set t_Co=256
 
-" Set clipboard as shared between X session and Vim
-set clipboard=unnamed
+hi Search cterm=NONE
+hi Search ctermbg=White
+hi Search ctermfg=Black
 
+" Set clipboard as shared between X session and Vim
+set clipboard^=unnamed,unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -135,6 +136,13 @@ let g:syntastic_css_checkers = ['csf']
 let g:syntastic_scss_checkers = ['csf']
 let g:syntastic_javascript_checkers = ['csf']
 
+" Ultisnips
+" let g:UltiSnipsExpandTrigger='<c-enter>'
+" let g:UltiSnipsJumpForwardTrigger='<c-j>'
+" let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+" let g:UltiSnipsEditSplit='vertical'
+" let g:UltiSnipsSnippetDirectories=[$HOME.'/dotfiles/vim/snippets']
+
 " vim-javascript
 let g:jsx_ext_required = 0
 
@@ -162,7 +170,7 @@ nnoremap j jzz
 nnoremap k kzz
 
 map <C-\> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
+au StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,13 +178,13 @@ autocmd StdinReadPre * let s:std_in=1
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Autoreload file on change
 set autoread
-autocmd CursorHold * checktime
+au WinEnter * checktime
 
 " Remove trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
+au BufWritePre * :%s/\s\+$//e
 
 " Force Syntax highlighting for certain  file ext
-autocmd BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
+au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Work settings for trailing newlines
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
