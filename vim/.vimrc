@@ -168,6 +168,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap j jzz
 nnoremap k kzz
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 map <C-\> :NERDTreeToggle<CR>
 au StdinReadPre * let s:std_in=1
