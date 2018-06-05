@@ -96,6 +96,8 @@ alias nrb='npm run build'
 alias nrf='npm run format'
 alias nrs='npm run start'
 alias nrt='npm run test'
+alias nrtwa='npm run test -- --watchAll'
+alias nrtu='npm run test -- -u'
 alias nrtw='npm run test -- --watch'
 alias nrw='npm run watch'
 
