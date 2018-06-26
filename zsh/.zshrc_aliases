@@ -140,20 +140,25 @@ function sfm {
 }
 
 # Faro Project
-alias deploy-faro='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && gradle deploy && npm run start'
-alias faro-bundles='$HOME/Liferay/ee-7.0.x/bundles/tomcat-8.0.32/bin'
+alias deploy-faro='$HOME/Liferay/com-liferay-osb-faro-private/osb-faro-web && gradle deploy && npm run start'
+alias faro-bundles='$HOME/Liferay/bundles/tomcat-8.0.32/bin'
 alias faro-bundles-run='faro-bundles && cr'
-alias faro-final='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && gradle formatSource &&  npm run test'
+alias faro-final='$HOME/Liferay/com-liferay-osb-faro-private/osb-faro-web && gradle formatSource &&  npm run test'
 alias farobr='faro-bundles && cr'
-alias gnrs='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew deploy && $HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && nrs'
-alias start-faro-docker='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew startDocker'
-alias create-faro-docker='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew createDocker'
+alias gnrs='$HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deploy && $HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && nrs'
+alias start-faro-docker='$HOME/Liferay/com-liferay-osb-faro-private && ./gradlew startDocker'
+alias create-faro-docker='$HOME/com-liferay-osb-faro-private && ./gradlew createDocker'
 alias cfd='create-faro-docker'
 alias sfd='start-faro-docker'
-alias csfd='cfd && $HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew deploy && sfd && faro-logs'
+alias csfd='cfd && $HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deploy && sfd && faro-logs'
 alias sfdl='start-faro-docker && faro-logs'
 
 alias faro-logs='docker logs -f com-liferay-osb-faro-private'
+
+alias bfjc='
+  nrb &&
+  cp ~/Liferay/faro-js-components/dist/main.css ~/Liferay/com-liferay-osb-faro-private/osb-faro-web/node_modules/faro-js-components/dist/main.css &&
+  cp ~/Liferay/faro-js-components/dist/main.js ~/Liferay/com-liferay-osb-faro-private/osb-faro-web/node_modules/faro-js-components/dist/main.js'
 
 # Loop Project
 alias deploy-loop='
