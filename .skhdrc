@@ -32,17 +32,17 @@ shift + alt - l : chunkc tiling::window --warp east
 alt - r : chunkc tiling::desktop --rotate 90
 
 # move monitor focus
-# alt - z  : chunkc tiling::desktop --focus prev
-# alt - c  : chunkc tiling::desktop --focus next
-# alt - 1  : chunkc tiling::desktop --focus 1
-# alt - 2  : chunkc tiling::desktop --focus 2
-# alt - 3  : chunkc tiling::desktop --focus 3
-# alt - 4  : chunkc tiling::desktop --focus 4
-# alt - 5  : chunkc tiling::desktop --focus 5
-# alt - 6  : chunkc tiling::desktop --focus 6
-# alt - 7  : chunkc tiling::desktop --focus 7
-# alt - 8  : chunkc tiling::desktop --focus 8
-# alt - 9  : chunkc tiling::desktop --focus 9
+alt - z  : chunkc tiling::desktop --focus prev
+alt - c  : chunkc tiling::desktop --focus next
+alt - 1  : chunkc tiling::desktop --focus 1
+alt - 2  : chunkc tiling::desktop --focus 2
+alt - 3  : chunkc tiling::desktop --focus 3
+alt - 4  : chunkc tiling::desktop --focus 4
+alt - 5  : chunkc tiling::desktop --focus 5
+alt - 6  : chunkc tiling::desktop --focus 6
+alt - 7  : chunkc tiling::desktop --focus 7
+alt - 8  : chunkc tiling::desktop --focus 8
+alt - 9  : chunkc tiling::desktop --focus 9
 
 # move focused container to workspace
 shift + alt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
