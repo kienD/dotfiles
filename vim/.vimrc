@@ -21,11 +21,13 @@ Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ElmCast/elm-vim'
+" Plug 'galooshi/vim-import-js'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-plug'
 " Plug 'mthadley/syntastic-csf'
+Plug 'prettier/vim-prettier'
 Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
 " Plug 'scrooloose/syntastic'
@@ -88,10 +90,10 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_symbols.branch = 'λ'
-let g:airline_symbols.linenr = '≡'
-let g:airline_symbols.maxlinenr = 'ln'
-let g:airline#extensions#ale#enabled = 1
+" let g:airline_symbols.branch = 'λ'
+" let g:airline_symbols.linenr = '≡'
+" let g:airline_symbols.maxlinenr = 'ln'
+" let g:airline#extensions#ale#enabled = 1
 
 " Ale
 highlight ALEError ctermbg=Blue
@@ -131,6 +133,9 @@ set laststatus=2
 " NerdTree
 let NERDTreeShowHidden = 1
 
+" Prettier
+let g:prettier#autoformat = 0
+
 " Syntastic
 let g:syntastic_css_checkers = ['csf']
 let g:syntastic_scss_checkers = ['csf']
@@ -145,6 +150,7 @@ let g:syntastic_javascript_checkers = ['csf']
 
 " vim-javascript
 let g:jsx_ext_required = 0
+let g:javascript_plugin_jsdoc = 1
 
 " Vim Sort Motion
 let g:sort_motion_flags = "ui"
@@ -190,10 +196,16 @@ au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 " Work settings for trailing newlines
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
 
+" Prettier auto-format before saving async
+au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
 """""""""""""""""""""""""""""""""""""""""""""""""""
 runtime macros/matchit.vim
+
+" Wrap selected item in console.log
+let @c='S)iconsole.log'
 
 " Break a 3 attribute single-line tag into a multi-line tag
 let @n='f xif xif xif>i'
