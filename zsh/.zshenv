@@ -22,3 +22,4 @@ export NVM_DIR="$HOME/.nvm"
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export MANPAGER=/usr/local/bin/vimpager
