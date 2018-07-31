@@ -111,7 +111,7 @@ let g:mta_filetypes = {
 
 " CtrlP Vim
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
+  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist|test-classes)$',
   \ }
 
 let g:ctrlp_show_hidden = 1
