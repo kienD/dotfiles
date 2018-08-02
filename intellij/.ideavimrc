@@ -1,3 +1,5 @@
 source ~/.vimrc
 
+nmap gcc :action CommentByLineComment<cr>
+
 set surround
