@@ -62,8 +62,10 @@ set dir=/tmp
 set expandtab
 set hlsearch
 set ignorecase
+set lazyredraw
 set mouse=a
 set nobackup
+set nocursorline
 set number
 set relativenumber
 set shiftwidth=2
@@ -197,7 +199,7 @@ au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
 
 " Prettier auto-format before saving async
-au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.less,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
