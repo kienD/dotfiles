@@ -35,6 +35,9 @@ alias arandr-mobile='arandr $HOME/dotfiles/arandr/single_screen.sh'
 alias dotfiles='$HOME/dotfiles/'
 alias pkgs='$HOME/pkgs/'
 
+# Facebook Messenger CLI
+alias fbm='fb-messenger-cli'
+
 # Git
 alias gc='git checkout'
 alias gca='g commit --amend'
