@@ -44,9 +44,12 @@ chunkc set mouse_follows_focus           off
 chunkc set window_float_next             0
 chunkc set window_float_center           1
 chunkc set window_region_locked          1
+chunkc set window_use_cgs_move           1
+
+chunkc set mouse_move_window             alt 1
+chunkc set mouse_resize_window           fn 2
 
 # chunkc set mouse_modifier                fn
-chunkc set mouse_resize_window           fn
 
 chunkc set preselect_border_color        0xffd75f5f
 chunkc set preselect_border_width        5
@@ -56,6 +59,12 @@ chunkc set focused_border_color          0xff0f6288
 chunkc set focused_border_width          5
 chunkc set focused_border_radius         5
 chunkc set focused_border_skip_floating  0
+
+chunkc set focused_border_skip_floating  1
+
+chunkc set 2_desktop_tree ~/dotfiles/chunkwm/terminal
+chunkc set 4_desktop_tree ~/dotfiles/chunkwm/chat
+chunkc set 6_desktop_tree ~/dotfiles/chunkwm/debugger
 
 #
 # NOTE: specify plugins to load when chunkwm starts.
