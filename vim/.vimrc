@@ -21,16 +21,13 @@ Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ElmCast/elm-vim'
-" Plug 'galooshi/vim-import-js'
 Plug 'henrik/vim-indexed-search'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-plug'
-" Plug 'mthadley/syntastic-csf'
 Plug 'prettier/vim-prettier'
 Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
-" Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -91,12 +88,6 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-" let g:airline_symbols.branch = 'λ'
-" let g:airline_symbols.linenr = '≡'
-" let g:airline_symbols.maxlinenr = 'ln'
-" let g:airline#extensions#ale#enabled = 1
-
 " Ale
 highlight ALEError ctermbg=Blue
 
@@ -143,13 +134,6 @@ let g:syntastic_css_checkers = ['csf']
 let g:syntastic_scss_checkers = ['csf']
 let g:syntastic_javascript_checkers = ['csf']
 
-" Ultisnips
-" let g:UltiSnipsExpandTrigger='<c-enter>'
-" let g:UltiSnipsJumpForwardTrigger='<c-j>'
-" let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-" let g:UltiSnipsEditSplit='vertical'
-" let g:UltiSnipsSnippetDirectories=[$HOME.'/dotfiles/vim/snippets']
-
 " vim-javascript
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
@@ -176,11 +160,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap j jzz
 nnoremap k kzz
-" nnoremap <C-;> :noh <CR>
 
 map <C-\> :NERDTreeToggle<CR>
 au StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto Commands
@@ -197,9 +179,6 @@ au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Work settings for trailing newlines
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
-
-" Prettier auto-format before saving async
-" au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.less,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
