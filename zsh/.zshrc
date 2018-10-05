@@ -17,6 +17,9 @@ plugins=(alias-tips git git-open)
 # User configuration
 source $ZSH/oh-my-zsh.sh
 
+# Zsh Completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
