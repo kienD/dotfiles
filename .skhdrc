@@ -1,7 +1,13 @@
 # issue/fix for slow focus https://github.com/koekeishiya/chunkwm/issues/232
+#
+# rotate tree
+alt - r : chunkc tiling::desktop --rotate 90
 
 # enter fullscreen mode for the focused container
 alt - f : chunkc tiling::window --toggle fullscreen
+
+# toggle window split type
+alt - v : chunkc tiling::window --toggle split
 
 # change focus between tiling / floating windows
 shift + alt - space : chunkc tiling::window --toggle float
@@ -56,6 +62,20 @@ shift + alt - 3 : chunkc tiling::window --send-to-desktop 3
 shift + alt - 4 : chunkc tiling::window --send-to-desktop 4
 shift + alt - 5 : chunkc tiling::window --send-to-desktop 5
 shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
+shift + alt - 7 : chunkc tiling::window --send-to-desktop 7
+shift + alt - 8 : chunkc tiling::window --send-to-desktop 8
+shift + alt - 9 : chunkc tiling::window --send-to-desktop 9
+
+# send window to desktop and follow focus
+shift + cmd - 1 : chunkc tiling::window --send-to-desktop 1; chunkc tiling::desktop --focus 1
+shift + cmd - 2 : chunkc tiling::window --send-to-desktop 2; chunkc tiling::desktop --focus 2
+shift + cmd - 3 : chunkc tiling::window --send-to-desktop 3; chunkc tiling::desktop --focus 3
+shift + cmd - 4 : chunkc tiling::window --send-to-desktop 4; chunkc tiling::desktop --focus 4
+shift + cmd - 5 : chunkc tiling::window --send-to-desktop 5; chunkc tiling::desktop --focus 5
+shift + cmd - 6 : chunkc tiling::window --send-to-desktop 6; chunkc tiling::desktop --focus 6
+shift + cmd - 7 : chunkc tiling::window --send-to-desktop 7; chunkc tiling::desktop --focus 7
+shift + cmd - 8 : chunkc tiling::window --send-to-desktop 7; chunkc tiling::desktop --focus 8
+shift + cmd - 9 : chunkc tiling::window --send-to-desktop 7; chunkc tiling::desktop --focus 9
 
 # resize region
 shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
