@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/kdo/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="ys"
 
@@ -17,8 +17,11 @@ plugins=(alias-tips git git-open)
 # User configuration
 source $ZSH/oh-my-zsh.sh
 
+# Zsh Completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # autojump
-[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh autoload -U compinit && compinit -u
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Alias definition
 if [ -f "$HOME/.zshrc_aliases" ]
@@ -71,3 +74,10 @@ function lsl {
 
 # Vim - disable Ctrl-S and Ctrl-Q in terminals
 stty -ixon
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Adding autocomplete for 'we'
+[ -f ~/.we_autocomplete ] && source ~/.we_autocomplete

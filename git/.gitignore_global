@@ -1,2 +1,5 @@
+.DS_Store
 .tern-project
 .vscode/
+jsconfig.json
+out/

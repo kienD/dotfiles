@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import getpass
 import os
@@ -9,7 +9,7 @@ import pygit2
 import requests
 
 COOKIES_PATH = '/tmp/jira-tools' # look into using the $TMPDIR env variable before falling back to tmp
-REPO_PATH = '/home/kdo/Liferay/ee-7.0.x/com-liferay-osb-faro-private'
+REPO_PATH = '/Users/kdotdo/Liferay/com-liferay-osb-faro-private'
 SESSION_API_URL = 'https://issues.liferay.com/rest/auth/1/session'
 
 def get_branch_name():

@@ -22,13 +22,13 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'henrik/vim-indexed-search'
+Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-plug'
-" Plug 'mthadley/syntastic-csf'
+Plug 'prettier/vim-prettier'
 Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
-" Plug 'scrooloose/syntastic'
-" Plug 'SirVer/ultisnips' " Maybe use this
+Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -57,11 +57,12 @@ syntax on
 set background=dark
 set dir=/tmp
 set expandtab
-set guifont=Source\ Code\ Pro\ 10
 set hlsearch
 set ignorecase
+set lazyredraw
 set mouse=a
 set nobackup
+set nocursorline
 set number
 set relativenumber
 set shiftwidth=2
@@ -69,13 +70,14 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
-set term=rxvt-256color
-set ttymouse=urxvt
 set t_Co=256
 
-" Set clipboard as shared between X session and Vim
-set clipboard=unnamedplus
+hi Search cterm=NONE
+hi Search ctermbg=White
+hi Search ctermfg=Black
 
+" Set clipboard as shared between X session and Vim
+set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -85,12 +87,6 @@ set clipboard=unnamedplus
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
-" unicode symbols
-let g:airline_symbols.branch = 'λ'
-let g:airline_symbols.linenr = '≡'
-let g:airline_symbols.maxlinenr = 'ln'
-let g:airline#extensions#ale#enabled = 1
 
 " Ale
 highlight ALEError ctermbg=Blue
@@ -108,7 +104,7 @@ let g:mta_filetypes = {
 
 " CtrlP Vim
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist)$',
+  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist|test-classes)$',
   \ }
 
 let g:ctrlp_show_hidden = 1
@@ -130,6 +126,9 @@ set laststatus=2
 " NerdTree
 let NERDTreeShowHidden = 1
 
+" Prettier
+let g:prettier#autoformat = 0
+
 " Syntastic
 let g:syntastic_css_checkers = ['csf']
 let g:syntastic_scss_checkers = ['csf']
@@ -137,6 +136,7 @@ let g:syntastic_javascript_checkers = ['csf']
 
 " vim-javascript
 let g:jsx_ext_required = 0
+let g:javascript_plugin_jsdoc = 1
 
 " Vim Sort Motion
 let g:sort_motion_flags = "ui"
@@ -162,21 +162,20 @@ nnoremap j jzz
 nnoremap k kzz
 
 map <C-\> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+au StdinReadPre * let s:std_in=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Autoreload file on change
 set autoread
-autocmd CursorHold * checktime
+au WinEnter * checktime
 
 " Remove trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
+au BufWritePre * :%s/\s\+$//e
 
 " Force Syntax highlighting for certain  file ext
-autocmd BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
+au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Work settings for trailing newlines
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
@@ -184,6 +183,10 @@ au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
 """""""""""""""""""""""""""""""""""""""""""""""""""
+runtime macros/matchit.vim
+
+" Wrap selected item in console.log
+let @c='S)iconsole.log'
 
 " Break a 3 attribute single-line tag into a multi-line tag
 let @n='f xif xif xif>i'

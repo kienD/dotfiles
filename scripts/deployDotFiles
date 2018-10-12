@@ -2,15 +2,20 @@
 
 echo "Running Deployment..."
 
-ln -is ~/dotfiles/vim/.vimrc ~/.vimrc
-ln -is ~/dotfiles/zsh/.zshrc ~/.zshrc
-ln -is ~/dotfiles/zsh/.zshrc_aliases ~/.zshrc_aliases
-ln -is ~/dotfiles/.i3/ ~/.i3/
-ln -is ~/dotfiles/.xinitrc ~/.xinitrc
-ln -is ~/dotfiles/Xmodmap/.Xmodmap ~/.Xmodmap
-ln -is ~/dotfiles/polybar/ ~/.polybar
-ln -is ~/dotfiles/git/.gitignore_global ~/.gitignore_global
-ln -is ~/dotfiles/xorg/.Xresources ~/.Xresources
+ln -is ~/dotfiles/.chunkwmrc ~/
+ln -is ~/dotfiles/.skhdrc ~/
+ln -is ~/dotfiles/.vimrc ~/.vimrc
+
+ln -is ~/dotfiles/zsh/.zshenv ~/
+ln -is ~/dotfiles/git/.gitignore_global ~/
+ln -is ~/dotfiles/intellij/.ideavimrc ~/
+ln -is ~/dotfiles/zsh/.zprofile ~/
+ln -is ~/dotfiles/zsh/.zshrc ~/
+ln -is ~/dotfiles/zsh/.zshrc_aliases ~/
+
+ln -is ~/dotfiles/karabiner/karabiner.json ~/config/karabiner/karabiner.json
+
+ln -is ~/dotfiles/scripts ~/
 
 echo "Deployment complete!"
 

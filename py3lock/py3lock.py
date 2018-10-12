@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import xcffib
 from xcffib.xproto import *

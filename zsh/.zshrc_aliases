@@ -35,16 +35,19 @@ alias arandr-mobile='arandr $HOME/dotfiles/arandr/single_screen.sh'
 alias dotfiles='$HOME/dotfiles/'
 alias pkgs='$HOME/pkgs/'
 
+# Facebook Messenger CLI
+alias fbm='fb-messenger-cli'
+
 # Git
 alias gc='git checkout'
 alias gca='g commit --amend'
 alias gcb='git checkout -b'
 alias gcm='g commit -m'
-alias gco-faro='gco 7.0.x-private'
 alias gfind="g log --grep"
 alias gitk="/usr/bin/wish $(which gitk)"
 alias gpr-ee='git pull --rebase upstream ee-6.2.x'
-alias gpr-faro='git pull --rebase upstream 7.0.x-private'
+alias gpr-prod='git pull --rebase upstream 7.0.x-private'
+alias gpr-faro='git pull --rebase upstream development'
 alias gpr-master='git pull --rebase upstream master'
 alias gpr='git pull --rebase'
 alias gpush-ee='git push origin ee-6.2.x'
@@ -61,7 +64,7 @@ alias gsp-master='g stash && gpr-master && gstp'
 alias ghpr='jira_tools.py'
 alias ghpr-bryce='ghpr bryceosterhaus ee-6.2.x'
 alias ghpr-calvin='ghpr CalvinKeum ee-6.2.x'
-alias ghpr-faro='ghpr liferay 7.0.x-private'
+alias ghpr-faro='ghpr liferay development'
 alias ghpr-josh='ghpr jwu910 ee-6.2.x'
 alias ghpr-loop-release='ghpr wesleygong loop-release'
 alias ghpr-matt='ghpr matthewkong ee-6.2.x'
@@ -88,7 +91,7 @@ fi
 alias gw='gulp watch'
 
 # Lock screen
-alias lock='/home/kdo/dotfiles/py3lock/py3lock.py'
+alias lock='$HOME/dotfiles/py3lock/py3lock.py'
 
 # Npm
 alias npm-check='npm list | grep'
@@ -96,7 +99,10 @@ alias nrb='npm run build'
 alias nrf='npm run format'
 alias nrs='npm run start'
 alias nrt='npm run test'
+alias nrtc='npm run test -- --coverage'
+alias nrtu='npm run test -- -u'
 alias nrtw='npm run test -- --watch'
+alias nrtwa='npm run test -- --watchAll'
 alias nrw='npm run watch'
 
 alias anrw='acd && lsl && nrw'
@@ -138,20 +144,25 @@ function sfm {
 }
 
 # Faro Project
-alias deploy-faro='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && gradle deploy && npm run start'
-alias faro-bundles='$HOME/Liferay/ee-7.0.x/bundles/tomcat-8.0.32/bin'
+alias deploy-faro='$HOME/Liferay/com-liferay-osb-faro-private/osb-faro-web && gradle deploy && npm run start'
+alias faro-bundles='$HOME/Liferay/bundles/tomcat-8.0.32/bin'
 alias faro-bundles-run='faro-bundles && cr'
-alias faro-final='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && gradle formatSource &&  npm run test'
+alias faro-final='$HOME/Liferay/com-liferay-osb-faro-private/osb-faro-web && gradle formatSource &&  npm run test'
 alias farobr='faro-bundles && cr'
-alias gnrs='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew deploy && $HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && nrs'
-alias start-faro-docker='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew startDocker'
-alias create-faro-docker='$HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew createDocker'
+alias gnrs='$HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deploy && $HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private/osb-faro-web && nrs'
+alias start-faro-docker='$HOME/Liferay/com-liferay-osb-faro-private && ./gradlew startDocker'
+alias create-faro-docker='$HOME/com-liferay-osb-faro-private && ./gradlew createDocker'
 alias cfd='create-faro-docker'
 alias sfd='start-faro-docker'
-alias csfd='cfd && $HOME/Liferay/ee-7.0.x/com-liferay-osb-faro-private && ./gradlew deploy && sfd && faro-logs'
+alias csfd='cfd && $HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deploy && sfd && faro-logs'
 alias sfdl='start-faro-docker && faro-logs'
 
 alias faro-logs='docker logs -f com-liferay-osb-faro-private'
+
+alias bfjc='
+  nrb &&
+  cp ~/Liferay/faro-js-components/dist/main.css ~/Liferay/com-liferay-osb-faro-private/osb-faro-web/node_modules/faro-js-components/dist/main.css &&
+  cp ~/Liferay/faro-js-components/dist/main.js ~/Liferay/com-liferay-osb-faro-private/osb-faro-web/node_modules/faro-js-components/dist/main.js'
 
 # Loop Project
 alias deploy-loop='
