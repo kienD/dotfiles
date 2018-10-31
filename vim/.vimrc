@@ -26,6 +26,7 @@ Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-plug'
 Plug 'prettier/vim-prettier'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
@@ -128,6 +129,9 @@ let NERDTreeShowHidden = 1
 
 " Prettier
 let g:prettier#autoformat = 0
+
+" Python Mode
+let g:pymode_python = 'python3'
 
 " Syntastic
 let g:syntastic_css_checkers = ['csf']
