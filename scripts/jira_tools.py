@@ -8,9 +8,11 @@ import sys
 import pygit2
 import requests
 
-COOKIES_PATH = '/tmp/jira-tools' # look into using the $TMPDIR env variable before falling back to tmp
+# TODO: look into using the $TMPDIR env variable before falling back to tmp
+COOKIES_PATH = '/tmp/jira-tools'
 REPO_PATH = '/Users/kdotdo/Liferay/com-liferay-osb-faro-private'
 SESSION_API_URL = 'https://issues.liferay.com/rest/auth/1/session'
+
 
 def get_branch_name():
     branch_name = ''
@@ -24,11 +26,13 @@ def get_branch_name():
 
     return branch_name
 
+
 def get_credentials():
     username = input('Username: ')
     password = getpass.getpass()
 
     return requests.auth.HTTPBasicAuth(username, password)
+
 
 def get_cookies():
     if os.path.exists(COOKIES_PATH) and os.path.getsize(COOKIES_PATH) > 0:
@@ -36,10 +40,13 @@ def get_cookies():
 
         return dict(JSESSIONID=file.read())
 
-    return False;
+    return False
+
 
 def get_title(branch_name):
-    url = 'https://issues.liferay.com/rest/api/2/issue/' + branch_name + '?fields=summary'
+    url = 'https://issues.liferay.com/rest/api/2/issue/' \
+        + branch_name \
+        + '?fields=summary'
 
     cookies = get_cookies()
 
@@ -64,6 +71,7 @@ def get_title(branch_name):
     else:
         print(request.json()['errorMessages'][0])
 
+
 def save_cookies(cookies):
     file = open(COOKIES_PATH, 'w')
 
@@ -71,13 +79,31 @@ def save_cookies(cookies):
 
     file.close()
 
+
 def main():
     branch_name = get_branch_name()
 
-    title = get_title(branch_name)
+    # title = get_title(branch_name)
+    title = branch_name
 
-    description = 'Jira Issue: [' + branch_name + '](https://issues.liferay.com/browse/' + branch_name + ')'
+    description = 'Jira Issue: [' \
+        + branch_name \
+        + '](https://issues.liferay.com/browse/' \
+        + branch_name \
+        + ')'
 
-    subprocess.call(['gh', 'pr', '-s', sys.argv[1], '-b', sys.argv[2], '-t', title, '-D', description])
+    message = title + '\n\n' + description
+
+    base = sys.argv[1] + ':' + sys.argv[2]
+
+    subprocess.call([
+        'hub',
+        'pull-request',
+        '-m',
+        message,
+        '-b',
+        base
+    ])
+
 
 main()
