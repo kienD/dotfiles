@@ -2,15 +2,17 @@
 
 import getpass
 import os
+import pathlib
 import subprocess
 import sys
 
 import pygit2
 import requests
 
-COOKIES_PATH = '/tmp/jira-tools' # look into using the $TMPDIR env variable before falling back to tmp
-REPO_PATH = '/Users/kdotdo/Liferay/com-liferay-osb-faro-private'
+# TODO: look into using the $TMPDIR env variable before falling back to tmp
+COOKIES_PATH = '/tmp/jira-tools'
 SESSION_API_URL = 'https://issues.liferay.com/rest/auth/1/session'
+
 
 def get_branch_name():
     branch_name = ''
@@ -18,11 +20,16 @@ def get_branch_name():
     if len(sys.argv) > 3:
         branch_name = sys.argv[3]
     elif branch_name == '':
-        repo = pygit2.Repository(REPO_PATH)
+        cwd = os.getcwd()
+
+        git_path = str(get_top_level(cwd))
+
+        repo = pygit2.Repository(git_path)
 
         branch_name = repo.head.shorthand
 
     return branch_name
+
 
 def get_credentials():
     username = input('Username: ')
@@ -30,16 +37,20 @@ def get_credentials():
 
     return requests.auth.HTTPBasicAuth(username, password)
 
+
 def get_cookies():
     if os.path.exists(COOKIES_PATH) and os.path.getsize(COOKIES_PATH) > 0:
         file = open(COOKIES_PATH, 'r')
 
         return dict(JSESSIONID=file.read())
 
-    return False;
+    return False
+
 
 def get_title(branch_name):
-    url = 'https://issues.liferay.com/rest/api/2/issue/' + branch_name + '?fields=summary'
+    url = 'https://issues.liferay.com/rest/api/2/issue/' \
+        + branch_name \
+        + '?fields=summary'
 
     cookies = get_cookies()
 
@@ -64,6 +75,19 @@ def get_title(branch_name):
     else:
         print(request.json()['errorMessages'][0])
 
+
+def get_top_level(path, last=None):
+    path = pathlib.Path(path).absolute()
+
+    if path == last:
+        return None
+
+    if (path / '.git').is_dir():
+        return path
+
+    return get_top_level(path.parent, last=path)
+
+
 def save_cookies(cookies):
     file = open(COOKIES_PATH, 'w')
 
@@ -71,13 +95,30 @@ def save_cookies(cookies):
 
     file.close()
 
+
 def main():
     branch_name = get_branch_name()
 
     title = get_title(branch_name)
 
-    description = 'Jira Issue: [' + branch_name + '](https://issues.liferay.com/browse/' + branch_name + ')'
+    description = 'Jira Issue: [' \
+        + branch_name \
+        + '](https://issues.liferay.com/browse/' \
+        + branch_name \
+        + ')'
 
-    subprocess.call(['gh', 'pr', '-s', sys.argv[1], '-b', sys.argv[2], '-t', title, '-D', description])
+    message = title + '\n\n' + description
+
+    base = sys.argv[1] + ':' + sys.argv[2]
+
+    subprocess.call([
+        'hub',
+        'pull-request',
+        '-m',
+        message,
+        '-b',
+        base
+    ])
+
 
 main()
