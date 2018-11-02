@@ -14,6 +14,37 @@ COOKIES_PATH = '/tmp/jira-tools'
 SESSION_API_URL = 'https://issues.liferay.com/rest/auth/1/session'
 
 
+def fetch_jira_issue():
+    branch_name = get_branch_name()
+
+    url = 'https://issues.liferay.com/rest/api/2/issue/' \
+        + branch_name \
+        + '?fields=summary,issuetype'
+
+    cookies = get_cookies()
+
+    if cookies:
+        request = requests.get(url, cookies=cookies)
+    else:
+        auth = get_credentials()
+
+        request = requests.get(url, auth=auth)
+
+        if request.status_code == 200:
+            save_cookies(request.cookies['JSESSIONID'])
+        else:
+            sys.exit()
+
+    if request.status_code == 401:
+        os.remove(COOKIES_PATH)
+
+        fetch_jira_issue()
+    elif request.status_code == 200:
+        return request.json()
+    else:
+        print(request.json()['errorMessages'][0])
+
+
 def get_branch_name():
     branch_name = ''
 
@@ -47,33 +78,31 @@ def get_cookies():
     return False
 
 
-def get_title(branch_name):
-    url = 'https://issues.liferay.com/rest/api/2/issue/' \
+def get_description(jira_issue):
+    branch_name = jira_issue['key']
+
+    return 'Jira Issue: [' \
         + branch_name \
-        + '?fields=summary'
+        + '](https://issues.liferay.com/browse/' \
+        + branch_name \
+        + ')'
 
-    cookies = get_cookies()
 
-    if cookies:
-        request = requests.get(url, cookies=cookies)
-    else:
-        auth = get_credentials()
+def get_labels(jira_issue):
+    issue_type = jira_issue['fields']['issuetype']['name']
 
-        request = requests.get(url, auth=auth)
+    labels_list = ['Review Needed']
 
-        if request.status_code == 200:
-            save_cookies(request.cookies['JSESSIONID'])
-        else:
-            sys.exit()
+    if issue_type == 'Bug':
+        labels_list.append('Bugfix')
+    elif issue_type == 'Story':
+        labels_list.append('Feature')
 
-    if request.status_code == 401:
-        os.remove(COOKIES_PATH)
+    return ','.join(labels_list)
 
-        get_title(branch_name)
-    elif request.status_code == 200:
-        return branch_name + ' ' + request.json()['fields']['summary']
-    else:
-        print(request.json()['errorMessages'][0])
+
+def get_title(jira_issue):
+    return jira_issue['key'] + ' ' + jira_issue['fields']['summary']
 
 
 def get_top_level(path, last=None):
@@ -97,15 +126,13 @@ def save_cookies(cookies):
 
 
 def main():
-    branch_name = get_branch_name()
+    jira_issue = fetch_jira_issue()
 
-    title = get_title(branch_name)
+    title = get_title(jira_issue)
 
-    description = 'Jira Issue: [' \
-        + branch_name \
-        + '](https://issues.liferay.com/browse/' \
-        + branch_name \
-        + ')'
+    description = get_description(jira_issue)
+
+    labels = get_labels(jira_issue)
 
     message = title + '\n\n' + description
 
@@ -117,7 +144,9 @@ def main():
         '-m',
         message,
         '-b',
-        base
+        base,
+        '-l',
+        labels
     ])
 
 
