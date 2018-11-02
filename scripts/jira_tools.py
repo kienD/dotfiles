@@ -141,6 +141,8 @@ def main():
     subprocess.call([
         'hub',
         'pull-request',
+        '-o',
+        '-p',
         '-m',
         message,
         '-b',
