@@ -125,6 +125,10 @@ def save_cookies(cookies):
     file.close()
 
 
+def update_jira_ticket(values):
+    return
+
+
 def main():
     jira_issue = fetch_jira_issue()
 
@@ -142,7 +146,6 @@ def main():
         'hub',
         'pull-request',
         '-o',
-        '-p',
         '-m',
         message,
         '-b',
