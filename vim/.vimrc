@@ -26,14 +26,14 @@ Plug 'henrik/vim-indexed-search'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/vim-plug'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 Plug 'prettier/vim-prettier'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
 " Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
@@ -145,16 +145,16 @@ let g:pymode_python = 'python3'
 " let g:syntastic_javascript_checkers = ['csf']
 
 " Tagbar
-nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 
-let g:tagbar_type_css = {
-\ 'ctagstype' : 'Css',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 's:selectors',
-        \ 'i:identities'
-    \ ]
-\ }
+" let g:tagbar_type_css = {
+" \ 'ctagstype' : 'Css',
+"     \ 'kinds'     : [
+"         \ 'c:classes',
+"         \ 's:selectors',
+"         \ 'i:identities'
+"     \ ]
+" \ }
 
 " vim-javascript
 let g:jsx_ext_required = 0
