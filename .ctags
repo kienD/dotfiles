@@ -1,0 +1,25 @@
+
+# Basic options
+--recurse=yes
+--tag-relative=yes
+--exclude=.git
+
+--exclude=build
+--exclude=coverage
+--exclude=documentation
+--exclude=lib
+--exclude=dist
+--exclude=min
+--exclude=vendor
+--exclude=\*.markdown
+--exclude=\*.min.\*
+--exclude=\*.map
+--exclude=\*.swp
+--exclude=\*.bak
+--exclude=\*Kit.js
+--exclude=tags
+--exclude=node_modules
+--exclude=bower_components
+--exclude=test
+--exclude=tests
+--exclude=__tests__
