@@ -20,22 +20,25 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ElmCast/elm-vim'
+" Plug 'ElmCast/elm-vim'
 Plug 'henrik/vim-indexed-search'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/vim-plug'
+Plug 'majutsushi/tagbar'
 Plug 'prettier/vim-prettier'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'valloric/youcompleteme'
+Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'tag': 'v1.9.1' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentline'
 
 " Syntax Files
@@ -91,6 +94,7 @@ endif
 
 " Ale
 highlight ALEError ctermbg=Blue
+let g:ale_typescript_tslint_exclude_paths = ['node_modules']
 
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.xml"
@@ -104,6 +108,8 @@ let g:mta_filetypes = {
   \}
 
 " CtrlP Vim
+nnoremap <leader>. :CtrlPTag<cr>
+
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist|test-classes)$',
   \ }
@@ -134,9 +140,21 @@ let g:prettier#autoformat = 0
 let g:pymode_python = 'python3'
 
 " Syntastic
-let g:syntastic_css_checkers = ['csf']
-let g:syntastic_scss_checkers = ['csf']
-let g:syntastic_javascript_checkers = ['csf']
+" let g:syntastic_css_checkers = ['csf']
+" let g:syntastic_scss_checkers = ['csf']
+" let g:syntastic_javascript_checkers = ['csf']
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+let g:tagbar_type_css = {
+\ 'ctagstype' : 'Css',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 's:selectors',
+        \ 'i:identities'
+    \ ]
+\ }
 
 " vim-javascript
 let g:jsx_ext_required = 0
@@ -184,6 +202,8 @@ au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 " Work settings for trailing newlines
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
 
+" Prettier auto-format before saving async
+au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.less,*.graphql,*.md,*.vue PrettierAsync
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
 """""""""""""""""""""""""""""""""""""""""""""""""""
