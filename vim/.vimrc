@@ -33,12 +33,11 @@ Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
 " Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale', { 'tag': 'v1.9.1' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentline'
 
 " Syntax Files
@@ -111,7 +110,7 @@ let g:mta_filetypes = {
 nnoremap <leader>. :CtrlPTag<cr>
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist|test-classes)$',
+  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist|test-classes|coverage)$',
   \ }
 
 let g:ctrlp_show_hidden = 1
@@ -201,6 +200,9 @@ au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Work settings for trailing newlines
 au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
+
+" Set syntax to html for snapshots
+au BufReadPost *.snap set syntax=jsx
 
 " Prettier auto-format before saving async
 au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.less,*.graphql,*.md,*.vue PrettierAsync
