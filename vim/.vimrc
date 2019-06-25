@@ -19,19 +19,13 @@ call plug#begin('~/.vim/bundle')
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'christoomey/vim-sort-motion'
-Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'ElmCast/elm-vim'
-Plug 'henrik/vim-indexed-search'
-" Plug 'honza/vim-snippets'
+Plug 'google/vim-searchindex'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jparise/vim-graphql'
 Plug 'junegunn/vim-plug'
-" Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf'
 Plug 'prettier/vim-prettier'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
-Plug 'rudes/vim-java'
 Plug 'scrooloose/nerdtree'
-" Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -42,8 +36,12 @@ Plug 'Yggdroot/indentline'
 
 " Syntax Files
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'ianks/vim-tsx'
+Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'rudes/vim-java'
 
 " Themes
 Plug 'crusoexia/vim-monokai'
@@ -62,6 +60,7 @@ set dir=/tmp
 set expandtab
 set hlsearch
 set ignorecase
+set laststatus=2
 set lazyredraw
 set mouse=a
 set nobackup
@@ -86,51 +85,41 @@ set clipboard=unnamed
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Airline
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
 " Ale
 highlight ALEError ctermbg=Blue
 let g:ale_typescript_tslint_exclude_paths = ['node_modules']
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver']
+\}
 
 " Closetag
-let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.xml"
+let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.ts,*.tsx,*.xml"
 let g:mta_filetypes = {
   \ 'html' : 1,
   \ 'xhtml': 1,
   \ 'xml' : 1,
   \ 'js' : 1,
   \ 'jsx' : 1,
-  \ 'jsp': 1
+  \ 'jsp': 1,
+  \ 'ts': 1,
+  \ 'tsx': 1
   \}
 
-" CtrlP Vim
-nnoremap <leader>. :CtrlPTag<cr>
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.?(git|hg|svn|node_modules|classes|build|dist|test-classes|coverage)$',
-  \ }
-
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_working_path_mode = 'a'
-
-" ElmCast/elm-vim
-let g:elm_detailed_complete = 1
-let g:elm_format_autosave = 1
-let g:elm_make_show_warnings = 1
-let g:elm_setup_keybindings = 0
+" fzf
+let g:fzf_layout = { 'down': '~20%' }
+map <C-P> :FZF<CR>
+" autocmd FileType fzf
+" autocmd  FileType fzf set laststatus=0 noshowmode noruler
+"   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " Indent Line
 let g:indentLine_char = '•'
-
 let g:jsx_ext_required = 0
-
-set laststatus=2
 
 " NerdTree
 let NERDTreeShowHidden = 1
+map <C-\> :NERDTreeToggle<CR>
 
 " Prettier
 let g:prettier#autoformat = 0
@@ -138,34 +127,24 @@ let g:prettier#autoformat = 0
 " Python Mode
 let g:pymode_python = 'python3'
 
-" Syntastic
-" let g:syntastic_css_checkers = ['csf']
-" let g:syntastic_scss_checkers = ['csf']
-" let g:syntastic_javascript_checkers = ['csf']
-
-" Tagbar
-" nmap <F8> :TagbarToggle<CR>
-
-" let g:tagbar_type_css = {
-" \ 'ctagstype' : 'Css',
-"     \ 'kinds'     : [
-"         \ 'c:classes',
-"         \ 's:selectors',
-"         \ 'i:identities'
-"     \ ]
-" \ }
-
 " vim-javascript
-let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
+let g:jsx_ext_required = 0
 
 " Vim Sort Motion
 let g:sort_motion_flags = "ui"
 
+" YouCompleteMe
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""
-function! s:DiffWithSaved()
+" See files changed before saving
+function! DiffWithSaved()
   let filetype=&ft
     diffthis
       vnew | r # | normal! 1Gdd
@@ -182,7 +161,6 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap j jzz
 nnoremap k kzz
 
-map <C-\> :NERDTreeToggle<CR>
 au StdinReadPre * let s:std_in=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -199,13 +177,14 @@ au BufWritePre * :%s/\s\+$//e
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 
 " Work settings for trailing newlines
-au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
+" au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
 
 " Set syntax to html for snapshots
 au BufReadPost *.snap set syntax=jsx
 
 " Prettier auto-format before saving async
 au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.less,*.graphql,*.md,*.vue PrettierAsync
+
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
 """""""""""""""""""""""""""""""""""""""""""""""""""
