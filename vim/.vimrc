@@ -115,6 +115,7 @@ map <C-P> :FZF<CR>
 
 " Indent Line
 let g:indentLine_char = '•'
+let g:indentLine_concealcursor = "c"
 let g:jsx_ext_required = 0
 
 " NerdTree
