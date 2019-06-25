@@ -25,7 +25,7 @@ Plug 'junegunn/vim-plug'
 Plug 'junegunn/fzf'
 Plug 'prettier/vim-prettier'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
