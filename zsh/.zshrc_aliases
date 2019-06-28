@@ -2,8 +2,8 @@
 ########### General ###########
 ###############################
 
-alias cbip='ifconfig enx00249b13a8bf | grep 'inet addr' | cut -d ':' -f 2 | cut -d ' ' -f 1 | xsel --clipboard'
-alias localip='ifconfig enx00249b13a8bf | grep 'inet addr' | cut -d 'B' -f1'
+alias ip='ipconfig getifaddr en0'
+alias cp-ip='ipconfig getifaddr en0 | echo | pbcopy'
 
 alias pls='sudo $(fc -ln -1)'
 
@@ -11,7 +11,6 @@ alias java-kill='fuser -k 8080/tcp'
 
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
 
 alias sbp='source $HOME/.bash_profile'
 alias szrc='source $HOME/.zshrc'
@@ -24,17 +23,6 @@ alias acd='ant clean deploy'
 # Apache
 alias apache='apache2ctl'
 
-# Apt
-alias aar='add-apt-repository'
-
-# Arandr
-alias arandr-work='arandr $HOME/dotfiles/arandr/dual_screen_1080p.sh'
-alias arandr-mobile='arandr $HOME/dotfiles/arandr/single_screen.sh'
-
-# Directory Shortcuts
-alias dotfiles='$HOME/dotfiles/'
-alias pkgs='$HOME/pkgs/'
-
 # Facebook Messenger CLI
 alias fbm='fb-messenger-cli'
 
@@ -43,23 +31,15 @@ alias gc='git checkout'
 alias gca='g commit --amend'
 alias gcb='git checkout -b'
 alias gcm='g commit -m'
-alias gfind="g log --grep"
-alias gitk="/usr/bin/wish $(which gitk)"
-alias gpr-ee='git pull --rebase upstream ee-6.2.x'
 alias gpr-prod='git pull --rebase upstream 7.0.x-private'
 alias gpr-faro='git pull --rebase upstream development'
 alias gpr-master='git pull --rebase upstream master'
 alias gpr='git pull --rebase'
-alias gpush-ee='git push origin ee-6.2.x'
-alias gpush-faro='git push origin development'
-alias gpush-master='git push origin master'
-alias gpush-prod='git push origin 7.0.x-private'
-alias gpush='git push'
-alias gs="git status"
-alias gsgco='g stash && gco'
-alias gsp-ee='g stash && gpr-ee && gstp'
-alias gsp-faro='g stash && gpr-faro && gstp'
-alias gsp-master='g stash && gpr-master && gstp'
+alias gp-ee='git push origin ee-6.2.x'
+alias gp-faro='git push origin development'
+alias gp-master='git push origin master'
+alias gp-prod='git push origin 7.0.x-private'
+alias gs='git status'
 
 # ghpr
 alias ghpr='jira_tools.py'
@@ -91,13 +71,10 @@ function gradle {
 #Gulp
 alias gw='gulp watch'
 
-# Lock screen
-alias lock='$HOME/dotfiles/py3lock/py3lock.py'
-
 # Npm
-alias npm-check='npm list | grep'
 alias nrb='npm run build'
 alias nrf='npm run format'
+alias nrl='npm run lint'
 alias nrs='npm run start'
 alias nrt='npm run test'
 alias nrtc='npm run test -- --coverage'
@@ -106,43 +83,15 @@ alias nrtw='npm run test -- --watch'
 alias nrtwa='npm run test -- --watchAll'
 alias nrw='npm run watch'
 
-alias anrw='acd && lsl && nrw'
-
-# Preview
-alias preview='xdg-open'
-
 # thefuck
 eval $(thefuck --alias)
-
-# xmodmap
-alias pok3r='xmodmap $HOME/.Xmodmap'
 
 ###############################
 ########### Liferay ###########
 ###############################
 
-# Start liferay service
-alias cr='./catalina.sh run'
-alias crd='./catalina.sh jpda run'
-
-# ant format source all changes
-function afsm {
-  if [ "$1" ]; then
-    git diff --stat --relative --name-only "$1".. | grep -E '.(tag|jsp.?|vm|ftl|js|(s)?css)$' | xargs ant-fs;
-  else
-    echo -e "$fg_bold[red]Please choose a branch to compare changes to.$reset_color EG: afsm ee-6.2.x"
-  fi
-}
-
-
-# Source format all changes
-function sfm {
-  if [ "$1" ]; then
-    git diff --stat --relative --name-only "$1".. | grep -E '.(tag|jsp.?|vm|ftl|js|(s)?css)$' | xargs check_sf;
-  else
-    echo -e "$fg_bold[red]Please choose a branch to compare changes to.$reset_color EG: sfm ee-6.2.x"
-  fi
-}
+# Asah Project
+ alias deploy-asah='$HOME/Liferay/com-liferay-osb-asah-private && gradle clean assemble && docker-compose -f docker-compose.monolith.yml up -d --build && faro-logs'
 
 # Faro Project
 alias deploy-faro='$HOME/Liferay/com-liferay-osb-faro-private/osb-faro-web && gradle deploy && npm run start'
@@ -159,56 +108,3 @@ alias csfd='cfd && $HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deplo
 alias sfdl='start-faro-docker && faro-logs'
 
 alias faro-logs='docker logs -f com-liferay-osb-faro-private'
-
-alias bfjc='nrb &&
-  cp ~/Liferay/faro-js-components/dist/main.css ~/Liferay/com-liferay-osb-faro-private/osb-faro-web/node_modules/faro-js-components/dist/main.css &&
-  cp ~/Liferay/faro-js-components/dist/main.js ~/Liferay/com-liferay-osb-faro-private/osb-faro-web/node_modules/faro-js-components/dist/main.js'
-
-# Loop Project
-alias deploy-loop='echo ---------------- loop-theme ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && acd &&
-  echo ---------------- loop-shared ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/shared/loop-shared && acd &&
-  echo ---------------- push-notifications-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/push-notifications-portlet && acd &&
-  echo ---------------- asset-entry-set-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/asset-entry-set-portlet && acd &&
-  echo ---------------- asset-sharing-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/asset-sharing-portlet && acd &&
-  echo ---------------- marketplace-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/marketplace-portlet && acd &&
-  echo ---------------- url-metadata-scraper-web ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/webs/url-metadata-scraper-web && acd &&
-  echo ---------------- portal-compat-hook ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/hooks/portal-compat-hook && acd &&
-  echo ---------------- token-auth-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/token-auth-portlet && acd &&
-  echo ---------------- elasticsearch-web ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/webs/elasticsearch-web && acd &&
-  echo ---------------- loop-portlet ---------------- && cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && anrw'
-
-alias ant-fs='ant format-source'
-
-alias ant-fs-loop='cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && ant-fs &&
-  cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && ant-fs'
-
-alias dir-watcher='$HOME/Liferay/dir-watcher/'
-alias dir-watcher-run='dir-watcher && gw' # Remove
-alias dist-clean='gco -- $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/docroot/js/dist/*'
-alias lpr='loop && anrw'
-alias dwr='dir-watcher && gw'
-alias adwr='reset-theme && dwr'
-
-alias ee-bundles='$HOME/Liferay/ee-6.2.x/bundles/tomcat-7.0.62/bin'
-alias ee-bundles-run='ee-bundles && cr'
-alias eebr='ee-bundles && cr'
-
-alias ee-plugins='$HOME/Liferay/ee-6.2.x/ee-plugins/'
-
-alias ee-portal='$HOME/Liferay/ee-7.0.x/ee-portal/'
-
-alias loop='$HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet/'
-alias loop-run='loop && anrw'
-alias lr='loop-run'
-alias reset-theme='theme && acd'
-alias theme='$HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme/'
-
-alias loop-final='loop && npm test && ant-fs-loop && sfm-loop'
-
-alias sfm-loop='cd $HOME/Liferay/ee-6.2.x/ee-plugins/themes/loop-theme && sfme &&
-  cd $HOME/Liferay/ee-6.2.x/ee-plugins/portlets/loop-portlet && sfme'
-
-alias sfme='sfm ee-6.2.x'
-
-# fix resolution for LVDS
-  alias fixres='xrandr --newmode "1920x1080_60.00" 173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync && xrandr --addmode LVDS-1-1 1920x1080_60.00'
