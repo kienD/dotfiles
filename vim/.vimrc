@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+"be""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Configs
 """""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -87,11 +87,11 @@ set clipboard=unnamed
 
 " Ale
 highlight ALEError ctermbg=Blue
-let g:ale_typescript_tslint_exclude_paths = ['node_modules']
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tsserver']
-\}
+" let g:ale_typescript_tslint_exclude_paths = ['node_modules']
+" let g:ale_linters = {
+" \   'javascript': ['eslint'],
+" \   'typescript': ['tsserver']
+" \}
 
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.ts,*.tsx,*.xml"
@@ -136,10 +136,10 @@ let g:jsx_ext_required = 0
 let g:sort_motion_flags = "ui"
 
 " YouCompleteMe
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
+" if !exists("g:ycm_semantic_triggers")
+"   let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers['typescript'] = ['.']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
@@ -176,9 +176,11 @@ au BufWritePre * :%s/\s\+$//e
 
 " Force Syntax highlighting for certain  file ext
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
+au BufRead,BufNewFile .babelrc set filetype=json
 
 " Work settings for trailing newlines
-" au BufRead,BufNewFile */Liferay/* setlocal noeol nofixeol sw=2 sts=2 ts=2 noet
+au BufRead,BufNewFile */Liferay/* setlocal sw=2 sts=2 ts=2 noet
+au BufRead,BufNewFile */Liferay/*.properties,*/Liferay/*.scss,*/Liferay/*.java,*/Liferay/*.jsp,*/Liferay/*.jspa setlocal noeol nofixeol
 
 " Set syntax to html for snapshots
 au BufReadPost *.snap set syntax=jsx
