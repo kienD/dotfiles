@@ -186,7 +186,7 @@ au BufRead,BufNewFile */Liferay/*.properties,*/Liferay/*.scss,*/Liferay/*.java,*
 au BufReadPost *.snap set syntax=jsx
 
 " Prettier auto-format before saving async
-au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.less,*.graphql,*.md,*.vue PrettierAsync
+au BufWritePre *.scss,*.css,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.less,*.graphql,*.md,*.vue PrettierAsync
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Macros
