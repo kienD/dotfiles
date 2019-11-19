@@ -36,7 +36,7 @@ Plug 'Yggdroot/indentline'
 
 " Syntax Files
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'jparise/vim-graphql'
 Plug 'pangloss/vim-javascript'
@@ -44,14 +44,18 @@ Plug 'mxw/vim-jsx'
 Plug 'rudes/vim-java'
 
 " Themes
-Plug 'crusoexia/vim-monokai'
+" Plug 'crusoexia/vim-monokai'
+" Plug 'plainfingers/black_is_the_color'
+" Plug 'FrancescoMagliocco/CmptrClr'
+Plug 'lucasprag/simpleblack'
+" Plug 'sff1019/vim-joker'
 
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme monokai
+colorscheme simpleblack
 
 syntax on
 
@@ -72,6 +76,7 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
+set termguicolors
 set t_Co=256
 
 hi Search cterm=NONE
@@ -110,10 +115,6 @@ let g:indentLine_char = '•'
 let g:indentLine_concealcursor = "c"
 let g:jsx_ext_required = 0
 
-" Vim Monokai
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
-
 " NerdTree
 let NERDTreeShowHidden = 1
 map <C-\> :NERDTreeToggle<CR>
@@ -130,9 +131,6 @@ let g:jsx_ext_required = 0
 
 " Vim Sort Motion
 let g:sort_motion_flags = "ui"
-
-" YATS: Yet Another Typescript Syntax
-let g:yats_host_keyword = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
