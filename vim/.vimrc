@@ -1,4 +1,4 @@
-"be""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Configs
 """""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,9 +36,9 @@ Plug 'Yggdroot/indentline'
 
 " Syntax Files
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'ianks/vim-tsx'
 Plug 'jparise/vim-graphql'
-Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'rudes/vim-java'
@@ -87,11 +87,6 @@ set clipboard=unnamed
 
 " Ale
 highlight ALEError ctermbg=Blue
-" let g:ale_typescript_tslint_exclude_paths = ['node_modules']
-" let g:ale_linters = {
-" \   'javascript': ['eslint'],
-" \   'typescript': ['tsserver']
-" \}
 
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.ts,*.tsx,*.xml"
@@ -109,14 +104,15 @@ let g:mta_filetypes = {
 " fzf
 let g:fzf_layout = { 'down': '~20%' }
 map <C-P> :FZF<CR>
-" autocmd FileType fzf
-" autocmd  FileType fzf set laststatus=0 noshowmode noruler
-"   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " Indent Line
 let g:indentLine_char = '•'
 let g:indentLine_concealcursor = "c"
 let g:jsx_ext_required = 0
+
+" Vim Monokai
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
 
 " NerdTree
 let NERDTreeShowHidden = 1
@@ -135,11 +131,8 @@ let g:jsx_ext_required = 0
 " Vim Sort Motion
 let g:sort_motion_flags = "ui"
 
-" YouCompleteMe
-" if !exists("g:ycm_semantic_triggers")
-"   let g:ycm_semantic_triggers = {}
-" endif
-" let g:ycm_semantic_triggers['typescript'] = ['.']
+" YATS: Yet Another Typescript Syntax
+let g:yats_host_keyword = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
