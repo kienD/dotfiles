@@ -18,6 +18,7 @@ call plug#begin('~/.vim/bundle')
 " Plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
+Plug 'amadeus/vim-mjml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'google/vim-searchindex'
 Plug 'jiangmiao/auto-pairs'
@@ -37,26 +38,30 @@ Plug 'Yggdroot/indentline'
 " Syntax Files
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
+" Plug 'ianks/vim-tsx'
 Plug 'jparise/vim-graphql'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
 Plug 'rudes/vim-java'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Themes
-" Plug 'crusoexia/vim-monokai'
-" Plug 'plainfingers/black_is_the_color'
-" Plug 'FrancescoMagliocco/CmptrClr'
+Plug 'crusoexia/vim-monokai'
+Plug 'plainfingers/black_is_the_color'
+Plug 'FrancescoMagliocco/CmptrClr'
 Plug 'lucasprag/simpleblack'
-" Plug 'sff1019/vim-joker'
+Plug 'sff1019/vim-joker'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'atahabaki/archman-vim'
+Plug 'jdsimcoe/hyper.vim'
+Plug 'niklas-8/vim-darkspace'
 
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme simpleblack
-
 syntax on
 
 set background=dark
@@ -79,6 +84,8 @@ set tabstop=2
 set termguicolors
 set t_Co=256
 
+colorscheme simpleblack
+
 hi Search cterm=NONE
 hi Search ctermbg=White
 hi Search ctermfg=Black
@@ -91,7 +98,8 @@ set clipboard=unnamed
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ale
-highlight ALEError ctermbg=Blue
+" highlight link ALEError ErrorMsg
+" highlight link ALEWarning WarningMsg
 
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.ts,*.tsx,*.xml"
@@ -166,6 +174,7 @@ au WinEnter * checktime
 au BufWritePre * :%s/\s\+$//e
 
 " Force Syntax highlighting for certain  file ext
+au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 au BufRead,BufNewFile *.jspf,*.tag set filetype=jsp
 au BufRead,BufNewFile .babelrc set filetype=json
 
