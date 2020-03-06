@@ -2,7 +2,7 @@
 
 echo "Running Deployment..."
 
-ln -is ~/dotfiles/.chunkwmrc ~/
+ln -is ~/dotfiles/.yabairc ~/
 ln -is ~/dotfiles/.skhdrc ~/
 ln -is ~/dotfiles/.vimrc ~/.vimrc
 
@@ -12,8 +12,9 @@ ln -is ~/dotfiles/intellij/.ideavimrc ~/
 ln -is ~/dotfiles/zsh/.zprofile ~/
 ln -is ~/dotfiles/zsh/.zshrc ~/
 ln -is ~/dotfiles/zsh/.zshrc_aliases ~/
+ln -is ~/dotfiles/intellij/.ideavimrc ~/
 
-ln -is ~/dotfiles/karabiner/karabiner.json ~/config/karabiner/karabiner.json
+ln -is ~/dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 
 ln -is ~/dotfiles/scripts ~/
 
