@@ -67,6 +67,7 @@ syntax on
 set background=dark
 set dir=/tmp
 set expandtab
+set guifont=Source\ Code\ Pro\ 12
 set hlsearch
 set ignorecase
 set laststatus=2
@@ -81,7 +82,11 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
+" set term=xterm-256color
+set term=rxvt-unicode-256color
+" set term=rxvt-unicde
 set termguicolors
+set ttymouse=urxvt
 set t_Co=256
 
 colorscheme simpleblack
@@ -91,7 +96,7 @@ hi Search ctermbg=White
 hi Search ctermfg=Black
 
 " Set clipboard as shared between X session and Vim
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins

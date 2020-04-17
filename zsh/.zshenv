@@ -1,6 +1,7 @@
 # Set default Editor to VIM
-# export BROWSER=google-chrome-stable
-# export TERM=terminator
+export BROWSER=firefox
+# export TERM=urxvt
+export TERMINAL=xterm
 export VISUAL=vim
 
 export EDITOR="$VISUAL"
@@ -9,6 +10,7 @@ export EDITOR="$VISUAL"
 # Exports
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
+export PATH=$PATH:$HOME/Packages/rancher-v2.2.0
 
 export ANT_OPTS="-Xms4g -Xmx4g"
 export HOSTNAME=${HOSTNAME}
@@ -22,4 +24,4 @@ export NVM_DIR="$HOME/.nvm"
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-export MANPAGER=/usr/local/bin/vimpager
+export MANPAGER=/usr/bin/vimpager

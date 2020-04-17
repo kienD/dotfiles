@@ -74,9 +74,6 @@ alias nrtw='npm run test:dev -- --watch'
 alias nrtwa='npm run test:dev -- --watchAll'
 alias nrw='npm run watch'
 
-# thefuck
-eval $(thefuck --alias)
-
 ###############################
 ########### Liferay ###########
 ###############################

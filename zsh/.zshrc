@@ -20,8 +20,11 @@ source $ZSH/oh-my-zsh.sh
 # Zsh Completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+#Jump
+eval "$(jump shell)"
+
+# # autojump
+# [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Alias definition
 if [ -f "$HOME/.zshrc_aliases" ]
@@ -38,6 +41,11 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden -s'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
+#
+
+# set keyboard repitition delay rate
+xset r rate 200 25
+

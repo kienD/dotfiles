@@ -1,0 +1,36 @@
+! Global Vim hot keys
+keycode 43 = h H Left
+keycode 44 = j J Down
+keycode 45 = k K Up
+keycode 46 = l L Right
+!
+! Left Alt to Mode_switch
+ keycode 64 = Mode_switch
+!
+! ! Left Shift to Right Shift
+! keycode 62 = Shift_L
+!
+! Swap Escape and Grave keys
+keycode 49 = Escape NoSymbol Escape
+keycode 9 = grave asciitilde grave asciitilde
+
+! Super + BackSpace = Delete
+keycode 22 = BackSpace BackSpace Delete
+!
+! Super + Home
+keycode 56 = b B Home
+keycode 57 = n N End
+!
+! Function Keys
+keycode  10 = 1 exclam F1 exclam
+keycode  11 = 2 at F2 at
+keycode  12 = 3 numbersign F3 numbersign
+keycode  13 = 4 dollar F4 dollar
+keycode  14 = 5 percent F5 percent
+keycode  15 = 6 asciicircum F6 asciicircum
+keycode  16 = 7 ampersand F7 ampersand
+keycode  17 = 8 asterisk F8 asterisk
+keycode  18 = 9 parenleft F9 parenleft
+keycode  19 = 0 parenright F10 parenright
+keycode  20 = minus underscore F11 underscore
+keycode  21 = equal plus F12 plus

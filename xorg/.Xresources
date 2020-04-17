@@ -1,0 +1,53 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+
+rofi.color-active:                   #FFFFFF,#C2CAD0,#F5F5F5,#5294E2,#C2CAD0
+rofi.color-normal:                   #FFFFFF,#525D76,#F5F5F5,#5294E2,#FFFFFF
+rofi.color-urgent:                   #FFFFFF,#DC322F,#F5F5F5,#5294E2,#DC322F
+rofi.color-window:                   #FFFFFF,#F5F5F5
+
+rofi.font: Source Code Pro 12
+rofi.eh: 2
+rofi.hide-scrollbar: true
+rofi.lines: 10
+rofi.line-margin: 10
+rofi.opacity: 90
+rofi.padding: 10
+rofi.separator-style: solid
+rofi.width: 40
+
+! URXVT Theme
+URxvt*cursorBlink: true
+URxvt*matcher.button: 1
+URxvt*perl-ext-common: default,matcher,selection-to-clipboard,resize-font
+URxvt*scrollBar: false
+URxvt*url-launcher: /usr/bin/google-chrome-stable
+URxvt.saveLines: 20000
+
+URxvt.background: [90]#000000
+URxvt.depth: 32
+URxvt.cursorColor: #D0D0D0
+URxvt.font: xft:Source Code Pro:pixelsize=14, xft:Inconsolata\ for\ Powerline:pixelsize=14
+URxvt.foreground: #D0D0D0
+URxvt.letterSpace: -1
+
+
+! Molokai theme
+URxvt.color0: #101010
+URxvt.color1: #960050
+URxvt.color2: #66AA11
+URxvt.color3: #C47f2C
+URxvt.color4: #30309B
+URxvt.color5: #7E40A5
+URxvt.color6: #3579A8
+URxvt.color7: #9999AA
+URxvt.color8: #303030
+URxvt.color9: #FF0090
+URxvt.color10: #80FF00
+URxvt.color11: #FFBA68
+URxvt.color12: #5F5FEE
+URxvt.color13: #BB88DD
+URxvt.color14: #4EB4FA
+URxvt.color15: #D0D0D0
