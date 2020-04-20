@@ -82,11 +82,11 @@ set splitbelow
 set splitright
 set sts=2
 set tabstop=2
-" set term=xterm-256color
-set term=rxvt-unicode-256color
+set term=xterm-256color
+" set term=rxvt-unicode-256color
 " set term=rxvt-unicde
 set termguicolors
-set ttymouse=urxvt
+set ttymouse=xterm
 set t_Co=256
 
 colorscheme simpleblack
