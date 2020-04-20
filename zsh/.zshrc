@@ -20,10 +20,13 @@ source $ZSH/oh-my-zsh.sh
 # Zsh Completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-#Jump
+# Jump
 eval "$(jump shell)"
 
-# # autojump
+# Hub
+eval "$(hub alias -s)"
+
+# autojump
 # [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Alias definition
@@ -49,3 +52,4 @@ export NVM_DIR="$HOME/.nvm"
 # set keyboard repitition delay rate
 xset r rate 200 25
 
+xmodmap ~/.Xmodmap
