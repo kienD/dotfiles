@@ -51,3 +51,36 @@ URxvt.color12: #5F5FEE
 URxvt.color13: #BB88DD
 URxvt.color14: #4EB4FA
 URxvt.color15: #D0D0D0
+
+! XTerm Theme
+XTerm*faceName: Source Code Pro
+xterm*faceSize: 10
+xterm*vt100*geometry: 80x60
+xterm*saveLines: 16384
+xterm*loginShell: true
+xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*termName: xterm-color
+xterm*eightBitInput: false
+
+XTerm.color0: #101010
+XTerm.color1: #960050
+XTerm.color2: #66AA11
+XTerm.color3: #C47f2C
+XTerm.color4: #30309B
+XTerm.color5: #7E40A5
+XTerm.color6: #3579A8
+XTerm.color7: #9999AA
+XTerm.color8: #303030
+XTerm.color9: #FF0090
+XTerm.color10: #80FF00
+XTerm.color11: #FFBA68
+XTerm.color12: #5F5FEE
+XTerm.color13: #BB88DD
+XTerm.color14: #4EB4FA
+XTerm.color15: #D0D0D0
+/* XTerm*colorBD        : _colorBD */
+/* XTerm*colorIT        : _colorIT */
+/* XTerm*colorUL        : _colorUL */
+XTerm*foreground     : #FFFFFF
+XTerm*background     : #000000
+XTerm*cursorColor    : #FFFFFF
