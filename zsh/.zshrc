@@ -35,6 +35,12 @@ then
 	source $HOME/.zshrc_aliases
 fi
 
+# Nvm
+if [ -f /usr/share/nvm/init-nvm.sh ]
+then
+  source /usr/share/nvm/init-nvm.sh
+fi
+
 # Vim - disable Ctrl-S and Ctrl-Q in terminals
 stty -ixon
 

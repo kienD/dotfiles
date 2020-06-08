@@ -31,18 +31,18 @@ alias gc='git checkout'
 alias gca='g commit --amend'
 alias gcb='git checkout -b'
 alias gcm='g commit -m'
-alias gpr-asah='git pull --rebase upstream 7.0.x-private'
-# alias gpr-prod='git pull --rebase upstream 7.0.x-private'
-alias gpr-faro='git pull --rebase upstream 7.1.x-private'
+alias gpr-asah='git pull --rebase upstream 7.0.x'
+# alias gpr-prod='git pull --rebase upstream 7.0.x'
+alias gpr-faro='git pull --rebase upstream 7.1.x'
 alias gpr-hotfix='git pull --rebase upstream hotfix'
 alias gpr-master='git pull --rebase upstream master'
 alias gpr='git pull --rebase'
-alias gp-faro='git push origin 7.1.x-private'
+alias gp-faro='git push origin 7.1.x'
 alias gs='git status'
 
 # ghpr
 alias ghpr='jira_tools.py'
-alias ghpr-faro='ghpr liferay 7.1.x-private'
+alias ghpr-faro='ghpr liferay 7.1.x'
 alias ghpr-hotfix='ghpr liferay hotfix'
 
 
@@ -73,6 +73,10 @@ alias nrtu='npm run test:dev -- -u'
 alias nrtw='npm run test:dev -- --watch'
 alias nrtwa='npm run test:dev -- --watchAll'
 alias nrw='npm run watch'
+
+# xsel
+alias pbcopy='xsel --clipboard --input'
+alias pbpase='xsel --clipboard --output'
 
 ###############################
 ########### Liferay ###########

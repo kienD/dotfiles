@@ -4,3 +4,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Ho
 export PATH=$PATH:$ANT_HOME/bin:$JAVA_HOME/bin:
 
 eval "$(hub alias -s)"
+
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
