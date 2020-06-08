@@ -96,7 +96,7 @@ hi Search ctermbg=White
 hi Search ctermfg=Black
 
 " Set clipboard as shared between X session and Vim
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
