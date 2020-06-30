@@ -1,0 +1,13 @@
+# Speed up scrolling for chromium and pass unchanged for zoom
+"^google-chrome$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+
+# Speed up scrolling for firefox and pass unchanged for zoom
+"^Navigator$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+
+"^Firefox$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4

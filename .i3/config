@@ -151,14 +151,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
+set $ws1 "1:   "
+set $ws2 "2:   "
+set $ws3 "3:   "
+set $ws4 "4:   "
+set $ws5 "5:   "
+set $ws6 "6:   "
+set $ws7 "7:   "
+set $ws8 "8:   "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -390,20 +390,20 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
+exec --no-startup-id imwheel -b 45
 # exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
+exec_always --no-startup-id dunst
 
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-# exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
 
 exec guake
 # exec polybar-run
 exec polybar example
 exec redshift -l 34.132268:-117.961578
 exec xautolock -locker py3lock.py
+
+# exec xterm
+# append_layout ./
