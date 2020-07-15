@@ -84,3 +84,5 @@ XTerm.color15: #D0D0D0
 XTerm*foreground     : #FFFFFF
 XTerm*background     : #000000
 XTerm*cursorColor    : #FFFFFF
+
+Xft.dpi: 192
