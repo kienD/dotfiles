@@ -30,9 +30,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
-Plug 'w0rp/ale', { 'tag': 'v1.9.1' }
+Plug 'w0rp/ale'
 Plug 'Yggdroot/indentline'
 
 " Syntax Files
@@ -86,7 +86,7 @@ set term=xterm-256color
 " set term=rxvt-unicode-256color
 " set term=rxvt-unicde
 set termguicolors
-set ttymouse=xterm
+set ttymouse=sgr
 set t_Co=256
 
 colorscheme simpleblack
@@ -103,8 +103,11 @@ set clipboard=unnamed,unnamedplus
 """""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ale
-" highlight link ALEError ErrorMsg
-" highlight link ALEWarning WarningMsg
+highlight link ALEError ErrorMsg
+highlight link ALEWarning WarningMsg
+let b:ale_fixers = ['prettier', 'eslint']
+let g:ale_completion_tsserver_autoimport = 1
+let g:ale_completion_enabled = 1
 
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.ts,*.tsx,*.xml"

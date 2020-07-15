@@ -53,7 +53,7 @@ URxvt.color14: #4EB4FA
 URxvt.color15: #D0D0D0
 
 ! XTerm Theme
-XTerm*faceName: Source Code Pro
+XTerm*faceName: Source Code Pro, Font Awesome 5
 xterm*faceSize: 10
 xterm*vt100*geometry: 80x60
 xterm*saveLines: 16384

@@ -2,9 +2,6 @@
 ########### General ###########
 ###############################
 
-alias ip='ipconfig getifaddr en0'
-alias cp-ip='ipconfig getifaddr en0 | echo | pbcopy'
-
 alias pls='sudo $(fc -ln -1)'
 
 alias java-kill='fuser -k 8080/tcp'

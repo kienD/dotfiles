@@ -151,14 +151,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 "1:   "
-set $ws2 "2:   "
-set $ws3 "3:   "
-set $ws4 "4:   "
-set $ws5 "5:   "
-set $ws6 "6:   "
-set $ws7 "7:   "
-set $ws8 "8:   "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -399,11 +399,39 @@ exec_always --no-startup-id dunst
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 
-exec guake
+exec --no-startup-id guake
 # exec polybar-run
 exec polybar example
 exec redshift -l 34.132268:-117.961578
 exec xautolock -locker py3lock.py
+
+# workspace setup
+# workspace 1
+# exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/dotfiles/.i3/workspace-1.json'"
+# exec firefox
+
+# workspace 4
+# exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/dotfiles/.i3/workspace-4.json'"
+# exec discord
+# exec slack
+
+# workspace 5
+# exec --no-startup-id "i3-msg 'workspace 5; append_layout ~/dotfiles/.i3/workspace-5.json'"
+
+# workspace 2
+# exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/dotfiles/.i3/workspace-2.json'"
+# exec --no-startup-id xterm -e 'htop'
+# exec --no-startup-id xterm -e 'rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n kd-deployment get pod --selector='component=faro' --output=jsonpath={.items..metadata.name})'
+# exec --no-startup-id xterm -e 'j faro'
+# exec --no-startup-id xterm -e 'j faro && nrs'
+
+# workspace 3
+# exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/dotfiles/.i3/workspace-3.json'"
+# exec xterm -e 'j faro'
+
+# workspace 6
+# exec --no-startup-id "i3-msg 'workspace 6; i3-msg append_layout ~/dotfiles/.i3/workspace-6.json'"
+# exec google-chrome
 
 # exec xterm
 # append_layout ./
