@@ -75,6 +75,18 @@ alias nrw='npm run watch'
 alias pbcopy='xsel --clipboard --input'
 alias pbpase='xsel --clipboard --output'
 
+# Yarn
+alias yrb='yarn run build'
+alias yrf='yarn run format'
+alias yrl='yarn run lint'
+alias yrs='yarn run start'
+alias yrt='yarn run test:dev'
+alias yrtc='yarn run test:dev -- --coverage'
+alias yrtu='yarn run test:dev -- -u'
+alias yrtw='yarn run test:dev -- --watch'
+alias yrtwa='yarn run test:dev -- --watchAll'
+alias yrw='yarn run watch'
+
 ###############################
 ########### Liferay ###########
 ###############################
@@ -96,4 +108,6 @@ alias sfd='start-faro-docker'
 alias csfd='cfd && $HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deploy && sfd && faro-logs'
 alias sfdl='start-faro-docker && faro-logs'
 
-alias faro-logs='docker logs -f com-liferay-osb-faro-private'
+# Rancher
+alias faro-logs='rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n kd-deployment get pod --selector='component=faro' --output=jsonpath={.items..metadata.name})'
+alias asah-logs='rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n kd-deployment get pod --selector='component=asahservice' --output=jsonpath={.items..metadata.name})'

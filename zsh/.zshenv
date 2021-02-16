@@ -16,7 +16,7 @@ export ANT_OPTS="-Xms4g -Xmx4g"
 export HOSTNAME=${HOSTNAME}
 # export IDEA_JDK="/usr/lib/jvm/java-8-openjdk"
 # export JAVA_OPTS="-Xms512m -Xmx512m -XX:PermSize=256m -XX:MaxPermSize=256m"
-export JAVA_HOME="/usr/lib/jvm/java-8-jdk/jre"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk/jre"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 

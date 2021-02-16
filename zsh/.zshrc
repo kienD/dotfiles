@@ -59,3 +59,7 @@ export NVM_DIR="$HOME/.nvm"
 xset r rate 200 25
 
 xmodmap ~/.Xmodmap
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
