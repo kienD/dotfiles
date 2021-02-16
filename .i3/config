@@ -62,11 +62,11 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Ctrl+t exec --no-startup-id compton -b --config ~/compton.conf
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym Print exec --no-startup-id i3-scrot ~/Pictures/screenshot.jpg
+bindsym $mod+F12 --release exec --no-startup-id i3-scrot -w ~/Pictures/screenshot.jpg
+bindsym $mod+Shift+F12 --release exec --no-startup-id i3-scrot -s ~/Pictures/screenshot.jpg
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -316,7 +316,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 bindsym $mod+m bar mode toggle
 
 # Rofi
-bindsym $mod+space exec rofi -show run
+bindsym $mod+space exec rofi -show run # -dpi 192
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -388,7 +388,9 @@ mode "$mode_gaps_outer" {
 ## Startup Programs ##
 ################################################################################################
 
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id ~/dotfiles/xorg/home_2_monitor.sh
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom -b --config ~/compton.conf
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id imwheel -b 45
@@ -400,6 +402,7 @@ exec_always --no-startup-id dunst
 # exec --no-startup-id start_conky_maia
 
 exec --no-startup-id guake
+exec --no-startup-id xset r rate 256 21
 # exec polybar-run
 exec polybar example
 exec redshift -l 34.132268:-117.961578
