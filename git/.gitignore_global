@@ -1,5 +1,6 @@
 .awcache/
 .DS_Store
+.env
 .tern-project
 .vscode/
 jsconfig.json
