@@ -9,18 +9,10 @@ keycode 46 = l L Right
 !
 ! ! Left Shift to Right Shift
 ! keycode 62 = Shift_L
-
-! Swap Caps Lock and Control
-remove lock = Caps_Lock
-! remove control = Control_L
-! keysym Control_L = Caps_Lock
-keysym Caps_Lock = Control_L
-add lock = Caps_Lock
-! add control = Control_L
-
+!
 ! Swap Escape and Grave keys
-! keycode 49 = Escape NoSymbol Escape
-! keycode 9 = grave asciitilde grave asciitilde
+keycode 49 = Escape NoSymbol Escape
+keycode 9 = grave asciitilde grave asciitilde
 
 ! Super + BackSpace = Delete
 keycode 22 = BackSpace BackSpace Delete
