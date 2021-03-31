@@ -85,4 +85,4 @@ XTerm*foreground     : #FFFFFF
 XTerm*background     : #000000
 XTerm*cursorColor    : #FFFFFF
 
-Xft.dpi: 192
+/* Xft.dpi: 192 */
