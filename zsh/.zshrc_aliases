@@ -1,3 +1,5 @@
+source ~/Liferay/acUserConfig.sh
+
 ###############################
 ########### General ###########
 ###############################
@@ -108,6 +110,46 @@ alias sfd='start-faro-docker'
 alias csfd='cfd && $HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deploy && sfd && faro-logs'
 alias sfdl='start-faro-docker && faro-logs'
 
+function enableRecommendations() {
+  curl -X POST --user "$userName:$password" http://localhost:3000/o/faro/main/project/$1/recommendations/enable
+}
+
 # Rancher
-alias faro-logs='rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n kd-deployment get pod --selector='component=faro' --output=jsonpath={.items..metadata.name})'
-alias asah-logs='rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n kd-deployment get pod --selector='component=asahservice' --output=jsonpath={.items..metadata.name})'
+
+# Get logs for pod based on namespace & role
+function checkRancherLogs() {
+  selectedNamespace=$1
+  selectedRole=$2
+
+  # Check if any arguments exist
+  if [ $# -eq 0 ]; then
+    PS3="Select Namespace: "
+
+    select namespace in $(rancher kubectl get namespaces --output=jsonpath={.items..metadata.name})
+
+    do
+      selectedNamespace=$namespace
+
+      break;
+    done
+  fi
+
+  echo "Namespace: $selectedNamespace"
+
+  # Check if second argument exists
+  if [ -z $2 ]; then
+    PS3="Select Role: "
+
+    select role in $(rancher kubectl -n $selectedNamespace get pods --output=jsonpath={.items..metadata.labels.role})
+
+    do
+      selectedRole=$role
+
+      break;
+    done
+  fi
+
+  echo "Role: $selectedRole"
+
+  rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n $selectedNamespace get pod --selector=role=$selectedRole --output=jsonpath={.items..metadata.name})
+}

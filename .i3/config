@@ -27,7 +27,7 @@ font xft:Source Code Pro 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec $TERMINAL
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,7 +63,7 @@ bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b --config ~/compton.conf
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot ~/Pictures/screenshot.jpg
 bindsym $mod+F12 --release exec --no-startup-id i3-scrot -w ~/Pictures/screenshot.jpg
 bindsym $mod+Shift+F12 --release exec --no-startup-id i3-scrot -s ~/Pictures/screenshot.jpg
@@ -316,7 +316,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 bindsym $mod+m bar mode toggle
 
 # Rofi
-bindsym $mod+space exec rofi -show run # -dpi 192
+bindsym $mod+space exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/hack/scripts/rofi/launcher.rasi # -dpi 192
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -396,7 +396,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id imwheel -b 45
 # exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-exec_always --no-startup-id dunst
+exec_always --no-startup-id deadd-notification-center
 
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
@@ -404,37 +404,8 @@ exec_always --no-startup-id dunst
 exec --no-startup-id guake
 exec --no-startup-id xset r rate 256 21
 # exec polybar-run
-exec polybar example
-exec redshift -l 34.132268:-117.961578
-exec xautolock -locker py3lock.py
-
-# workspace setup
-# workspace 1
-# exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/dotfiles/.i3/workspace-1.json'"
-# exec firefox
-
-# workspace 4
-# exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/dotfiles/.i3/workspace-4.json'"
-# exec discord
-# exec slack
-
-# workspace 5
-# exec --no-startup-id "i3-msg 'workspace 5; append_layout ~/dotfiles/.i3/workspace-5.json'"
-
-# workspace 2
-# exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/dotfiles/.i3/workspace-2.json'"
-# exec --no-startup-id xterm -e 'htop'
-# exec --no-startup-id xterm -e 'rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n kd-deployment get pod --selector='component=faro' --output=jsonpath={.items..metadata.name})'
-# exec --no-startup-id xterm -e 'j faro'
-# exec --no-startup-id xterm -e 'j faro && nrs'
-
-# workspace 3
-# exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/dotfiles/.i3/workspace-3.json'"
-# exec xterm -e 'j faro'
-
-# workspace 6
-# exec --no-startup-id "i3-msg 'workspace 6; i3-msg append_layout ~/dotfiles/.i3/workspace-6.json'"
-# exec google-chrome
-
-# exec xterm
-# append_layout ./
+# exec polybar example
+exec --no-startup-id ~/.config/polybar/hack/launch.sh
+# exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec redshift
+exec xautolock -locker ~/dotfiles/py3lock/py3lock.py -time 30

@@ -29,7 +29,7 @@ URxvt.saveLines: 20000
 URxvt.background: [90]#000000
 URxvt.depth: 32
 URxvt.cursorColor: #D0D0D0
-URxvt.font: xft:Source Code Pro:pixelsize=14, xft:Inconsolata\ for\ Powerline:pixelsize=14
+URxvt.font: xft:Source Code Pro:pixelsize=14, xft:Inconsolata Nerd Font:pixelsize=12
 URxvt.foreground: #D0D0D0
 URxvt.letterSpace: -1
 
@@ -53,7 +53,7 @@ URxvt.color14: #4EB4FA
 URxvt.color15: #D0D0D0
 
 ! XTerm Theme
-XTerm*faceName: Source Code Pro, Font Awesome 5
+XTerm*faceName: Source Code Pro, xft:Inconsolata Nerd Font Mono:size=12
 xterm*faceSize: 10
 xterm*vt100*geometry: 80x60
 xterm*saveLines: 16384
