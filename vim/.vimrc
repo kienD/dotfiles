@@ -9,7 +9,7 @@
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -25,14 +25,14 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-plug'
 Plug 'junegunn/fzf'
 Plug 'prettier/vim-prettier'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentline'
 
 " Syntax Files
@@ -105,22 +105,50 @@ set clipboard=unnamed,unnamedplus
 " Ale
 highlight link ALEError ErrorMsg
 highlight link ALEWarning WarningMsg
-let b:ale_fixers = ['prettier', 'eslint']
-let g:ale_completion_tsserver_autoimport = 1
+let g:ale_completion_autoimport = 1
 let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 0
+" let b:ale_fixers = ['prettier', 'eslint']
+
+let g:ale_fixers = {
+      \ 'css': ['prettier'],
+      \ 'html': ['prettier'],
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'jsx': ['prettier', 'eslint'],
+      \ 'json': ['prettier'],
+      \ 'scss': ['prettier'],
+      \ 'sh': ['shfmt'],
+      \ 'tsx': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier', 'eslint'],
+      \}
+let g:ale_linters = {
+      \ 'awk': ['gawk'],
+      \ 'javascript': ['eslint'],
+      \ 'jsx': ['eslint'],
+      \ 'tsx': ['eslint'],
+      \ 'typescript': ['eslint'],
+      \ 'sh': ['shellcheck'],
+      \}
+let g:ale_sh_shfmt_options='-i 2' " Indent with 2 spaces
+
+" Move between warnings or errors with ALENext and ALEPrevious
+nnoremap <silent> <leader>aj :ALENext<cr>
+nnoremap <silent> <leader>ak :ALEPrevious<cr>
+" ALEFix will format the file in place
+nnoremap <silent> <leader>af :ALEFix<cr>
 
 " Closetag
 let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsp,*.jsx,*.ts,*.tsx,*.xml"
 let g:mta_filetypes = {
-  \ 'html' : 1,
-  \ 'xhtml': 1,
-  \ 'xml' : 1,
-  \ 'js' : 1,
-  \ 'jsx' : 1,
-  \ 'jsp': 1,
-  \ 'ts': 1,
-  \ 'tsx': 1
-  \}
+      \ 'html' : 1,
+      \ 'xhtml': 1,
+      \ 'xml' : 1,
+      \ 'js' : 1,
+      \ 'jsx' : 1,
+      \ 'jsp': 1,
+      \ 'ts': 1,
+      \ 'tsx': 1
+      \}
 
 " fzf
 let g:fzf_layout = { 'down': '~20%' }
@@ -154,10 +182,10 @@ let g:sort_motion_flags = "ui"
 " See files changed before saving
 function! DiffWithSaved()
   let filetype=&ft
-    diffthis
-      vnew | r # | normal! 1Gdd
-        diffthis
-          exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 

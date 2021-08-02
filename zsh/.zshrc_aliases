@@ -38,28 +38,28 @@ alias gpr-master='git pull --rebase upstream master'
 alias gpr='git pull --rebase'
 alias gp-faro='git push origin 7.1.x'
 alias gs='git status'
+alias gsync='git pull --rebase upstream $(current_branch) && git push origin $(current_branch)'
 
 # ghpr
 alias ghpr='jira_tools.py'
 alias ghpr-faro='ghpr liferay 7.1.x'
 alias ghpr-hotfix='ghpr liferay hotfix'
 
+# Gradle
+alias gradle-fs='gradle wrapper --gradle-version 6.6.1 && gradle formatSource'
 
 # Gradlew from any level
-function gradle {
+function gw {
   local root_level=$(git rev-parse --show-toplevel 2>/dev/null)
 
   if [[ -n "$root_level" && -f "$root_level/gradlew" ]]; then
     root_level="$root_level/gradlew"
   else
-    root_level=$(which gradle)
+    root_level=$(which gradlew)
   fi
 
   "$root_level" $@
 }
-
-#Gulp
-alias gw='gulp watch'
 
 # Npm
 alias nrb='npm run build'
