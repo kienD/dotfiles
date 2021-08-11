@@ -402,7 +402,7 @@ exec_always --no-startup-id deadd-notification-center
 # exec --no-startup-id start_conky_maia
 
 exec --no-startup-id guake
-exec --no-startup-id xset r rate 256 21
+exec --no-startup-id xset r rate 248 21
 # exec polybar-run
 # exec polybar example
 exec --no-startup-id ~/.config/polybar/hack/launch.sh

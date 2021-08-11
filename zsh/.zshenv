@@ -12,6 +12,7 @@ export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 export PATH=$PATH:$HOME/Packages/rancher-v2.2.0
 export PATH=$PATH:$HOME/Liferay/portal-commit-patcher
+export PATH=$PATH:$HOME/Projects/jira-pr-tool
 
 export ANT_OPTS="-Xms4g -Xmx4g"
 export HOSTNAME=${HOSTNAME}

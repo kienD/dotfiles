@@ -56,7 +56,7 @@ export NVM_DIR="$HOME/.nvm"
 #
 
 # set keyboard repitition delay rate
-xset r rate 200 25
+xset r rate 248 21
 
 xmodmap ~/.Xmodmap
 

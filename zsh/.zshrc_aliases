@@ -41,9 +41,11 @@ alias gs='git status'
 alias gsync='git pull --rebase upstream $(current_branch) && git push origin $(current_branch)'
 
 # ghpr
-alias ghpr='jira_tools.py'
-alias ghpr-faro='ghpr liferay 7.1.x'
-alias ghpr-hotfix='ghpr liferay hotfix'
+alias ghpr='create-pr'
+alias ghpr-faro='ghpr -b liferay:7.1.x -l Review\ Needed'
+alias ghpr-faro-fe='ghpr-faro -a fcodias,jhonattasferreira,gabrielpramos'
+alias ghprff='ghpr-faro-fe'
+# alias ghpr-hotfix='ghpr liferay hotfix'
 
 # Gradle
 alias gradle-fs='gradle wrapper --gradle-version 6.6.1 && gradle formatSource'
@@ -110,46 +112,46 @@ alias sfd='start-faro-docker'
 alias csfd='cfd && $HOME/Liferay/com-liferay-osb-faro-private && ./gradlew deploy && sfd && faro-logs'
 alias sfdl='start-faro-docker && faro-logs'
 
-function enableRecommendations() {
+function enable-recommendations() {
   curl -X POST --user "$userName:$password" http://localhost:3000/o/faro/main/project/$1/recommendations/enable
 }
 
 # Rancher
 
 # Get logs for pod based on namespace & role
-function checkRancherLogs() {
-  selectedNamespace=$1
-  selectedRole=$2
+function check-rancher-logs() {
+  local selected_namespace="$1"
+  local selected_role="$2"
 
   # Check if any arguments exist
-  if [ $# -eq 0 ]; then
+  if [ "$#" -eq 0 ]; then
     PS3="Select Namespace: "
 
     select namespace in $(rancher kubectl get namespaces --output=jsonpath={.items..metadata.name})
 
     do
-      selectedNamespace=$namespace
+      selected_namespace="$namespace"
 
       break;
     done
   fi
 
-  echo "Namespace: $selectedNamespace"
+  echo "Namespace: $selected_namespace"
 
   # Check if second argument exists
-  if [ -z $2 ]; then
+  if [ -z "$selected_role" ]; then
     PS3="Select Role: "
 
-    select role in $(rancher kubectl -n $selectedNamespace get pods --output=jsonpath={.items..metadata.labels.role})
+    select role in $(rancher kubectl -n "$selected_namespace" get pods --output=jsonpath={.items..metadata.labels.role})
 
     do
-      selectedRole=$role
+      selected_role="$role"
 
       break;
     done
   fi
 
-  echo "Role: $selectedRole"
+  echo "Role: $selected_role"
 
-  rancher kubectl -n kd-deployment logs -f $(rancher kubectl -n $selectedNamespace get pod --selector=role=$selectedRole --output=jsonpath={.items..metadata.name})
+  rancher kubectl -n "$selected_namespace" logs -f $(rancher kubectl -n "$selected_namespace" get pod --selector=role="$selected_role" --output=jsonpath={.items..metadata.name})
 }
