@@ -118,6 +118,51 @@ function enable-recommendations() {
 
 # Rancher
 
+# Exec command line function in rancher pod instance
+function exec-rancher-command() {
+  local selected_namespace="$1"
+  local selected_role="$2"
+  local cli_command="$3"
+
+  # Check if any arguments exist
+  if [ "$#" -eq 0 ]; then
+    PS3="Select Namespace: "
+
+    select namespace in $(rancher kubectl get namespaces --output=jsonpath={.items..metadata.name})
+
+    do
+      selected_namespace="$namespace"
+
+      break;
+    done
+  fi
+
+  echo "Namespace: $selected_namespace"
+
+  # Check if second argument exists
+  if [ -z "$selected_role" ]; then
+    PS3="Select Role: "
+
+    select role in $(rancher kubectl -n "$selected_namespace" get pods --output=jsonpath={.items..metadata.labels.role})
+
+    do
+      selected_role="$role"
+
+      break;
+    done
+  fi
+
+  echo "Role: $selected_role"
+
+  if [ -z "$cli_command" ]; then
+    echo -n "Enter cli command to run: "
+
+    read cli_command
+  fi
+
+  rancher kubectl -n "$selected_namespace" exec $(rancher kubectl -n kd-deployment get pod --selector=role="$selected_role" --output=jsonpath={.items..metadata.name}) -- "$cli_command"
+}
+
 # Get logs for pod based on namespace & role
 function check-rancher-logs() {
   local selected_namespace="$1"
