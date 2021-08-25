@@ -1,0 +1,21 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "coc.preferences.formatOnType": true,
+  "eslint.autoFixOnSave": true,
+  "javascript.autoClosingTags": true,
+  "languageserver": {
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    },
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      // customize filetypes to your needs
+      "filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "graphql"]
+    }
+  },
+  "tsserver.formatOnType": true,
+  "typescript.autoClosingTags": true
+}
