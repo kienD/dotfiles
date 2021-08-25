@@ -56,11 +56,12 @@ export NVM_DIR="$HOME/.nvm"
 #
 
 # set keyboard repitition delay rate
-xset r rate 248 21
+xset r rate 248 40
 
 xmodmap ~/.Xmodmap
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
+
 eval $(sdk export zsh)
