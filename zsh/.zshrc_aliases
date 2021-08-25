@@ -160,7 +160,7 @@ function exec-rancher-command() {
     read cli_command
   fi
 
-  rancher kubectl -n "$selected_namespace" exec $(rancher kubectl -n kd-deployment get pod --selector=role="$selected_role" --output=jsonpath={.items..metadata.name}) -- "$cli_command"
+  rancher kubectl -n "$selected_namespace" exec -it $(rancher kubectl -n kd-deployment get pod --selector=role="$selected_role" --output=jsonpath={.items..metadata.name}) -- "$cli_command"
 }
 
 # Get logs for pod based on namespace & role
