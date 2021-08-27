@@ -17,7 +17,7 @@ call plug#begin('~/.vim/bundle')
 
 " Plugins
 Plug 'airblade/vim-gitgutter'
-" Plug 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 Plug 'amadeus/vim-mjml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'neoclide/coc.nvim', {'branch': 'release' }
@@ -63,6 +63,7 @@ call plug#end()
 " coc-eslint
 " coc-sh
 " coc-css
+" coc-react-refactor
 
 """""""""""""""""""""""""""""""""""""""""""""""""""
 " General

@@ -2,7 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "coc.preferences.formatOnType": true,
   "eslint.autoFixOnSave": true,
-  "javascript.autoClosingTags": true,
+  "javascript.autoClosingTags": false,
   "languageserver": {
     "dockerfile": {
       "command": "docker-langserver",
@@ -17,5 +17,5 @@
     }
   },
   "tsserver.formatOnType": true,
-  "typescript.autoClosingTags": true
+  "typescript.autoClosingTags": false
 }
