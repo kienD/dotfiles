@@ -1,11 +1,10 @@
 # Set default Editor to VIM
 export BROWSER=firefox
-export TERM=kitty
-export TERMINAL=kitty
+export TERM=xterm-kitty
+# export TERMINAL=kitty
 export VISUAL=vim
 
 export EDITOR="$VISUAL"
-
 
 # Exports
 export PATH=$PATH:$HOME/scripts
