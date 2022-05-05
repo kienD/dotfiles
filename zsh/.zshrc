@@ -55,6 +55,9 @@ export NVM_DIR="$HOME/.nvm"
 # fi
 #
 
+# Start kechain
+eval `keychain id_rsa --quiet --eval --timeout 15 --nogui --noask`
+
 # set keyboard repitition delay rate
 xset r rate 248 40
 
@@ -65,3 +68,9 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 fi
 
 eval $(sdk export zsh)
+
+IJ_CLONE_PATH=~/Liferay/liferay-intellij
+
+ij() {
+    ${IJ_CLONE_PATH}/intellij "$@"
+}

@@ -43,8 +43,6 @@ alias gsync='git pull --rebase upstream $(current_branch) && git push origin $(c
 # ghpr
 alias ghpr='create-pr'
 alias ghpr-faro='ghpr -b liferay:7.1.x -l Review\ Needed'
-alias ghpr-faro-fe='ghpr-faro -a fcodias,jhonattasferreira,gabrielpramos'
-alias ghprff='ghpr-faro-fe'
 # alias ghpr-hotfix='ghpr liferay hotfix'
 
 # Gradle
@@ -99,7 +97,6 @@ alias yrw='yarn run watch'
  alias deploy-asah='$HOME/Liferay/com-liferay-osb-asah-private && gradle clean assemble && docker-compose -f docker-compose.monolith.yml up -d --build && faro-logs'
 
 # Faro Project
-alias deploy-faro='$HOME/Liferay/com-liferay-osb-faro-private/osb-faro-web && gradle deploy && npm run start'
 alias faro-bundles='$HOME/Liferay/bundles/tomcat-8.0.32/bin'
 alias faro-bundles-run='faro-bundles && cr'
 alias faro-final='$HOME/Liferay/com-liferay-osb-faro-private/osb-faro-web && gradle formatSource &&  npm run test'

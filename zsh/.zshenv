@@ -1,7 +1,7 @@
 # Set default Editor to VIM
 export BROWSER=firefox
 export TERM=xterm-kitty
-# export TERMINAL=kitty
+export TERMINAL=kitty
 export VISUAL=vim
 
 export EDITOR="$VISUAL"
