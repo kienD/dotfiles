@@ -1,0 +1,39 @@
+#!/bin/bash
+set -e
+
+function main() {
+  local day_of_week=$(date +%u)
+
+  local wake_time
+
+  if [[ $day_of_week -gt 5 ]]; then
+    wake_time=$(date +%s -d next\ Monday\ 08:00AM)
+  else
+    wake_time=$(date +%s -d next\ day\ 08:00AM)
+  fi
+
+  message=$(sudo rtcwake -l -m mem -t $wake_time | xargs echo)
+
+  split_time "$message"
+}
+
+function split_time() {
+  local value="$1";
+
+  delimiter="at"
+
+  #Concatenate the delimiter with the main string
+  string=$value$delimiter
+
+  #Split the text based on the delimiter
+  myarray=()
+  while [[ $string ]]; do
+    myarray+=( "${string%%"$delimiter"*}" )
+
+    string=${string#*"$delimiter"}
+  done
+
+  echo "${myarray[0]} at $(date -u -d "${myarray[1]} UTC")"
+}
+
+main
