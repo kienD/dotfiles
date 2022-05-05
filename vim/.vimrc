@@ -31,6 +31,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentline'
 " Plug 'python-mode/python-mode', { 'branch': 'develop' }
@@ -97,6 +98,10 @@ set termguicolors
 set ttymouse=sgr
 set t_Co=256
 
+" For Coc
+set shortmess+=c
+set updatetime=300
+
 colorscheme simpleblack
 
 hi LineNr guifg=Grey
@@ -154,18 +159,18 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-function! ShowDocIfNoDiagnostic(timer_id)
-  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
-    silent call CocActionAsync('doHover')
-  endif
-endfunction
+" function! ShowDocIfNoDiagnostic(timer_id)
+"   if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+"     silent call CocActionAsync('doHover')
+"   endif
+" endfunction
 
-function! s:show_hover_doc()
-  call timer_start(500, 'ShowDocIfNoDiagnostic')
-endfunction
+" function! s:show_hover_doc()
+"   call timer_start(500, 'ShowDocIfNoDiagnostic')
+" endfunction
 
-autocmd CursorHoldI * :call <SID>show_hover_doc()
-autocmd CursorHold * :call <SID>show_hover_doc()
+" autocmd CursorHoldI * :call <SID>show_hover_doc()
+" autocmd CursorHold * :call <SID>show_hover_doc()
 
 " Set coc-css for scss files
 autocmd FileType scss setl iskeyword+=@-@
@@ -289,3 +294,6 @@ let @l='f xi'
 
 " Trim js ext off imports & add ;
 let @i = 'vbbxa;'
+
+" Convert method to arrow function
+let @f='iconst ^C^Cf(i = ^C^Cf)a =>^C^C'

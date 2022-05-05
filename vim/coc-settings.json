@@ -1,6 +1,7 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "coc.preferences.formatOnType": true,
+  //"coc.preferences.enableMessageDialog": false,
   "eslint.autoFixOnSave": true,
   "javascript.autoClosingTags": false,
   "languageserver": {
