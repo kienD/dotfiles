@@ -11,23 +11,42 @@ export UPDATE_ZSH_DAYS=14
 # Display command execution time
 HIST_STAMPS="mm/dd/yyyy"
 
+# zplug
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# zplug plugins
+zplug "djui/alias-tips"
+zplug "paulirish/git-open", as:plugin
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(alias-tips git git-open)
+# plugins=(alias-tips git git-open)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
 
+# lab completion
+source <(lab completion zsh)
+
 # Zsh Completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/opt/homebrew/share/zsh-completions $fpath)
 
 # Jump
 eval "$(jump shell)"
-
-# Hub
-eval "$(hub alias -s)"
-
-# autojump
-# [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Alias definition
 if [ -f "$HOME/.zshrc_aliases" ]
@@ -42,32 +61,14 @@ then
 fi
 
 # Vim - disable Ctrl-S and Ctrl-Q in terminals
-stty -ixon
+# stty -ixon
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden -s'
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init -)"
-# fi
-#
-
-# Start kechain
-eval `keychain id_rsa --quiet --eval --timeout 15 --nogui --noask`
-
-# set keyboard repitition delay rate
-xset r rate 248 40
-
-xmodmap ~/.Xmodmap
-
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
-
-eval $(sdk export zsh)
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 IJ_CLONE_PATH=~/Liferay/liferay-intellij
 
