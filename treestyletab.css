@@ -1,0 +1,136 @@
+/* Show title of unread tabs with red and italic font */
+:root.sidebar tab-item.unread .label-content {
+  color: red !important;
+  font-style: italic !important;
+}
+
+
+/* Add private browsing indicator per tab */
+/*
+:root.sidebar tab-item.private-browsing tab-label:before {
+  content: "🕶";
+}
+*/
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_sidebar.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* Show sidebar only when the cursor is over it  */
+/* The border controlling sidebar width will be removed so you'll need to modify these values to change width */
+
+/* Hide .twisty and adjust margins so favicons have 7px on left. */
+tab-item .twisty {
+    visibility: hidden;
+    margin-left: -7px;
+}
+
+#tabbar:hover tab-item .twisty {
+    visibility: visible;
+    margin-left: 0px;
+}
+
+
+tab-item:hover .closebox {
+    visibility: initial;
+}
+
+/* Show close button only on hover */
+#tabbar tab-item tab-item-substance:not(:hover) tab-closebox {
+  display: none;
+}
+
+/* show pointer when hovering tab item */
+#tabbar tab-item:hover {
+  cursor: pointer;
+}
+
+/* Hide label text until hover */
+#tabbar tab-item .label {
+  visibility: hidden;  
+}
+
+#tabbar:hover tab-item .label {
+  visibility: visible;  
+}
+
+/* Hide counter text until hover */
+#tabbar tab-item tab-counter {
+  visibility: hidden;  
+}
+
+#tabbar:hover tab-item tab-counter {
+  visibility: visible;  
+}
+
+#tabbar tab-item .label {
+  text-overflow: ellipsis;  
+}
+
+/* Center the new tab sign in collapsed state. */
+.newtab-button{
+    padding-left: 0.48em !important;
+}
+
+#tabbar {
+  font-size: 1.2rem;
+}
+
+#tabbar tab-favicon {
+  --favicon-size: 2.0rem;
+}
+
+#tabbar tab-favicon {
+	margin-left: -2px;
+}
+
+/* Better alignment of Favicons when collapsed */
+#tab-item[data-level][data-level="0"] tab-item-substance {
+  margin-left: 0% !important;
+}
+tab-item[data-level][data-level="1"] tab-item-substance {
+  margin-left: 0% !important;
+}
+tab-item[data-level][data-level="2"] tab-item-substance {
+  margin-left: 0% !important;
+}
+tab-item[data-level][data-level="3"] tab-item-substance {
+  margin-left: 0% !important;
+}
+tab-item[data-level][data-level="4"] tab-item-substance {
+  margin-left: 0% !important;
+}
+tab-item[data-level][data-level="5"] tab-item-substance {
+  margin-left: 0% !important;
+}
+tab-item[data-level][data-level="6"] tab-item-substance {
+  margin-left: 0% !important;
+}
+tab-item[data-level][data-level="7"] tab-item-substance {
+  margin-left: 0% !important;
+}
+
+/* Better alignment of Favicons when collapsed */
+#tabbar:hover tab-item[data-level][data-level="0"] tab-item-substance {
+  margin-left: 2% !important;
+}
+#tabbar:hover tab-item[data-level][data-level="1"] tab-item-substance {
+  margin-left: 4% !important;
+}
+#tabbar:hover tab-item[data-level][data-level="2"] tab-item-substance {
+  margin-left: 6% !important;
+}
+#tabbar:hover tab-item[data-level][data-level="3"] tab-item-substance {
+  margin-left: 8% !important;
+}
+#tabbar:hover tab-item[data-level][data-level="4"] tab-item-substance {
+  margin-left: 12% !important;
+}
+#tabbar:hover tab-item[data-level][data-level="5"] tab-item-substance {
+  margin-left: 14% !important;
+}
+#tabbar:hover tab-item[data-level][data-level="6"] tab-item-substance {
+  margin-left: 16% !important;
+}
+#tabbar:hover tab-item[data-level][data-level="7"] tab-item-substance {
+  margin-left: 18% !important;
+}
