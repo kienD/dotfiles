@@ -1,0 +1,9 @@
+{
+    "vim.overrideCopy": true,
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc",
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys": {
+    },
+}
