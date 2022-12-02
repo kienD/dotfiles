@@ -62,6 +62,16 @@ tab-item:hover .closebox {
   visibility: visible;  
 }
 
+/* Hide sound icon until hover */
+#tabbar tab-sound-button {
+	visibility: hidden;
+}
+
+#tabbar:hover tab-sound-button {
+	visibility: visible;
+}
+
+/* Display ellipsis for overflowing text */
 #tabbar tab-item .label {
   text-overflow: ellipsis;  
 }
@@ -82,6 +92,9 @@ tab-item:hover .closebox {
 #tabbar tab-favicon {
 	margin-left: -2px;
 }
+
+/* Hid scrollbar */
+#tabbar { scrollbar-width: none; }
 
 /* Better alignment of Favicons when collapsed */
 #tab-item[data-level][data-level="0"] tab-item-substance {
