@@ -1,0 +1,157 @@
+{
+  "workbench.colorTheme": "Tomorrow_Night_Bright",
+  "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "vim.overrideCopy": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "~/.vimrc",
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {},
+  "vim.normalModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+        "before": ["u"],
+        "commands": ["undo"]
+    },
+    {
+        "before": ["c-r"],
+        "commands": ["redo"]
+    },
+    {
+      "before": ["=", "="],
+      "commands": [
+        {
+          "command": "editor.action.reindentselectedlines",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["g", "a"],
+      "commands": [
+        {
+          "command": "editor.action.revealDefinitionAside",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": [
+        {
+          "command": "editor.action.goToImplementation",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": [
+        {
+          "command": "editor.action.peekDefinition",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": [
+        {
+          "command": "editor.action.goToReferences",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["g", "t"],
+      "commands": [
+        {
+          "command": "editor.action.goToTypeDefinition",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["q", "n", "e"],
+      "commands": [
+        {
+          "command": "editor.action.marker.nextInFiles",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["q", "p", "e"],
+      "commands": [
+        {
+          "command": "editor.action.marker.previousInFiles",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["q", "s"],
+      "commands": [
+        {
+          "command": "editor.action.triggerSuggest",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["q", "f"],
+      "commands": [
+        {
+          "command": "editor.action.quickFix",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["q", "n", "t"],
+      "commands": [
+        {
+          "command": "workbench.action.nextEditor",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["q", "p", "t"],
+      "commands": [
+        {
+          "command": "workbench.action.previousEditor",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestionsDelay": 200,
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
+  },
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.lineNumbers": "relative",
+  "problems.showCurrentInStatus": true,
+  "editor.minimap.enabled": false,
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:jni+resolve=off -javaagent:\"/Users/kdo/.vscode/extensions/vscjava.vscode-lombok-1.0.1/server/lombok.jar\"",
+  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  }
+}

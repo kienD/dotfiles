@@ -1,0 +1,697 @@
+// Place your key bindings in this file to override the defaults
+[
+    // {
+    //     "key": "cmd+h",
+    //     "command": "workbench.action.focusPreviousGroup",
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "cmd+l",
+    //     "command": "workbench.action.focusNextGroup",
+    //     "when": "editorTextFocus"
+    // },
+     {
+        "key": "Escape",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "Escape",
+        "command": "notebook.cell.quitEdit",
+        "when": "inputFocus && notebookEditorFocused && !editorHasSelection && !editorHoverVisible && vim.active && vim.mode == 'Normal'"
+      },
+      {
+        "key": "Home",
+        "command": "extension.vim_home",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "cmd+home",
+        "command": "extension.vim_ctrl+home",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "End",
+        "command": "extension.vim_end",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "cmd+end",
+        "command": "extension.vim_ctrl+end",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "Insert",
+        "command": "extension.vim_insert",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "Backspace",
+        "command": "extension.vim_backspace",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "Delete",
+        "command": "extension.vim_delete",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "tab",
+        "command": "extension.vim_tab",
+        "when": "editorFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "shift+tab",
+        "command": "extension.vim_shift+tab",
+        "when": "editorFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "left",
+        "command": "extension.vim_left",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "right",
+        "command": "extension.vim_right",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "up",
+        "command": "extension.vim_up",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible && !parameterHintsVisible"
+      },
+      {
+        "key": "down",
+        "command": "extension.vim_down",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && !suggestWidgetVisible && !parameterHintsVisible"
+      },
+      {
+        "key": "g g",
+        "command": "list.focusFirst",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "h",
+        "command": "list.collapse",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "j",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "l",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "o",
+        "command": "list.toggleExpand",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "/",
+        "command": "list.toggleKeyboardNavigation",
+        "when": "listFocus && !inputFocus && listSupportsKeyboardNavigation"
+      },
+      {
+        "key": "cmd+a",
+        "command": "extension.vim_ctrl+a",
+        "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+b",
+        "command": "extension.vim_ctrl+b",
+        "when": "editorTextFocus && vim.active && vim.use<C-b> && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "cmd+c",
+        "command": "extension.vim_ctrl+c",
+        "when": "editorTextFocus && vim.active && vim.use<C-c> && !inDebugRepl && vim.overridecmdC"
+      },
+      {
+        "key": "cmd+d",
+        "command": "extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+d",
+        "command": "list.focusPageDown",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "cmd+e",
+        "command": "extension.vim_ctrl+e",
+        "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+f",
+        "command": "extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.active && vim.use<C-f> && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "cmd+g",
+        "command": "extension.vim_ctrl+g",
+        "when": "editorTextFocus && vim.active && vim.use<C-g> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+h",
+        "command": "extension.vim_ctrl+h",
+        "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+i",
+        "command": "extension.vim_ctrl+i",
+        "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+j",
+        "command": "extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+k",
+        "command": "extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+l",
+        "command": "extension.vim_navigateCtrlL",
+        "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+m",
+        "command": "extension.vim_ctrl+m",
+        "when": "editorTextFocus && vim.active && vim.use<C-m> && !inDebugRepl || vim.mode == 'CommandlineInProgress' && vim.active && vim.use<C-m> && !inDebugRepl || vim.mode == 'SearchInProgressMode' && vim.active && vim.use<C-m> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+n",
+        "command": "extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.mode == 'CommandlineInProgress' && vim.active && vim.use<C-n> && !inDebugRepl || vim.mode == 'SearchInProgressMode' && vim.active && vim.use<C-n> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+o",
+        "command": "extension.vim_ctrl+o",
+        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+p",
+        "command": "extension.vim_ctrl+p",
+        "when": "suggestWidgetVisible && vim.active && vim.use<C-p> && !inDebugRepl || vim.mode == 'CommandlineInProgress' && vim.active && vim.use<C-p> && !inDebugRepl || vim.mode == 'SearchInProgressMode' && vim.active && vim.use<C-p> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+q",
+        "command": "extension.vim_winCtrlQ",
+        "when": "editorTextFocus && vim.active && vim.use<C-q> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+r",
+        "command": "extension.vim_ctrl+r",
+        "when": "editorTextFocus && vim.active && vim.use<C-r> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+t",
+        "command": "extension.vim_ctrl+t",
+        "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+u",
+        "command": "extension.vim_ctrl+u",
+        "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+u",
+        "command": "list.focusPageUp",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "cmd+v",
+        "command": "extension.vim_ctrl+v",
+        "when": "editorTextFocus && vim.active && vim.use<C-v> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+w",
+        "command": "extension.vim_ctrl+w",
+        "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+x",
+        "command": "extension.vim_ctrl+x",
+        "when": "editorTextFocus && vim.active && vim.use<C-x> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+y",
+        "command": "extension.vim_ctrl+y",
+        "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+z",
+        "command": "extension.vim_ctrl+z",
+        "when": "editorTextFocus && vim.active && vim.use<C-z> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+6",
+        "command": "extension.vim_ctrl+6",
+        "when": "editorTextFocus && vim.active && vim.use<C-6> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+^",
+        "command": "extension.vim_ctrl+^",
+        "when": "editorTextFocus && vim.active && vim.use<C-^> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+[",
+        "command": "extension.vim_ctrl+[",
+        "when": "editorTextFocus && vim.active && vim.use<C-[> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+]",
+        "command": "extension.vim_ctrl+]",
+        "when": "editorTextFocus && vim.active && vim.use<C-]> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+shift+2",
+        "command": "extension.vim_ctrl+shift+2",
+        "when": "editorTextFocus && vim.active && vim.use<C-shift+2>"
+      },
+      {
+        "key": "cmd+up",
+        "command": "extension.vim_ctrl+up",
+        "when": "editorTextFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "cmd+down",
+        "command": "extension.vim_ctrl+down",
+        "when": "editorTextFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "cmd+left",
+        "command": "extension.vim_ctrl+left",
+        "when": "editorTextFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "cmd+right",
+        "command": "extension.vim_ctrl+right",
+        "when": "editorTextFocus && vim.active && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        // "key": "cmd+pagedown",
+        "command": "extension.vim_ctrl+pagedown",
+        "when": "editorTextFocus && vim.active && vim.use<C-pagedown> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+pageup",
+        "command": "extension.vim_ctrl+pageup",
+        "when": "editorTextFocus && vim.active && vim.use<C-pageup> && !inDebugRepl"
+      },
+      {
+        "key": "cmd+space",
+        "command": "extension.vim_ctrl+space",
+        "when": "editorTextFocus && vim.active && vim.use<C-space> && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "shift+G",
+        "command": "list.focusLast",
+        "when": "listFocus && !inputFocus"
+      },
+      {
+        "key": "cmd+backspace",
+        "command": "extension.vim_ctrl+backspace",
+        "when": "editorTextFocus && vim.active && vim.use<C-BS> && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "shift+backspace",
+        "command": "extension.vim_shift+backspace",
+        "when": "editorTextFocus && vim.active && vim.use<S-BS> && vim.mode != 'Insert' && !inDebugRepl"
+      },
+      {
+        "key": "cmd+left",
+        "command": "extension.vim_cmd+left",
+        "when": "editorTextFocus && vim.active && vim.use<D-left> && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "cmd+right",
+        "command": "extension.vim_cmd+right",
+        "when": "editorTextFocus && vim.active && vim.use<D-right> && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "cmd+a",
+        "command": "extension.vim_cmd+a",
+        "when": "editorTextFocus && vim.active && vim.use<D-a> && !inDebugRepl && vim.mode != 'Insert'"
+      },
+      {
+        "key": "cmd+c",
+        "command": "extension.vim_cmd+c",
+        "when": "editorTextFocus && vim.active && vim.use<D-c> && vim.overrideCopy && !inDebugRepl"
+      },
+      {
+        "key": "cmd+v",
+        "command": "extension.vim_cmd+v",
+        "when": "editorTextFocus && vim.active && vim.use<D-v> && vim.mode == 'CommandlineInProgress' && !inDebugRepl || editorTextFocus && vim.active && vim.use<D-v> && vim.mode == 'SearchInProgressMode' && !inDebugRepl"
+      },
+      {
+        "key": "cmd+alt+down",
+        "linux": "shift+alt+down",
+        "mac": "cmd+alt+down",
+        "command": "extension.vim_cmd+alt+down",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "cmd+alt+up",
+        "linux": "shift+alt+up",
+        "mac": "cmd+alt+up",
+        "command": "extension.vim_cmd+alt+up",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "j",
+        "command": "notebook.focusNextEditor",
+        "when": "vim.mode == 'Normal' && editorTextFocus && inputFocus && notebookEditorFocused && notebookEditorCursorAtBoundary != 'none' && notebookEditorCursorAtBoundary != 'top'"
+      },
+      {
+        "key": "k",
+        "command": "notebook.focusPreviousEditor",
+        "when": "vim.mode == 'Normal' && editorTextFocus && inputFocus && notebookEditorFocused && notebookEditorCursorAtBoundary != 'bottom' && notebookEditorCursorAtBoundary != 'none'"
+      },
+      {
+        "key": "cmd+\\",
+        "command": "-workbench.action.splitEditor"
+      },
+      {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.splitInstance",
+        "when": "terminalProcessSupported && terminalTabsFocus"
+      },
+      {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+      },
+      {
+        "key": "cmd+\\",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarFocus"
+      },
+      {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+      },
+      {
+        "key": "cmd+0",
+        "command": "-workbench.action.focusSideBar"
+      },
+      {
+        "key": "cmd+\\",
+        "command": "workbench.action.focusSideBar",
+        "when": "!sideBarFocus"
+      },
+      {
+        "key": "cmd+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+      },
+      {
+        "key": "cmd+k d",
+        "command": "-workbench.files.action.compareWithSaved"
+      },
+      {
+        "key": "cmd+k cmd+d",
+        "command": "-editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+      },
+      {
+        "key": "cmd+u",
+        "command": "-cursorUndo",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "cmd+k cmd+u",
+        "command": "-editor.action.removeCommentLine",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "key": "cmd+k u",
+        "command": "-workbench.action.closeUnmodifiedEditors"
+      },
+      {
+        "key": "cmd+d",
+        "command": "-extension.vim_cmd+d",
+        "when": "editorTextFocus && vim.active && vim.use<D-d> && !inDebugRepl"
+      },
+      {
+        "key": "shift+7",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
+      },
+      {
+        "key": "shift+cmd+\\",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "editor.action.cancelSelectionAnchor",
+        "when": "editorTextFocus && selectionAnchorSet"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "editor.closeTestPeek",
+        "when": "testing.isInPeek && !config.editor.stablePeek || testing.isPeekVisible && !config.editor.stablePeek"
+      },
+      {
+        "key": "escape",
+        "command": "-editor.closeTestPeek",
+        "when": "testing.isInPeek && !config.editor.stablePeek || testing.isPeekVisible && !config.editor.stablePeek"
+      },
+      {
+        "key": "cmd+c",
+        "command": "-editor.action.clipboardCopyAction"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "editor.debug.action.closeExceptionWidget",
+        "when": "exceptionWidgetVisible"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "workbench.action.hideInterfaceOverview",
+        "when": "interfaceOverviewVisible"
+      },
+      {
+        "key": "cmd+c",
+        "command": "notebook.cell.quitEdit",
+        "when": "inputFocus && notebookEditorFocused && vim.active && !editorHasSelection && !editorHoverVisible && vim.mode == 'Normal'"
+      },
+      {
+        "key": "cmd+c",
+        "command": "notebook.cell.quitEdit",
+        "when": "inputFocus && notebookEditorFocused && !editorHasMultipleSelections && !editorHasSelection && !editorHoverVisible"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "notifications.hideList",
+        "when": "notificationCenterVisible"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "settings.action.clearSearchResults",
+        "when": "inSettingsEditor && inSettingsSearch"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "settings.action.focusLevelUp",
+        "when": "inSettingsEditor && !inSettingsJSONEditor && !inSettingsSearch"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "search.action.focusQueryEditorWidget",
+        "when": "inSearchEditor"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "search.action.cancel",
+        "when": "listFocus && searchViewletVisible && !inputFocus && searchState != '0'"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "inlayHints.stopReadingLineWithHint",
+        "when": "isReadingLineWithInlayHints"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "workbench.action.terminal.clearSelection",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected && !terminalFindVisible || terminalFocus && terminalProcessSupported && terminalTextSelected && !terminalFindVisible"
+      },
+      {
+        "key": "cmd+c",
+        "command": "workbench.action.terminal.hideFind",
+        "when": "terminalFindVisible && terminalFocus && terminalHasBeenCreated || terminalFindVisible && terminalFocus && terminalProcessSupported"
+      },
+      {
+        "key": "cmd+c",
+        "command": "breadcrumbs.selectEditor",
+        "when": "breadcrumbsActive && breadcrumbsVisible"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "cancelLinkedEditingInput",
+        "when": "LinkedEditingInputVisible && editorTextFocus"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "cancelRenameInput",
+        "when": "editorFocus && renameInputVisible"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "cancelSelection",
+        "when": "editorHasSelection && textInputFocus"
+      },
+      {
+        "key": "cmd+c",
+        "command": "closeAccessibilityHelp",
+        "when": "accessibilityHelpWidgetVisible && editorFocus"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "closeBreakpointWidget",
+        "when": "breakpointWidgetVisible && textInputFocus"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "closeParameterHints",
+        "when": "editorFocus && parameterHintsVisible"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "closeMarkersNavigation",
+        "when": "editorFocus && markersNavigationVisible"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "closeFindWidget",
+        "when": "editorFocus && findWidgetVisible && !isComposing"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "closeDirtyDiff",
+        "when": "dirtyDiffVisible"
+      },
+      {
+        "key": "cmd+c",
+        "command": "closeBreakpointWidget",
+        "when": "breakpointWidgetVisible && textInputFocus"
+      },
+      {
+        "key": "cmd+c",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "cmd+c",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+      },
+      {
+        "key": "cmd+c",
+        "command": "keybindings.editor.clearSearchResults",
+        "when": "inKeybindings && inKeybindingsSearch"
+      },
+      {
+        "key": "cmd+c",
+        "command": "leaveEditorMessage",
+        "when": "messageVisible"
+      },
+      {
+        "key": "cmd+c",
+        "command": "leaveSnippet",
+        "when": "editorTextFocus && inSnippetMode"
+      },
+      {
+        "key": "cmd+c",
+        "command": "list.clear",
+        "when": "listFocus && listHasSelectionOrFocus && !inputFocus"
+      },
+      {
+        "key": "cmd+c",
+        "command": "notifications.hideToasts",
+        "when": "notificationToastsVisible"
+      },
+      {
+        "key": "cmd+c",
+        "command": "notifications.hideToasts",
+        "when": "notificationFocus && notificationToastsVisible"
+      },
+      {
+        "key": "cmd+c",
+        "command": "problems.action.clearFilterText",
+        "when": "problemsFilterFocus"
+      },
+      {
+        "key": "cmd+c",
+        "command": "removeSecondaryCursors",
+        "when": "editorHasMultipleSelections && textInputFocus"
+      },
+      {
+        "key": "cmd+c",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickOpen"
+      },
+      {
+        "key": "cmd+c",
+        "command": "workbench.action.hideComment",
+        "when": "commentEditorFocused"
+      },
+      {
+        "key": "cmd+c",
+        "command": "workbench.statusBar.clearFocus",
+        "when": "statusBarFocused"
+      },
+      {
+        "key": "cmd+s",
+        "command": "-workbench.action.files.save"
+      },
+      {
+        "key": "cmd+s",
+        "command": "editor.action.inlineSuggest.trigger"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "closeReferenceSearch",
+        "when": "referenceSearchVisible && !config.editor.stablePeek"
+      },
+      {
+        "key": "cmd+c",
+        "command": "workbench.action.terminal.navigationModeExit",
+        "when": "accessibilityModeEnabled && terminalA11yTreeFocus && terminalProcessSupported"
+      },
+      {
+        "key": "shift+cmd+c",
+        "command": "execCopy"
+      },
+      {
+        "key": "cmd+c",
+        "command": "-execCopy"
+      },
+      {
+        "key": "shift+cmd+f12",
+        "command": "-editor.action.peekImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+      }
+]
