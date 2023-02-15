@@ -22,6 +22,7 @@ Plug 'amadeus/vim-mjml'
 Plug 'christoomey/vim-sort-motion'
 Plug 'neoclide/coc.nvim', {'branch': 'release' }
 Plug 'google/vim-searchindex'
+Plug 'hashivim/vim-terraform'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-plug'
 Plug 'junegunn/fzf'

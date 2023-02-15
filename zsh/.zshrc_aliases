@@ -25,11 +25,15 @@ alias gca='g commit --amend'
 alias gcb='git checkout -b'
 alias gcm='g commit -m'
 alias gpr='git pull --rebase'
+alias gpr-main='gpr upstream main'
+alias gprm='gpr-main'
 alias gs='git status'
-alias gsync='git pull --rebase upstream $(current_branch) && git push origin $(current_branch)'
+alias get_git_branch='git rev-parse --abbrev-ref HEAD'
+alias ggb=get_git_branch
+# alias gsync='git pull --rebase upstream $(current_branch) && git push origin $(current_branch)'
 
 # ghpr
-alias ghpr='create-pr'
+# alias ghpr='create-pr'
 
 # Gradle
 alias gradle-fs='gradle wrapper --gradle-version 6.6.1 && gradle formatSource'
@@ -59,10 +63,6 @@ alias nrtw='npm run test:dev -- --watch'
 alias nrtwa='npm run test:dev -- --watchAll'
 alias nrw='npm run watch'
 
-# xsel
-alias pbcopy='xsel --clipboard --input'
-alias pbpase='xsel --clipboard --output'
-
 # Yarn
 alias yrb='yarn run build'
 alias yrf='yarn run format'
@@ -74,3 +74,35 @@ alias yrtu='yarn run test:dev -- -u'
 alias yrtw='yarn run test:dev -- --watch'
 alias yrtwa='yarn run test:dev -- --watchAll'
 alias yrw='yarn run watch'
+
+function gpub() {
+  local BRANCH_NAME="$1"
+
+  if [[ -z $1 ]]; then
+    BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD)"
+
+    echo "Using $BRANCH_NAME as branch name."
+  elif [[ $1 == "main" || $1 == "master" ]]; then
+    echo "Cannot push to $1."
+
+    return 1
+  fi
+
+  gpu "$BRANCH_NAME"
+}
+
+function gpuf() {
+  local BRANCH_NAME="$1"
+
+  if [[ -z $1 ]]; then
+    BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD)"
+
+    echo "Using $BRANCH_NAME as branch name."
+  elif [[ $1 == "main" || $1 == "master" ]]; then
+    echo "Cannot push to $1."
+
+    return 1
+  fi
+
+  gpu "$BRANCH_NAME" --force-with-lease
+}
