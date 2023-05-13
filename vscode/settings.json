@@ -7,7 +7,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true,
   "vim.overrideCopy": true,
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "~/.vimrc",
@@ -17,12 +16,12 @@
   "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-        "before": ["u"],
-        "commands": ["undo"]
+      "before": ["u"],
+      "commands": ["undo"]
     },
     {
-        "before": ["c-r"],
-        "commands": ["redo"]
+      "before": ["c-r"],
+      "commands": ["redo"]
     },
     {
       "before": ["=", "="],
@@ -97,6 +96,15 @@
       ]
     },
     {
+      "before": ["q", "r"],
+      "commands": [
+        {
+          "command": "editor.action.rename",
+          "args": []
+        }
+      ]
+    },
+    {
       "before": ["q", "s"],
       "commands": [
         {
@@ -151,7 +159,22 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[terraform]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
   "[python]": {
     "editor.formatOnType": true
-  }
+  },
+  "redhat.telemetry.enabled": false,
+  "importSorter.importStringConfiguration.trailingComma": "multiLine",
+  "importSorter.sortConfiguration.customOrderingRules.defaultNumberOfEmptyLinesAfterGroup": 0,
+  "prettier.singleQuote": true,
+  "prettier.useEditorConfig": false,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.messageEnabled": false,
+  "vim.visualModeKeyBindings": [],
+  "vim.visualModeKeyBindingsNonRecursive": [],
+  "editor.formatOnSave": true,
+  "vim.operatorPendingModeKeyBindingsNonRecursive": []
 }
