@@ -29,7 +29,8 @@ alias gpr-main='gpr upstream main'
 alias gprm='gpr-main'
 alias gs='git status'
 alias get_git_branch='git rev-parse --abbrev-ref HEAD'
-alias ggb=get_git_branch
+alias ggb='get_git_branch'
+alias glonm='glo --no-merges'
 # alias gsync='git pull --rebase upstream $(current_branch) && git push origin $(current_branch)'
 
 # ghpr
@@ -106,3 +107,13 @@ function gpuf() {
 
   gpu "$BRANCH_NAME" --force-with-lease
 }
+
+# Cherry pick the commits that differ between the source & target branch
+function git-cherry-pick-diff() {
+   local SOURCE_NAME=${1}
+   local TARGET_BRANCH=${2:-main}
+
+   git cherry-pick $(git rev-list --abbrev-commit ${TARGET_BRANCH}..${SOURCE_NAME})
+ }
+
+alias gcpd='git-cherry-pick-diff'
