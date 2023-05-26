@@ -1,42 +1,49 @@
 source ~/.vimrc
 
+" Plug 'preservim/nerdtree'
+
 nmap gcc :action CommentByLineComment<cr>
 
-nnoremap <c-\> :action SplitVertically<CR>
-nnoremap <c--> :action SplitHorizontally<CR>
-nnoremap <c-=> :action Unsplit<CR>
-nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>sethandler <c-j> a:vim
-sethandler <c-k> a:vim
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <D-l> :action MotionLeftWrap
-nnoremap <D-h> :action MotionRightWrap
-nnoremap <c-k> <c-w>knnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>nnoremap <Leader>en :action EditSourceInNewWindow<CR>
-nnoremap <Leader>n :action NextWindow<CR>nnoremap <Leader>q :action CloseContent<CR>
-nnoremap <Leader>qa :action CloseAllEditors<CR>
-set clipboard+=unnamed
-set clipboard+=ideaputnnoremap \e :e ~/.ideavimrc<CR>
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
-map <C-c> <Esc>set surround
-set ideajoin
-set idearefactormode=keepvnoremap < <gv
-vnoremap > >gvnnoremap [[ :action MethodUp<CR>
-nnoremap ]] :action MethodDown<CR>nnoremap zc :action CollapseRegion<CR>
-nnoremap zo :action ExpandRegion<CR>
-nnoremap <leader>zc :action CollapseAllRegions<CR>
-nnoremap <leader>zo :action ExpandAllRegions<CR>nnoremap <leader>c :action CommentByLineComment<CR>nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>nnoremap <Leader>=  :action ReformatCode<CR>
-nnoremap <leader>o :action OptimizeImports<CR>nnoremap <c-r> :action RecentFiles<CR>
-nnoremap <leader>l :action RecentLocations<CR>
-nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>nnoremap ge :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
-set incsearchnnoremap <c-/> :action FindInPath<CR>
-nnoremap <c-a> :action GotoAction<CR>
-nnoremap <c-f> :action GotoFile<CR>
-nnoremap <leader>u :action FindUsages<CR>nnoremap <leader>s :action GotoRelated<CR>
-nnoremap <leader>h :action CallHierarchy<CR>
-nnoremap <leader>b :action ShowNavBar<CR>
+" nnoremap <c-\> :action SplitVertically<CR>
+" nnoremap <c--> :action SplitHorizontally<CR>
+" nnoremap <c-=> :action Unsplit<CR>
+" nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>sethandler <c-j> a:vim
+" sethandler <c-k> a:vim
+" nnoremap <c-h> <c-w>h
+" nnoremap <c-l> <c-w>l
+" nnoremap <c-j> <c-w>j
+" nnoremap <D-l> :action MotionLeftWrap
+" nnoremap <D-h> :action MotionRightWrap
+" nnoremap <c-k> <c-w>knnoremap <TAB> :action PreviousTab<CR>
+" nnoremap <s-TAB> :action NextTab<CR>nnoremap <Leader>en :action EditSourceInNewWindow<CR>
+" nnoremap <Leader>n :action NextWindow<CR>nnoremap <Leader>q :action CloseContent<CR>
+" nnoremap <Leader>qa :action CloseAllEditors<CR>
+" set clipboard+=unnamed
+" set clipboard+=ideaputnnoremap \e :e ~/.ideavimrc<CR>
+" nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+" " map <C-c> <Esc>set surround
+" set ideajoin
+" set idearefactormode=keepvnoremap < <gv
+" vnoremap > >gvnnoremap [[ :action MethodUp<CR>
+" nnoremap ]] :action MethodDown<CR>nnoremap zc :action CollapseRegion<CR>
+" nnoremap zo :action ExpandRegion<CR>
+" nnoremap <leader>zc :action CollapseAllRegions<CR>
+" nnoremap <leader>zo :action ExpandAllRegions<CR>
+" nnoremap <leader>c :action CommentByLineComment<CR>
+" nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+" nnoremap <Leader>= :action ReformatCode<CR>
+" nnoremap <leader>o :action OptimizeImports<CR>
+" nnoremap <leader>l :action RecentLocations<CR>
+" nnoremap <leader>h :action LocalHistory.ShowHistory<CR>
+" nnoremap ge :action GotoNextError<CR>
+" nnoremap gE :action GotoPreviousError<CR>
+" set incsearchnnoremap <c-/> :action FindInPath<CR>
+" nnoremap <c-a> :action GotoAction<CR>
+" nnoremap <c-f> :action GotoFile<CR>
+" nnoremap <leader>u :action FindUsages<CR>
+" nnoremap <leader>s :action GotoRelated<CR>
+" nnoremap <leader>h :action CallHierarchy<CR>
+" nnoremap <leader>b :action ShowNavBar<CR>
 nnoremap <c-s> :action FileStructurePopup<CR>
 nnoremap <c-o> :action GotoSymbol<CR>
 nnoremap gc :action GotoClass<CR>
